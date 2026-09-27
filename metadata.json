@@ -1,0 +1,6 @@
+{
+  "name": "REE Board Exam Visual Mastery - ESAS, EE & MATH Study Hub",
+  "description": "Personalized visual study companion for Electrical Engineering board exam candidates featuring structured roadmap, interactive circuit and power simulators, daily 100-problem sets, and Google Drive syllabus integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
