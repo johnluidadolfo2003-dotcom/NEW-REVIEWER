@@ -344,12 +344,36 @@ export function EconomicsProblemCard({
       </div>
       <details className="mt-4 group">
         <summary className="cursor-pointer text-teal-300 font-medium text-sm py-2">
-          Show answer & shortcut solution
+          Show formula, substitution & answer
         </summary>
         <div className="mt-3 space-y-4 border-t border-slate-800 pt-4">
-          <div
+          <section data-solution-stage="formula">
+            <h4 className="text-sm font-semibold">1 · Formula</h4>
+            <EconomicsMath formula={p.governingFormula} />
+            <p className="text-xs text-slate-400">
+              {formulaById[p.formulaId || ""].symbols}
+            </p>
+          </section>
+          <section data-solution-stage="substitute">
+            <h4 className="text-sm font-semibold">2 · Substitute the values</h4>
+            {p.substitutionMath ? (
+              <EconomicsMath formula={p.substitutionMath} />
+            ) : (
+              p.solutionSteps.map((step, j) => (
+                <div key={j} className="mt-3">
+                  <p className="text-sm text-slate-300">{step.explanation}</p>
+                  {step.calculationMath && (
+                    <EconomicsMath formula={step.calculationMath} />
+                  )}
+                </div>
+              ))
+            )}
+          </section>
+          <section
+            data-solution-stage="answer"
             className={`rounded-xl p-4 ${p.correctLetter ? "bg-teal-950/40 border border-teal-900" : "bg-amber-950/30 border border-amber-900"}`}
           >
+            <h4 className="text-sm font-semibold mb-2">3 · Answer</h4>
             <p className="font-semibold">
               {p.correctLetter
                 ? `${p.answerStatus === "nearest-choice" ? "Nearest choice" : "Answer"}: ${p.correctLetter}`
@@ -363,87 +387,82 @@ export function EconomicsProblemCard({
                   : `You selected ${selected}; compare your rate and timing with the solution.`}
               </p>
             )}
-          </div>
-          <section>
-            <h4 className="text-sm font-semibold">1 · Write the givens</h4>
-            <dl className="grid sm:grid-cols-2 gap-3 mt-3">
-              {p.given.map((item, j) => (
-                <div
-                  key={j}
-                  className="rounded-xl border border-slate-800 p-3 text-sm"
-                >
-                  <dt className="text-xs text-slate-400">{item.meaning}</dt>
-                  <dd className="mt-1 text-slate-200">{item.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-          <div>
-            <p className="text-xs uppercase tracking-wide text-slate-400">
-              2 · Understand the method and timing
-            </p>
-            <p className="text-sm mt-2 leading-relaxed">{p.shortcutSolution}</p>
-            {p.assumption && (
-              <p className="text-xs text-amber-200 mt-2">
-                Read the stated convention or assumption before using the
-                answer.
+            {(p.assumption || p.answerStatus !== "matched") && (
+              <p className="text-sm text-amber-200 mt-3 leading-relaxed">
+                {p.shortcutSolution}
               </p>
             )}
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-wide text-slate-400">
-              3 · Choose the formula
-            </p>
-            <EconomicsMath formula={p.governingFormula} />
-            <p className="text-xs text-slate-400">
-              {formulaById[p.formulaId || ""].symbols}
-            </p>
-          </div>
-          {p.substitutionMath && (
-            <section>
-              <h4 className="text-sm font-semibold">
-                4 · Substitute the actual values
-              </h4>
-              <EconomicsMath formula={p.substitutionMath} />
-            </section>
-          )}
-          <section>
-            <h4 className="text-sm font-semibold">
-              5 · Follow the calculation
-            </h4>
-            <p className="text-xs text-slate-400 mt-2">
-              Intermediate decimals below are shortened for reading. The answer
-              uses full precision.
-            </p>
-            <ol className="space-y-4 mt-4">
-              {p.solutionSteps.map((step, j) => (
-                <li key={j} className="border-l-2 border-teal-900 pl-4">
-                  <p className="text-sm font-medium">
-                    {j + 1}. {step.title}
-                  </p>
-                  <p className="text-sm leading-relaxed text-slate-400 mt-1">
-                    {step.explanation}
-                  </p>
-                  {step.calculationMath && (
-                    <EconomicsMath formula={step.calculationMath} />
-                  )}
-                </li>
-              ))}
-            </ol>
           </section>
-          <div>
-            <p className="text-xs uppercase tracking-wide text-slate-400">
-              6 · Calculator shortcut after you understand the steps
-            </p>
-            <p className="font-mono break-words bg-slate-950 p-4 rounded-xl text-sm text-teal-200 mt-2 leading-relaxed">
-              {p.calculatorEntry}
-            </p>
-            <p className="text-xs text-slate-400 mt-2">
-              {p.calculatorEntry?.includes("X")
-                ? "Use SOLVE; X is a decimal rate, so multiply the solved X by 100 for percent. Verify the residual."
-                : "Use the power key for ^, the negative-sign key for negative exponents, and eˣ or ln where shown. Press =; round only at the end."}
-            </p>
-          </div>
+          <details className="rounded-xl border border-slate-800 p-4">
+            <summary className="cursor-pointer text-sm text-teal-300">
+              More explanation & calculator shortcut
+            </summary>
+            <div className="mt-4 space-y-4">
+              <section>
+                <h4 className="text-sm font-semibold">Given values</h4>
+                <dl className="grid sm:grid-cols-2 gap-3 mt-3">
+                  {p.given.map((item, j) => (
+                    <div
+                      key={j}
+                      className="rounded-xl border border-slate-800 p-3 text-sm"
+                    >
+                      <dt className="text-xs text-slate-400">{item.meaning}</dt>
+                      <dd className="mt-1 text-slate-200">{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+              <div>
+                <p className="text-xs uppercase tracking-wide text-slate-400">
+                  Method and timing
+                </p>
+                <p className="text-sm mt-2 leading-relaxed">{p.shortcutSolution}</p>
+                {p.assumption && (
+                  <p className="text-xs text-amber-200 mt-2">
+                    Read the stated convention or assumption before using the
+                    answer.
+                  </p>
+                )}
+              </div>
+              <section>
+                <h4 className="text-sm font-semibold">
+                  Calculation details
+                </h4>
+                <p className="text-xs text-slate-400 mt-2">
+                  Intermediate decimals below are shortened for reading. The answer
+                  uses full precision.
+                </p>
+                <ol className="space-y-4 mt-4">
+                  {p.solutionSteps.map((step, j) => (
+                    <li key={j} className="border-l-2 border-teal-900 pl-4">
+                      <p className="text-sm font-medium">
+                        {j + 1}. {step.title}
+                      </p>
+                      <p className="text-sm leading-relaxed text-slate-400 mt-1">
+                        {step.explanation}
+                      </p>
+                      {step.calculationMath && (
+                        <EconomicsMath formula={step.calculationMath} />
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </section>
+              <div>
+                <p className="text-xs uppercase tracking-wide text-slate-400">
+                  Canon calculator shortcut
+                </p>
+                <p className="font-mono break-words bg-slate-950 p-4 rounded-xl text-sm text-teal-200 mt-2 leading-relaxed">
+                  {p.calculatorEntry}
+                </p>
+                <p className="text-xs text-slate-400 mt-2">
+                  {p.calculatorEntry?.includes("X")
+                    ? "Use SOLVE; X is a decimal rate, so multiply the solved X by 100 for percent. Verify the residual."
+                    : "Use the power key for ^, the negative-sign key for negative exponents, and eˣ or ln where shown. Press =; round only at the end."}
+                </p>
+              </div>
+            </div>
+          </details>
           <SourceSheet name={p.sourceFile} />
         </div>
       </details>
@@ -770,12 +789,18 @@ export function EconomicsStudyHub({
                   <summary className="text-teal-300 text-sm cursor-pointer">
                     Follow the shortcut solution
                   </summary>
+                  <h4 className="text-sm font-semibold mt-4">1 · Formula</h4>
                   <EconomicsMath formula={formulaById[e.formulaId].formula} />
-                  <p className="text-sm text-slate-300">{e.note}</p>
+                  <h4 className="text-sm font-semibold">2 · Substitute the values</h4>
                   <p className="font-mono text-sm text-teal-200 break-words p-3 bg-slate-950 rounded-xl my-3">
                     {e.entry}
                   </p>
-                  <p className="font-semibold">{e.answer}</p>
+                  <h4 className="text-sm font-semibold">3 · Answer</h4>
+                  <p className="font-semibold mt-2">{e.answer}</p>
+                  <details className="mt-4">
+                    <summary className="text-sm text-teal-300 cursor-pointer">More explanation</summary>
+                    <p className="text-sm text-slate-300 mt-2">{e.note}</p>
+                  </details>
                 </details>
                 <SourceSheet name={e.source} />
               </article>

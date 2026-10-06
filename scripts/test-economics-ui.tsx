@@ -50,15 +50,23 @@ assert.equal(first.querySelector("details")!.open, false);
 fireEvent.click(within(first).getByRole("button", { name: "A. 15030.03" }));
 first.querySelector("details")!.open = true;
 assert.ok(within(first).getByText("Answer: A"));
-assert.ok(within(first).getByText("1 · Write the givens"));
-assert.ok(within(first).getByText("Principal"));
-assert.ok(within(first).getByText("4 · Substitute the actual values"));
-assert.ok(within(first).getByText("5 · Follow the calculation"));
-assert.ok(
-  within(first).getByText(
-    "6 · Calculator shortcut after you understand the steps",
+assert.deepEqual(
+  Array.from(first.querySelectorAll("[data-solution-stage]")).map(
+    (section) => section.getAttribute("data-solution-stage"),
   ),
+  ["formula", "substitute", "answer"],
 );
+assert.ok(within(first).getByText("1 · Formula"));
+assert.ok(within(first).getByText("2 · Substitute the values"));
+assert.ok(within(first).getByText("3 · Answer"));
+const explanation = within(first)
+  .getByText("More explanation & calculator shortcut")
+  .closest("details")!;
+assert.equal(explanation.open, false);
+explanation.open = true;
+assert.ok(within(explanation).getByText("Principal"));
+assert.ok(within(explanation).getByText("Calculation details"));
+assert.ok(within(explanation).getByText("Canon calculator shortcut"));
 assert.ok(within(first).getByText("Your selected answer matches."));
 fireEvent.change(
   view.getByRole("textbox", { name: "Search sample problems" }),
