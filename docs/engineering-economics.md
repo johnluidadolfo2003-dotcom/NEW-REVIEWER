@@ -33,7 +33,7 @@ Important source issues include:
 
 `src/data/economicsFormulas.ts` is the shared formula bank; `src/utils/economicsMath.ts` supplies checked KaTeX expressions. Sample solutions, their calculator entries, topic filters and day assignments use the same formula IDs.
 
-To edit the numerical or terms content, change `scripts/economics-problems.tsv` or `scripts/economics-terms.tsv`, then run:
+To edit the numerical or terms content, change `scripts/economics-problems.tsv`, `scripts/economics-givens.tsv`, or `scripts/economics-terms.tsv`, then run:
 
 ```sh
 python scripts/build-economics.py
@@ -43,3 +43,9 @@ npm run build
 ```
 
 The build script evaluates trusted, checked-in expressions at generation time; the app does not evaluate user-supplied math strings. Numerical tests compare representative annuity, deferred-payment, return and bond calculations with independent cash-flow sums. Coverage checks require all 175 numerical and 100 terms numbers, a real source-sheet reference, and a formula for every numerical question. Interaction tests cover completion, unlock/relock, local persistence, search, hidden expanded answers, terms, calculator instructions, formula rendering all 25 topic lessons, all 175 numerical and 100 terms questions across their practice pages, and the absence of Drive review links.
+
+## Easy-to-follow numerical solutions
+
+All 175 numerical questions include curated, named givens; a timing/method explanation; the shared formula; a mathematically formatted substitution; short arithmetic steps with intermediate values; and a separate Canon shortcut entry. The calculation steps use the same checked expression as the answer, preserve full precision internally, and shorten intermediate decimals only for display. Rate-of-return and bond-yield solutions explicitly verify their present-worth residual. Minimum whole-unit break-even answers show the upward-rounding step. Missing-data questions explain why calculation must stop.
+
+`economics_solution_steps.py` builds these teaching calculations; no expression evaluation is performed in the app. Formula and arithmetic rendering is checked for every solution. The 175 original questions, choices, final results, answer letters and discrepancy classifications are preserved by this presentation update.

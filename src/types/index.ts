@@ -94,6 +94,7 @@ export interface DriveSampleProblem {
   formulaId?: string;
   resultValue?: number | null;
   calculatorEntry?: string;
+  substitutionMath?: string | null;
   assumption?: boolean;
   answerStatus?: "matched" | "nearest-choice" | "choice-mismatch" | "missing-given" | "ambiguous";
   id: string;
@@ -117,6 +118,8 @@ export interface DriveSampleProblem {
     title: string;
     explanation: string;
     calculation?: string;
+    calculationMath?: string;
+    intermediateValue?: number | null;
   }[];
   finalAnswer: string;
   canonCalTech: {

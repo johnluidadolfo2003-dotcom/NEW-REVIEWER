@@ -1,5 +1,7 @@
 """Build the source-backed data. Inputs are manually transcribed, not generated questions."""
 import ast,json,math,re
+from economics_solution_steps import load_givens, build_steps
+givens_by_number=load_givens()
 from pathlib import Path
 
 def pa(i,n): return n if i==0 else (1-(1+i)**(-n))/i
@@ -76,11 +78,14 @@ for line in Path('scripts/economics-problems.tsv').read_text().splitlines():
  if n==143:fmt='₱21,357.42 book value; ₱68,642.58 accumulated depreciation'
  if n==82:fmt='Quarterly (4 times per year)'
  if unit=='units' and result is not None and abs(value-result)>.00001:note+=f' Continuous break-even ratio = {result:,.4f}; whole-unit minimum = {value:,}.'
- if status=='choice-mismatch':note+=' No printed choice matches the calculated result at its stated precision. Check the original sheet; do not force a letter.'
+ if status=='choice-mismatch':note+=' No printed choice matches the calculated result at its stated precision. The correct computed result is shown above; do not force a letter.'
  page=778 if n<=26 else 779 if n<=50 else 780 if n<=75 else 781 if n<=105 else 782 if n<=131 else 783 if n<=152 else 784
  image=f'IMG_0{page}.HEIC'
  calc=entry(expr)
- problems.append(dict(id=f'econ-sample-{n:03}',problemNumber=n,sourceFile=image,sourceDocumentName='Practice Problems in Engineering Economics',folderName='Economics Sample Problem',category=key,topicTitle=key,weekDay=1,difficulty='Moderate',question=q,choices=[f'{"ABCD"[j]}. {o}' for j,o in enumerate(opts)],correctLetter=letter,answerStatus=status,assumption=n in assumptions,formulaId=key,resultValue=value,calculatorEntry=calc,shortcutSolution=note,given=[],governingFormula='',solutionSteps=[dict(step=1,title='Choose the method',explanation=note),dict(step=2,title='Substitute once',explanation='Use decimal rates, matched payment periods, and full calculator precision.',calculation=calc),dict(step=3,title='Check the result',explanation=fmt)],finalAnswer=fmt,canonCalTech=dict(calculator='Canon F-789SGA',mode='COMP',keystrokes=[calc,'Press =. For an expression containing X, use SOLVE with a decimal initial estimate; then verify the residual.'],resultDisplay=fmt,proTip='Use the power key for ^ and the negative-sign key for a negative exponent; round only the final result.'),mentalModelOrTrap=note))
+ if n==12:calc="2 ÷ 0.20 − 1 = 9 years minimum"
+ if n==82:calc="Test quarterly: ((1 + 0.095 ÷ 4)^4 − 1) × 100 ≈ 9.84%; therefore m = 4"
+ worked,substitution=build_steps(n,key,expr,note,result,value,fmt,env)
+ problems.append(dict(id=f'econ-sample-{n:03}',problemNumber=n,sourceFile=image,sourceDocumentName='Practice Problems in Engineering Economics',folderName='Economics Sample Problem',category=key,topicTitle=key,weekDay=1,difficulty='Moderate',question=q,choices=[f'{"ABCD"[j]}. {o}' for j,o in enumerate(opts)],correctLetter=letter,answerStatus=status,assumption=n in assumptions,formulaId=key,resultValue=value,calculatorEntry=calc,shortcutSolution=note,given=givens_by_number[n],governingFormula='',substitutionMath=substitution,solutionSteps=worked,finalAnswer=fmt,canonCalTech=dict(calculator='Canon F-789SGA',mode='COMP',keystrokes=[calc,'Press =. For an expression containing X, use SOLVE with a decimal initial estimate; then verify the residual.'],resultDisplay=fmt,proTip='Use the power key for ^ and the negative-sign key for a negative exponent; round only the final result.'),mentalModelOrTrap=note))
 # Look up formula text and day in TS at runtime to keep a single formula bank.
 Path('src/data/driveSampleProblems.ts').write_text("import { DriveSampleProblem } from '../types';\nimport { formulaById } from './economicsFormulas';\nexport const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = "+json.dumps(problems,ensure_ascii=False,indent=2)+".map(p => ({...p, correctLetter: (p.correctLetter || undefined) as DriveSampleProblem['correctLetter'], difficulty: 'Moderate' as const, category: formulaById[p.formulaId].title, topicTitle: formulaById[p.formulaId].title, governingFormula: formulaById[p.formulaId].formula, weekDay: formulaById[p.formulaId].day, answerStatus: p.answerStatus as DriveSampleProblem['answerStatus']}));\n")
 with Path('src/data/driveSampleProblems.ts').open('a') as f: f.write('export const ESAS_DRIVE_SAMPLE_PROBLEMS = DRIVE_SAMPLE_PROBLEMS;\n')

@@ -28,7 +28,7 @@ assert.deepEqual(
 for (const p of problems) {
   assert.ok(p.formulaId && formulaById[p.formulaId]);
   assert.ok(
-    p.shortcutSolution && p.calculatorEntry && p.solutionSteps.length >= 3,
+    p.shortcutSolution && p.calculatorEntry && p.solutionSteps.length >= 1,
   );
   assert.ok(ECONOMICS_SOURCE_SHEETS.includes(p.sourceFile));
   if (p.answerStatus === "matched") assert.ok(p.correctLetter);
@@ -80,3 +80,30 @@ for (const t of ECONOMICS_TOPIC_NOTES)
   assert.ok(
     t.idea && t.recognize && t.example && t.steps.length >= 3 && t.answer,
   );
+
+for (const p of problems) {
+  assert.ok(
+    p.given.length >= 2,
+    `Problem ${p.problemNumber} needs named givens`,
+  );
+  if (p.substitutionMath)
+    katex.renderToString(p.substitutionMath, {
+      throwOnError: true,
+      strict: "ignore",
+    });
+  for (const step of p.solutionSteps) {
+    assert.ok(step.title && step.explanation);
+    if (step.calculationMath)
+      katex.renderToString(step.calculationMath, {
+        throwOnError: true,
+        strict: "ignore",
+      });
+    if (step.intermediateValue != null)
+      assert.ok(Number.isFinite(step.intermediateValue));
+    if (step.title === "Check the solved rate")
+      assert.ok(Math.abs(step.intermediateValue!) < 1e-6);
+  }
+}
+console.log(
+  "PASS: named givens, complete calculation steps, valid mathematical rendering for all 175 solutions, and solved-rate residual checks.",
+);

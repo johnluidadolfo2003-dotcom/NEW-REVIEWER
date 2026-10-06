@@ -364,9 +364,23 @@ export function EconomicsProblemCard({
               </p>
             )}
           </div>
+          <section>
+            <h4 className="text-sm font-semibold">1 · Write the givens</h4>
+            <dl className="grid sm:grid-cols-2 gap-3 mt-3">
+              {p.given.map((item, j) => (
+                <div
+                  key={j}
+                  className="rounded-xl border border-slate-800 p-3 text-sm"
+                >
+                  <dt className="text-xs text-slate-400">{item.meaning}</dt>
+                  <dd className="mt-1 text-slate-200">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
           <div>
             <p className="text-xs uppercase tracking-wide text-slate-400">
-              1 · Identify the method and timing
+              2 · Understand the method and timing
             </p>
             <p className="text-sm mt-2 leading-relaxed">{p.shortcutSolution}</p>
             {p.assumption && (
@@ -378,16 +392,48 @@ export function EconomicsProblemCard({
           </div>
           <div>
             <p className="text-xs uppercase tracking-wide text-slate-400">
-              2 · Formula from your bank
+              3 · Choose the formula
             </p>
             <EconomicsMath formula={p.governingFormula} />
             <p className="text-xs text-slate-400">
               {formulaById[p.formulaId || ""].symbols}
             </p>
           </div>
+          {p.substitutionMath && (
+            <section>
+              <h4 className="text-sm font-semibold">
+                4 · Substitute the actual values
+              </h4>
+              <EconomicsMath formula={p.substitutionMath} />
+            </section>
+          )}
+          <section>
+            <h4 className="text-sm font-semibold">
+              5 · Follow the calculation
+            </h4>
+            <p className="text-xs text-slate-400 mt-2">
+              Intermediate decimals below are shortened for reading. The answer
+              uses full precision.
+            </p>
+            <ol className="space-y-4 mt-4">
+              {p.solutionSteps.map((step, j) => (
+                <li key={j} className="border-l-2 border-teal-900 pl-4">
+                  <p className="text-sm font-medium">
+                    {j + 1}. {step.title}
+                  </p>
+                  <p className="text-sm leading-relaxed text-slate-400 mt-1">
+                    {step.explanation}
+                  </p>
+                  {step.calculationMath && (
+                    <EconomicsMath formula={step.calculationMath} />
+                  )}
+                </li>
+              ))}
+            </ol>
+          </section>
           <div>
             <p className="text-xs uppercase tracking-wide text-slate-400">
-              3 · Canon COMP entry
+              6 · Calculator shortcut after you understand the steps
             </p>
             <p className="font-mono break-words bg-slate-950 p-4 rounded-xl text-sm text-teal-200 mt-2 leading-relaxed">
               {p.calculatorEntry}

@@ -1,0 +1,175 @@
+1|Principal=₱10,000; Nominal return=15% yearly; Inflation=6% yearly; Time=5 years
+2|Sale value=$10,000; Annual straight-line charge=$4,000; Elapsed life=5 years
+3|Par and redemption=$1,000; Coupon rate=6% nominal yearly; Coupons=Semiannual; Required yield=8% nominal yearly; Life=5 years
+4|Initial investment=$350,000; Year-end receipt=$200,000; Receipts=3
+5|Loan=₱10,000; Nominal annual rate=10%; Compounding and payments=Semiannual; Term=5 years; First payment=6 months from now
+6|Cash price=$60,000; Payments=12 quarterly payments; Nominal annual rate=24%; Timing=Beginning of each quarter
+7|Cost=₱10,000; Salvage=₱0; Life=20 years; Requested charge=Year 3; Method=SYD
+8|Cost=₱15,000; Salvage=₱2,000; Life=6 years; Interest=12% yearly; Find=Nearest equivalent annual cost
+9|Initial bridge cost=₱250 million; Rebuilding=₱100 million every 20 years; Interest=6% yearly; Horizon=Indefinite
+10|Loan=₱1,000,000; Interest=12% compounded annually; Payments=Monthly for 10 years
+11|Installed cost=₱120,000; Salvage=₱10,000; Total life=10 years; Sold after=5 years; Selling price=₱30,000; Method=Straight line
+12|Salvage=Zero; Maximum annual SYD charge=20% of first cost; Find=Minimum whole-year life
+13|Normal payment date=Day 100; Discount payment date=Day 31; Early discount=3%; Day basis=360-day assumption
+14|Original nominal rate=12%; Original compounding=Semiannual; Required compounding=Quarterly
+15|Year-end payment=₱6,000; Payments=5; Interest=15% yearly
+16|Down payment=₱100,000; Installment=₱8,000; Installments=10 semiannual; First installment=End of year 3; Nominal rate=12% semiannual compounding
+17|Cost=$720,000; Life=10 years; Depreciation rate=25% of beginning book value; Find=Total depreciation
+18|Old cost=₱5,000; Old life=2 years; Old salvage=₱800; New life=3 years; New salvage=₱1,000; Interest=4% yearly
+19|Cost=₱300,000; Salvage=₱30,000; Life=15 years; Interest=18% yearly; Assumption=Identical replacements forever
+20|Principal=₱500,000; Continuous rate=12% yearly; Time=5 years
+21|Year-5 book value=₱30,833.33; Salvage=₱12,000; Life=6 years; Method=Straight line
+22|Cost=$80,000; Salvage=$20,000; Life=20 years; Annual operation=$18,000; Interest=10% yearly
+23|Monthly payment=$1,000; Nominal rate=12% compounded quarterly; Horizon=Forever
+24|Quarter-end payment=₱100,000; Payments=40 over 10 years; Nominal rate=14% compounded quarterly; Focal date=End of year 4
+25|Loan=₱12,000; Nominal rate=20% compounded quarterly; Payments=Semiannual for 3 years
+26|Cost=₱12,000; Interest=8% yearly; Payments=5 beginning-of-year payments
+27|Service life=5 years; Warranty=2 years; Maintenance=$100 at years 3, 4, 5; Interest=10% yearly
+28|Face repayment=₱100,000; Interest withheld=20% of face value; Time=1 year; Cash received=₱80,000
+29|Year-end receipt=$1,000; Receipts=10; Required real return=5%; Inflation=6%
+30|Debt=$15,000; Payments=$4,000 at month 3, $5,000 at month 12, $3,000 at month 15; Final payment date=Month 21; Nominal rate=18% compounded quarterly
+31|Fixed annual cost=$70,000; Selling price=$125 per unit; Variable cost=$56 per unit; Find=Minimum whole units
+32|Cost=₱45,000; Book value after 6 years=₱4,350; Method=Constant-percentage declining balance
+33|Principal=$10,000; Simple annual rate=8%; Time=90 days; Day basis=360-day assumption
+34|Effective annual rate=8.33%; Find=Equivalent continuous annual rate; Mentioned period=6 years, not needed for annual conversion
+35|Yearly payments=₱5,000, ₱4,500, ₱4,000, ₱3,500 at years 1–4; Interest=5%; Focal date=Year 4
+36|Target=₱40,000 at age 21; First deposit=Age 3½; Deposits=Every half-year through age 21; Nominal rate=3% compounded semiannually
+37|Cost=$720,000; Year-10 book value=$40,545.73; Method=Constant-percentage declining balance
+38|Cost=$20,000; Scrap=$2,000; Life=8 years; Fund interest=4% yearly
+39|Redemption target=₱150,000; Time=10 years; Fund interest=3% yearly
+40|Payment=$3,000 at each quarter’s beginning; Time=4 years for requested target; Nominal rate=6% compounded quarterly; Source issue=“34 years” is inconsistent with its year-4 target
+41|Principal=$600; First stage=4 years at 6% simple interest; Second stage=12 years at 5% annual compounding
+42|Installed cost=₱800,000; Gross salvage=₱50,000; Dismantling=₱15,000; Life=10 years; Elapsed time=6 years; Method=Straight line
+43|Cost=$1,000,000; Life=10 years; Depreciation rate=25% of beginning book value
+44|Simple interest earned=$328; Annual rate=8.5%; Time=2 years
+45|Loan=₱10,000; Annual rate=12%; Payments=6 year-end payments
+46|Price=$20,000; Down payment=$5,000; Payments=12 yearly; Interest=4% yearly
+47|Cost=$20,000; Salvage=$2,000; Life=10 years; Fund interest=4% yearly
+48|Month-end deposit=₱500; Nominal rate=12% compounded monthly; Requested time=2 years; Original planned time=10 years, not the requested target
+49|Par and redemption=$5,000; Annual coupon rate=7%; Required yield=8%; Life=8 years
+50|Motor cost=₱6,000; Generator cost=₱4,000; Assembly=₱500; Salvage=₱400; Life=10 years; Operation=1,600 hours/year at ₱0.85/hour; Maintenance=₱300/year; Interest=Not stated
+51|Principal=$5,000; Simple annual rate=15%; Time=15 months
+52|Principal=₱10,000; Simple annual rate=8%; Time=90 days; Day basis=360-day assumption
+53|Interest earned=$450; Simple annual rate=6%; Time=2 years 6 months
+54|Maturity price=₱25,000; Simple annual rate=14%; Time=60 days; Day basis=360-day assumption
+55|Principal=₱110,000; Net interest=₱890.39; Withholding=20% of interest; Time=31 days; Day basis=Not specified, both 360 and 365 discussed
+56|Maturity price=$1,500; Simple annual rate=10%; Time=90 days; Day basis=360-day assumption
+57|Normal payment date=Day 100; Discount date=Day 31; Early discount=3%; Day basis=360-day assumption
+58|Principal=$10,500; Exact simple rate=5%; Time=75 days; Year basis=365 days, no leap year stated
+59|Principal=$5,000; Simple annual rate=22%; Dates=Jan 15–Nov 28, 1992; Elapsed days=318; Year basis=366 days
+60|Interest paid=$9,600; Simple annual rate=16%; Time=5 years
+61|Principal=₱6,800; Simple annual rate=11%; Time=3 years; Find=Interest only
+62|Principal=₱5,000; Nominal rate=8% compounded quarterly; Time=10 years; Find=Interest only
+63|Half-year-end deposit=$300; Nominal rate=2% compounded semiannually; Time=10 years
+64|Scholarships=$30,000/year in years 1–6, $40,000/year in years 7–10, $50,000/year thereafter; Interest=15% yearly
+65|Principal=₱50,000; Annual compounded rate=7.5%; Time=5 years
+66|Cost=₱100,000; Life=25 years; Salvage floor=₱5,000; Requested book value=After 3 years; Method=Double declining balance
+67|Principal=$500,000; Nominal rate=11.25% compounded monthly; Time=7 years 9 months; Find=Interest only
+68|Cash price=$1,000,000; Down payment=$200,000; Later payments=$300,000 at year 1 and $400,000 at year 3; Final date=Year 5; Interest=20% yearly
+69|Principal=₱10,000; Compounded rate=12% yearly; Time=5 years; Wording issue=“Present day pesos” has no specified purchasing-power convention
+70|Target=$20,000 at year 10; First 5 years=8% compounded annually; Next 5 years=12% nominal compounded quarterly
+71|Year-end receipt=$1,000; Receipts=5; Interest=4% yearly
+72|Principal=$2,825; Nominal rate=5% compounded quarterly; Time=8 years
+73|Initial investment=$350,000; Year-end receipt=$200,000; Receipts=3
+74|Principal=$1,000; Compounded rate=6% yearly; Time=12 years
+75|Principal=₱3,000; Interest after 2 years=₱500; Requested interval=4 years; Rate=Same compound rate throughout
+76|Future target=$10,000; Nominal rate=6% compounded semiannually; Time=5 years
+77|Principal=₱5,000; Nominal rate=8% compounded quarterly; Time=10 years; Find=Total amount
+78|Nominal rate=8%; Compounding=Quarterly; Find=Equivalent annual compounded rate
+79|Principal=$10,000; Nominal rate=6% compounded monthly; Time=20 years
+80|Nominal rate=18%; Compounding=Semi-quarterly, 8 periods/year
+81|Monthly rate=1.5%; Find=Effective annual rate
+82|Nominal annual rate=9.5%; Advertised annual effective rate=9.84%; Find=Compounding frequency
+83|Nominal annual rate=8%; Compounding=Quarterly; Find=Effective annual rate
+84|Original nominal annual rate=12%; Original compounding=Monthly; Required compounding=Every two months, 6 periods/year
+85|Continuous annual rate=12%; Find=Effective annual rate
+86|Effective annual rate=19.56%; Compoundings per year=12; Find=Nominal annual rate
+87|Principal=₱1,000; Future amount=₱1,126.49; Time=4 years; Compounding=Semiannual; Find=Nominal and effective annual rates
+88|Effective annual rate=10%; Find=Continuous nominal annual rate
+89|Principal=$5,000; Continuous annual rate=3%; Time=10 years
+90|Growth target=Double, F/P is 2; Continuous annual rate=10%; Find=Time
+91|Effective annual rate=4%; Find=Equivalent continuous annual rate
+92|Effective annual rate=24%; Find=Equivalent continuous annual rate
+93|Growth factor=1.34986; Time=10 years; Compounding=Continuous; Find=Annual nominal rate
+94|Continuous monthly rate=1.5%; Months per year=12; Find=Effective annual rate
+95|Principal=₱2,000; Continuous annual rate=8%; Target amount=Missing; Find=Time, which cannot be determined
+96|Principal=₱500; Annual rate=5%; Time=5 years; Compare=Annual vs continuous compounding
+97|Yearly receipt=$2,000; Payments=5 beginning-of-year payments; Interest=4% yearly
+98|Quarter-end payment=₱2,000; Payments=6; Nominal rate=12% compounded quarterly
+99|Year-end deposit=₱6,000; Time=5 years; Interest=15% yearly
+100|Cash price=₱10,000; Down payment=₱2,000; Year-end installment=₱750; Payments=15; Find=Annual interest rate
+101|Quarter-end installment=₱2,000; Payments=10; Nominal rate=10% compounded quarterly
+102|First lease payment=$20,000 at year 1; Annual increase=$1,500; Payments=8; Interest=7% yearly
+103|Year-end payment=$200; Payments=10; Interest=6% yearly
+104|Loan=₱100,000; Nominal annual rate=12%; Payments=Monthly for 20 years; Assumption=Monthly compounding
+105|Future target=₱20,000; Year-end deposits=12; Interest=6% yearly
+106|Future target=₱100,000 on final deposit date; Year-end deposits=5; Interest=10% yearly
+107|Down payment=₱200,000, equal to 10% of price; Payments=Monthly for 5 years; Nominal rate=15% compounded monthly
+108|Monthly payment=$10,000; Payments=60; Interest=12% compounded annually
+109|Future target=₱5,000 on last deposit date; Deposits=6, on January 1 of years 1–6; Interest=6% yearly
+110|Payment=$120,000; Payments=6 at beginning of each year; Interest=15% yearly
+111|Deposit=$200; Deposits=15 at beginning of each year; Interest=7% yearly
+112|Loan=₱2,000; Annual rate=4.5%; Installments=10 semiannual; First installment=Year 3; Assumption=Nominal rate compounded semiannually
+113|Loan=₱187,400; Annual rate=5%; Payments=8 yearly; First payment=End of year 10
+114|Down payment=₱100,000; Installment=₱8,000; Installments=10 semiannual; First installment=Year 3; Nominal rate=12% compounded semiannually
+115|Annual receipt=$2,000; Receipts=3; First receipt=Year 4; Interest=4% yearly
+116|Year-end receipt=$5,000; Annual interest=10%; Horizon=Forever
+117|Annual receipt=$1,000; Interest=8%; First receipt=End of year 5; Horizon=Forever
+118|Year-end receipt=$2,000; Nominal rate=10% compounded quarterly; Horizon=Forever
+119|Year-end receipt=$10,000; Interest=10% yearly; Horizon=Forever
+120|Present worth=$1,000; Periodic interest=15.5%; Horizon=Forever; Find=Periodic payment
+121|Semiannual receipt=$15,000; Nominal rate=8% compounded quarterly; Horizon=Forever
+122|Cost=$10,000; Salvage=$500; Life=10 years; Method=Straight line
+123|Cost=$10,000; Salvage=10% of cost; Life=10 years; Requested book value=After 6 years
+124|Cost=$15,000; Salvage=$1,000; Life=3 years; Method=Straight line
+125|Installed cost=₱800,000; Gross salvage=₱50,000; Dismantling=₱15,000; Life=10 years; Method=Straight line
+126|Cost=$45,000; Salvage=$2,500; Life=5 years; Find=Annual straight-line charge as percentage of cost
+127|Cost=$900,000; Salvage=$200,000; Life=8 years; Elapsed life=5 years; Method=Straight line
+128|Cost=$200,000; Salvage=$25,000; Life=20 years; Elapsed life=12 years; Method=Straight line
+129|Cost=₱500,000; Salvage=₱100,000; Life=25 years; Requested total depreciation=First 3 years
+130|Purchase cost=₱500,000; Installation=₱30,000; Salvage=10% of installed first cost; Life=10 years; Elapsed life=5 years
+131|Cost=₱45,000; Salvage=₱2,500; Life=5 years; Find=Annual straight-line rate
+132|Cost=₱10,000; Salvage=₱500; Life=10 years; Fund interest=4%; Find=Annual fund deposit
+133|Cost=$30,000; Sale/salvage=$10,000; Life=5 years; Interest=8%; Method=Sinking-fund annual cost
+134|Cost=$20,000; Salvage=$2,000; Life=10 years; Fund interest=4%
+135|Cost=₱9,000; Salvage=₱1,000; Life=10 years; Requested total depreciation=First 3 years; Method=SYD
+136|Cost=₱10,000; Salvage=Zero; Life=20 years; Requested charge=Year 3; Method=SYD
+137|Cost=$10,000; Salvage=Zero; Life=20 years; Requested charge=Year 3; Method=SYD
+138|Cost=₱9,000; Salvage=₱1,000; Life=10 years; Requested book value=After year 1; Method=SYD
+139|Cost=$15,000; Life=5 years; Elapsed life=3 years; Assumed salvage=Zero because none is stated; Method=SYD
+140|Cost=$9,000; Salvage=$1,000; Life=10 years; Requested total depreciation=First 4 years; Method=SYD
+141|Cost=₱50,000; Annual DB rate=20%; Elapsed life=9 years
+142|Cost=$480,000; Salvage=10% of cost; Life=12 years; Elapsed life=5 years; Method=Salvage-derived declining balance
+143|Cost=₱90,000; Salvage floor=₱18,000; Life=8 years; Elapsed life=5 years; Method=Double declining balance
+144|Cost=₱720,000; Salvage=₱40,545.73; Life=10 years; Method=Constant-percentage declining balance
+145|Inflation=9% yearly; Real cost of money=15% yearly; Find=Combined nominal rate
+146|Current price=$100; Inflation=7% yearly; Time=10 years
+147|Par purchase and redemption=₱1,000; Annual coupon=₱50; Life=20 years; Inflation=2% yearly
+148|Inflation=6% yearly; Real cost of money=10% yearly; Find=Combined nominal rate
+149|Year-end maintenance=$100, $200, $300, $400 in years 1–4; Interest=6% yearly
+150|Cost=$100,000; Scrap=$5,000; Life=10 years; Interest=5%; Method=Handout straight-line annual cost
+151|Cost=$100,000; Life=20 years; Interest=6%; Assumed salvage=Zero, none stated
+152|Initial cost=₱500,000; Annual maintenance=₱10,000; Interest=6%; Horizon=Forever
+153|Cost=$50,000; Salvage=$2,000; Life=10 years; Annual maintenance=$1,200; Interest=10%; Horizon=Repeated service forever
+154|Initial cost=$500,000; Annual operation and maintenance=$90,000; Interest=15%; Horizon=Forever
+155|Initial cost=$100,000; Annual recurring expense=$18,000 under source convention; Interest=8%; Horizon=Forever
+156|Initial cost=$250 million; Rebuilding=$100 million every 20 years; Interest=6%; Horizon=Forever
+157|Initial cost=$1.5 million; Annual maintenance=$150,000; Interest=15%; Horizon=Forever
+158|Initial cost=₱324,000; Salvage=₱50,000; Life=4 years; Interest=6%; Assumption=Repeated replacements forever
+159|Replacement tractor=$24,000; Replacement interval=5 years; Interest=6%; Assumption=First tractor now, then indefinite replacements
+160|Bond par=$1,000; Annual coupon rate=10%; Market price=$1,080; Required yield=12%; Life=8 years; Find=Redemption price
+161|Bond par=₱1,000; Annual coupon rate=10%; Redemption=₱1,040; Market price=₱1,120; Life=10 years; Find=Yield
+162|Bond par=₱1,000,000; Annual coupon rate=3%; Market price=95% of par; Life=15 years; Assumption=Annual coupons, redeem at par
+163|Annual coupon=$110; Redemption=$1,000; Life=20 years; Yield=12% yearly
+164|Par purchase and redemption=₱1,000; Annual coupon=₱50; Life=20 years; Inflation=2% yearly
+165|Bond par and redemption=₱1,000; Annual coupon rate=8%; Market price=₱1,030; Life=10 years; Find=Yield
+166|Fixed monthly cost=$200,000; Variable cost=$160/unit; Selling price=$200/unit
+167|Fixed monthly costs=₱3,500 property tax + ₱25,000 wages + ₱12,000 other; Variable costs=₱20 electricity + ₱2 tax per block; Selling price=₱55/block
+168|Annual fixed cost=₱80,000; Selling price=₱0.50/unit; Current production=500,000/year; Variable cost=Missing, zero assumed explicitly
+169|Fixed annual cost=₱69,994; Variable cost=₱56/unit; Selling price=₱135/unit
+170|Fixed monthly cost=$100,000; Variable costs=$300 labor + $400 material + $100 other per unit; Selling price=$1,200/unit
+171|Fixed monthly cost=$50,000; Variable costs=$0.75 labor + $3.25 material + $0.50 other per piece; Selling price=$6/piece
+172|Fixed monthly cost=$450,000; Variable costs=$45 labor/material + $15 other per unit; Selling price=$250/unit
+173|Fixed annual cost=$200,000; Variable cost=$160/drum; Selling price=$200/drum
+174|Fixed monthly cost=₱461,600; Variable costs=₱315 labor + ₱100 material + ₱3 other per unit; Selling price=₱995/unit
+175|Fixed monthly cost=₱34,950; Variable costs=₱15 labor + ₱65 material + ₱20 other per chair; Selling price=₱250/chair

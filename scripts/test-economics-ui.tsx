@@ -50,6 +50,15 @@ assert.equal(first.querySelector("details")!.open, false);
 fireEvent.click(within(first).getByRole("button", { name: "A. 15030.03" }));
 first.querySelector("details")!.open = true;
 assert.ok(within(first).getByText("Answer: A"));
+assert.ok(within(first).getByText("1 · Write the givens"));
+assert.ok(within(first).getByText("Principal"));
+assert.ok(within(first).getByText("4 · Substitute the actual values"));
+assert.ok(within(first).getByText("5 · Follow the calculation"));
+assert.ok(
+  within(first).getByText(
+    "6 · Calculator shortcut after you understand the steps",
+  ),
+);
 assert.ok(within(first).getByText("Your selected answer matches."));
 fireEvent.change(
   view.getByRole("textbox", { name: "Search sample problems" }),
