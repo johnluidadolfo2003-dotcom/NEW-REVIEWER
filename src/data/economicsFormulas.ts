@@ -270,10 +270,6 @@ export const ECONOMICS_FORMULAS: EconomicsFormula[] = [
 export const formulaById = Object.fromEntries(
   ECONOMICS_FORMULAS.map((f) => [f.id, f]),
 );
-export const ECONOMICS_SOURCE_ROOT =
-  "https://drive.google.com/drive/folders/13xPdd6pHRaJ_HsX3cmFlluqZ93tCATBG";
-export const ECONOMICS_SAMPLE_ROOT =
-  "https://drive.google.com/drive/folders/1dmr64S1v8SQRP3KTx4ZdRQ56SntGwwZa";
 export const CANON_MANUAL =
   "https://ij.manual.canon/cal/webmanual/WebPortal/pdf/F-789SGA%20(EXP)_EN.pdf";
 export const ECONOMICS_SOURCE_SHEETS = [

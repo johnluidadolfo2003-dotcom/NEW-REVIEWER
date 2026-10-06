@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { economicsFormulaLatex } from "../src/utils/economicsMath";
+import { ECONOMICS_TOPIC_NOTES } from "../src/data/economicsTopics";
 import katex from "katex";
 import { DRIVE_SAMPLE_PROBLEMS as problems } from "../src/data/driveSampleProblems";
 import { ECON_TERMS_QUESTIONS as terms } from "../src/data/econTermsQuestions";
@@ -70,3 +71,12 @@ for (const f of ECONOMICS_FORMULAS)
 console.log(
   "PASS: 175 problems, 100 terms, formula/source coverage, and 15 independent numerical checks.",
 );
+
+assert.deepEqual(
+  ECONOMICS_TOPIC_NOTES.map((t) => t.id).sort(),
+  ECONOMICS_FORMULAS.map((f) => f.id).sort(),
+);
+for (const t of ECONOMICS_TOPIC_NOTES)
+  assert.ok(
+    t.idea && t.recognize && t.example && t.steps.length >= 3 && t.answer,
+  );

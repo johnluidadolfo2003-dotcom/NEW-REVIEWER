@@ -1,6 +1,6 @@
 import React from 'react';
 import { User } from 'firebase/auth';
-import { ESAS_DRIVE_SAMPLE_PROBLEMS } from '../data/driveSampleProblems';
+import { ECONOMICS_FORMULAS } from '../data/economicsFormulas';
 
 interface NavbarProps {
   currentTab: 'roadmap' | 'mathBasics' | 'caltech' | 'foundations' | 'daily100' | 'simulators' | 'drive' | 'formulas' | 'fastTrack';
@@ -142,11 +142,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
             }`}
           >
-            <span>Drive Problems</span>
+            <span>Economics Topics</span>
             <span className={`text-[10px] font-mono px-1 rounded ${
               currentTab === 'drive' ? 'bg-slate-950/20 text-slate-950 font-bold' : 'bg-slate-800 text-amber-400'
             }`}>
-              {ESAS_DRIVE_SAMPLE_PROBLEMS.length}
+              {ECONOMICS_FORMULAS.length}
             </span>
           </button>
         </nav>

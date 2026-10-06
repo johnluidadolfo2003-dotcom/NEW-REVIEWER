@@ -4,13 +4,13 @@ The app opens on the economics week plan. The main ESAS handout determines the l
 
 ## References
 
-- Main reference: [ESAS Engineering Economics](https://drive.google.com/drive/folders/13xPdd6pHRaJ_HsX3cmFlluqZ93tCATBG). IMG_0766 is the cover; IMG_0767–IMG_0775 are the nine handout pages.
-- [Economics Sample Problem](https://drive.google.com/drive/folders/1dmr64S1v8SQRP3KTx4ZdRQ56SntGwwZa). IMG_0778–IMG_0784 contain numerical problems 1–175. IMG_0785–IMG_0787 contain terms questions 1–100. These are the supplementary practice reference.
+- Main reference: ESAS Engineering Economics handout. IMG_0766 is the cover; IMG_0767–IMG_0775 are the nine handout pages.
+- Economics Sample Problem sheets. IMG_0778–IMG_0784 contain numerical problems 1–175. IMG_0785–IMG_0787 contain terms questions 1–100. These are the supplementary practice reference.
 - [Official Canon F-789SGA manual](https://ij.manual.canon/cal/webmanual/WebPortal/pdf/F-789SGA%20(EXP)_EN.pdf), especially COMP, SOLVE, and CALC. The user's model spelling was interpreted as F-789SGA and that assumption is visible in the guide. Entries are checked mathematically; they have not been tested on physical calculator hardware.
 
-The 275 sample questions were transcribed from the supplied photos, with minor wording cleanup. They replace the previous incomplete numerical data and generic generated terms. Sample-sheet numbering and option order are preserved. Each problem records its source filename. The handout's additional exercises are accessible through its original Drive pages; 14 selected handout examples are worked within the week plan.
+The 275 sample questions were transcribed from the supplied photos, with minor wording cleanup. They replace the previous incomplete numerical data and generic generated terms. Sample-sheet numbering and option order are preserved. Each problem records its source filename. Fourteen selected handout examples are worked within the week plan, supplemented by an in-app worked teaching example for each of the 25 topics.
 
-Original scans remain in Drive. They are not copied into this public repository because they include contact information. Source references identify the sheet and open the correct folder.
+All 25 topic explanations, formulas, and worked teaching examples are written inside the app, both in the week lessons and a searchable Topic Lessons section. All 175 solving problems and 100 terms questions are rendered in the app with expandable solutions. Study screens do not link out to Drive or require reading external pages. Original scans remain in Drive and are not copied into this public repository because they include contact information. Source filenames are shown only as provenance.
 
 ## Answer policy
 
@@ -42,4 +42,4 @@ npm run lint
 npm run build
 ```
 
-The build script evaluates trusted, checked-in expressions at generation time; the app does not evaluate user-supplied math strings. Numerical tests compare representative annuity, deferred-payment, return and bond calculations with independent cash-flow sums. Coverage checks require all 175 numerical and 100 terms numbers, a real source-sheet reference, and a formula for every numerical question. Interaction tests cover completion, unlock/relock, local persistence, search, hidden expanded answers, terms, calculator instructions, formula rendering and all 20 sheet references.
+The build script evaluates trusted, checked-in expressions at generation time; the app does not evaluate user-supplied math strings. Numerical tests compare representative annuity, deferred-payment, return and bond calculations with independent cash-flow sums. Coverage checks require all 175 numerical and 100 terms numbers, a real source-sheet reference, and a formula for every numerical question. Interaction tests cover completion, unlock/relock, local persistence, search, hidden expanded answers, terms, calculator instructions, formula rendering all 25 topic lessons, all 175 numerical and 100 terms questions across their practice pages, and the absence of Drive review links.

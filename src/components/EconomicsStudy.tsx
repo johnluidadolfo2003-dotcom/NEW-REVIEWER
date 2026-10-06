@@ -10,13 +10,8 @@ import {
 } from "lucide-react";
 import { DRIVE_SAMPLE_PROBLEMS } from "../data/driveSampleProblems";
 import { ECON_TERMS_QUESTIONS } from "../data/econTermsQuestions";
-import {
-  CANON_MANUAL,
-  ECONOMICS_FORMULAS,
-  ECONOMICS_SAMPLE_ROOT,
-  ECONOMICS_SOURCE_ROOT,
-  formulaById,
-} from "../data/economicsFormulas";
+import { ECONOMICS_FORMULAS, formulaById } from "../data/economicsFormulas";
+import { economicsNoteById } from "../data/economicsTopics";
 import { ECONOMICS_LESSONS } from "../data/economicsLessons";
 import { economicsFormulaLatex } from "../utils/economicsMath";
 import type { DriveSampleProblem } from "../types";
@@ -63,27 +58,129 @@ export function EconomicsMath({ formula }: { formula: string }) {
   );
 }
 export function SourceSheet({ name, label }: { name: string; label?: string }) {
-  const sample = Number(name.match(/\d+/)?.[0]) >= 778;
   return (
-    <details className="mt-3 rounded-xl border border-slate-800 p-3">
-      <summary className="cursor-pointer text-sm text-slate-400 hover:text-teal-200">
-        {label || "Compare with original sheet"} · {name.replace(".HEIC", "")}
-      </summary>
-      <p className="text-xs text-slate-400 my-3">
-        Open the {sample ? "sample-problem" : "main ESAS"} folder and select{" "}
-        {name}. Original photos remain in your Drive.
-      </p>
-      <a
-        href={sample ? ECONOMICS_SAMPLE_ROOT : ECONOMICS_SOURCE_ROOT}
-        target="_blank"
-        rel="noreferrer"
-        className="text-sm text-teal-300 underline"
-      >
-        Open source folder ↗
-      </a>
-    </details>
+    <p className="mt-3 text-xs text-slate-500">
+      Reference: {label || "ESAS Engineering Economics"} ·{" "}
+      {name.replace(".HEIC", "")}
+    </p>
   );
 }
+export function EconomicsTopicCard({ id }: { id: string }) {
+  const f = formulaById[id],
+    note = economicsNoteById[id];
+  return (
+    <article className={panel} data-topic-id={id}>
+      <p className="text-xs text-teal-300">Day {f.day}</p>
+      <h3 className="font-semibold text-lg mt-1">{f.title}</h3>
+      <p className="text-sm text-slate-300 leading-relaxed mt-3">{note.idea}</p>
+      <p className="text-xs text-slate-400 mt-3">
+        Recognize it: {note.recognize}
+      </p>
+      <details className="mt-4">
+        <summary className="text-sm text-teal-300 cursor-pointer">
+          Learn the formula & follow an example
+        </summary>
+        <EconomicsMath formula={f.formula} />
+        <p className="text-xs text-slate-400">{f.symbols}</p>
+        <h4 className="font-semibold mt-4 text-sm">Try this example</h4>
+        <p className="text-sm mt-2">{note.example}</p>
+        <ol className="list-decimal ml-5 space-y-2 text-sm leading-relaxed text-slate-300 mt-3">
+          {note.steps.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+        <p className="text-sm text-teal-200 mt-4 rounded-xl bg-teal-950/40 p-3">
+          {note.answer}
+        </p>
+        <p className="text-xs text-amber-200 mt-3">Watch for: {f.trap}</p>
+      </details>
+    </article>
+  );
+}
+export function EconomicsTopics() {
+  const [query, setQuery] = useState("");
+  const topics = ECONOMICS_FORMULAS.filter((f) =>
+    `${f.title} ${economicsNoteById[f.id].idea}`
+      .toLowerCase()
+      .includes(query.toLowerCase()),
+  );
+  return (
+    <section className="space-y-5">
+      <div>
+        <p className="text-xs uppercase tracking-widest text-teal-300">
+          Study inside the app
+        </p>
+        <h2 className="text-2xl font-semibold mt-1">
+          Engineering Economics topic lessons
+        </h2>
+        <p className="text-sm text-slate-400 mt-2">
+          Every topic has a simple explanation, the formula, a worked example,
+          and the solving shortcut. The full 175 solving problems and 100 terms
+          questions appear below the completed week plan.
+        </p>
+      </div>
+      <details className={panel}>
+        <summary className="cursor-pointer text-teal-300 text-sm">
+          Start here: understand the symbols
+        </summary>
+        <dl className="grid sm:grid-cols-2 gap-4 mt-5 text-sm">
+          {[
+            [
+              "Principal / present worth P",
+              "Money valued today, before future interest or payments.",
+            ],
+            ["Future worth F", "Money valued at a stated later date."],
+            [
+              "Payment A",
+              "An equal amount paid or received each payment period.",
+            ],
+            [
+              "Periodic rate i",
+              "Interest per payment period as a decimal: 5% = 0.05.",
+            ],
+            [
+              "Periods n",
+              "Count of compounding or payment intervals; use the same clock as i.",
+            ],
+            ["Salvage S", "Net value remaining when an asset is retired."],
+            [
+              "Book value BV",
+              "First cost minus accumulated depreciation; it need not equal resale price.",
+            ],
+            [
+              "Cash-flow timing",
+              "Mark now as 0; write each amount at its actual payment date.",
+            ],
+          ].map(([term, definition]) => (
+            <div key={term}>
+              <dt className="font-medium text-teal-200">{term}</dt>
+              <dd className="text-slate-400 mt-1">{definition}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="text-xs text-slate-400 mt-4">
+          When i=0, equal payments total A×n and a target is divided by n; use
+          these limits instead of dividing by zero in an interest-factor
+          formula.
+        </p>
+      </details>
+      <input
+        aria-label="Search economics topics"
+        placeholder="Search a topic…"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="w-full p-3 bg-slate-950 border border-slate-700 rounded-xl"
+      />
+      <div className="grid md:grid-cols-2 gap-4">
+        {topics.map((f) => (
+          <EconomicsTopicCard key={f.id} id={f.id} />
+        ))}
+      </div>
+      {!topics.length && <p>No topics match your search.</p>}
+    </section>
+  );
+}
+
 export function EconomicsFormulaBank({ day }: { day?: number }) {
   const [search, setSearch] = useState("");
   const formulas = ECONOMICS_FORMULAS.filter(
@@ -210,14 +307,11 @@ export function EconomicsCalculatorGuide() {
         the manual’s CALC section before reusing a template. Expressions are
         cleared by mode changes or power-off.
       </p>
-      <a
-        className="text-sm text-teal-300 underline"
-        href={CANON_MANUAL}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Official Canon manual · SOLVE and CALC (printed pages 28–29) ↗
-      </a>
+      <p className="text-xs text-slate-500">
+        Reference: official Canon F-789SGA manual, SOLVE and CALC sections
+        (printed pages 28–29). The instructions and examples you need are
+        written above.
+      </p>
     </section>
   );
 }
@@ -340,8 +434,8 @@ export function EconomicsPractice({ unlocked }: { unlocked: boolean }) {
           Economics sample problems
         </h2>
         <p className="text-sm text-slate-400 mt-2">
-          175 numerical problems · 100 terms questions · references to all 10
-          sample sheets
+          175 solving problems · 100 terms questions · full questions and
+          solutions in this app
         </p>
       </div>
       {!unlocked ? (
@@ -479,73 +573,6 @@ export function EconomicsPractice({ unlocked }: { unlocked: boolean }) {
     </section>
   );
 }
-export function EconomicsReferences() {
-  return (
-    <section className="space-y-5">
-      <div>
-        <p className="text-xs uppercase tracking-widest text-teal-300">
-          Source library
-        </p>
-        <h2 className="text-2xl font-semibold mt-1">
-          Your Engineering Economics references
-        </h2>
-        <p className="text-sm text-slate-400 mt-2">
-          The main ESAS handout guides the lessons and formulas. Its Economics
-          Sample Problem subfolder supplies the 175 numerical and 100 terms
-          questions. The original pages in Drive include the handout’s
-          additional exercises.
-        </p>
-      </div>
-      <div className="flex flex-wrap gap-3">
-        <a
-          className={button}
-          href={ECONOMICS_SOURCE_ROOT}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Main ESAS folder ↗
-        </a>
-        <a
-          className={button}
-          href={ECONOMICS_SAMPLE_ROOT}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Sample-problem folder ↗
-        </a>
-        <a
-          className={button}
-          href={CANON_MANUAL}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Canon manual ↗
-        </a>
-      </div>
-      <p className="text-xs text-slate-400">
-        Source wording has been lightly cleaned for readability. Printed values
-        and choices are retained; corrections and assumptions appear with the
-        solutions.
-      </p>
-      <h3 className="font-semibold">Main handout · cover + 9 pages</h3>
-      {Array.from({ length: 10 }, (_, i) => (
-        <SourceSheet
-          key={i}
-          name={`IMG_0${766 + i}.HEIC`}
-          label={i === 0 ? "Handout cover" : `Handout page ${i}`}
-        />
-      ))}
-      <h3 className="font-semibold pt-4">Sample folder · 10 sheets</h3>
-      {Array.from({ length: 10 }, (_, i) => (
-        <SourceSheet
-          key={i}
-          name={`IMG_0${778 + i}.HEIC`}
-          label={i < 7 ? "Numerical problems" : "Terms questions"}
-        />
-      ))}
-    </section>
-  );
-}
 export function EconomicsStudyHub({
   initialSection = "plan",
 }: {
@@ -580,7 +607,8 @@ export function EconomicsStudyHub({
         </h1>
         <p className="text-slate-300 text-sm sm:text-base mt-3 max-w-2xl leading-relaxed">
           One clear week. Learn the idea, follow a worked example, then build
-          speed with every problem in your sample folder.
+          speed with all 175 solving problems and 100 terms questions right
+          here.
         </p>
         <div className="flex items-center gap-3 mt-6">
           <div
@@ -610,7 +638,7 @@ export function EconomicsStudyHub({
           { id: "plan", label: "Week plan", icon: BookOpen },
           { id: "formulas", label: "Formula bank", icon: BookOpen },
           { id: "calculator", label: "Canon techniques", icon: Calculator },
-          { id: "references", label: "Original sheets", icon: BookOpen },
+          { id: "references", label: "Topic lessons", icon: BookOpen },
         ].map(({ id, label, icon: Icon }) => (
           <button
             key={id}
@@ -673,6 +701,16 @@ export function EconomicsStudyHub({
                   </div>
                 ))}
               </div>
+            </div>
+          </section>
+          <section className="space-y-4">
+            <h3 className="font-semibold text-lg">Learn today’s topics</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {ECONOMICS_FORMULAS.filter((f) => f.day === lesson.day).map(
+                (f) => (
+                  <EconomicsTopicCard key={f.id} id={f.id} />
+                ),
+              )}
             </div>
           </section>
           <div className="grid md:grid-cols-2 gap-4">
@@ -743,7 +781,7 @@ export function EconomicsStudyHub({
       ) : section === "calculator" ? (
         <EconomicsCalculatorGuide />
       ) : (
-        <EconomicsReferences />
+        <EconomicsTopics />
       )}
     </div>
   );

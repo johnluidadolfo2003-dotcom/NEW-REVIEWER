@@ -33,6 +33,16 @@ assert.equal(
   view.queryByText("Finish your seven-day plan to unlock practice"),
   null,
 );
+// Walk every practice page to verify all requested questions are rendered in-app.
+const numericalSeen = new Set<number>();
+for (let page = 1; page <= 9; page++) {
+  for (const label of view.getAllByText(/^Problem \d+ ·/))
+    numericalSeen.add(Number(label.textContent!.match(/Problem (\d+)/)![1]));
+  if (page < 9) fireEvent.click(view.getByRole("button", { name: "Next" }));
+}
+assert.equal(numericalSeen.size, 175);
+for (let page = 9; page > 1; page--)
+  fireEvent.click(view.getByRole("button", { name: "Previous" }));
 const first = view
   .getByText("Problem 1 · Inflation and real purchasing power")
   .closest("article")!;
@@ -54,6 +64,14 @@ assert.ok(
     "Intended answer: D",
   ),
 );
+const termsSeen = new Set<number>();
+for (let page = 1; page <= 5; page++) {
+  for (const label of view.getAllByText(/^Terms question \d+$/))
+    termsSeen.add(Number(label.textContent!.match(/(\d+)$/)![1]));
+  if (page < 5) fireEvent.click(view.getByRole("button", { name: "Next" }));
+}
+assert.equal(termsSeen.size, 100);
+assert.equal(document.querySelector('a[href*="drive.google.com"]'), null);
 fireEvent.click(view.getByRole("button", { name: "Formula bank" }));
 assert.ok(
   view.getByRole("heading", { name: "Ordinary annuity — present worth" }),
@@ -61,8 +79,17 @@ assert.ok(
 assert.equal(document.querySelectorAll(".katex-error").length, 0);
 fireEvent.click(view.getByRole("button", { name: "Canon techniques" }));
 assert.ok(view.getByRole("heading", { name: "Canon F-789SGA" }));
-fireEvent.click(view.getByRole("button", { name: "Original sheets" }));
-assert.equal(view.getAllByText("Open source folder ↗").length, 20);
+fireEvent.click(view.getByRole("button", { name: "Topic lessons" }));
+assert.equal(document.querySelectorAll("[data-topic-id]").length, 25);
+assert.ok(
+  view.getByRole("heading", { name: "Engineering Economics topic lessons" }),
+);
+assert.equal(document.querySelector('a[href*="drive.google.com"]'), null);
+assert.ok(
+  view.getByText(
+    "Future amount ₱1,210; interest ₱210. For nominal r compounded m times/year, use i=r/m and n=m×years.",
+  ),
+);
 cleanup();
 const reload = render(<EconomicsStudyHub />);
 assert.ok(reload.getByText("7/7 days complete"));
@@ -75,5 +102,5 @@ assert.deepEqual(readEconomicsProgress(), [1]);
 localStorage.setItem("economics-source-week-v1", "broken");
 assert.deepEqual(readEconomicsProgress(), []);
 console.log(
-  "PASS: lesson completion, practice gate/relock, persistence, expanded answers, search, terms, formula rendering, calculator guide, and 20 sheets.",
+  "PASS: lesson completion, practice gate/relock, persistence, expanded answers, search, terms, formula rendering, calculator guide, all topic lessons, and no Drive review links.",
 );

@@ -1,7 +1,9 @@
 import { DriveItem, SubjectType } from '../types';
 
-export const USER_DRIVE_FOLDER_ID = '13xPdd6pHRaJ_HsX3cmFlluqZ93tCATBG';
-export const USER_DRIVE_FOLDER_URL = 'https://drive.google.com/drive/folders/13xPdd6pHRaJ_HsX3cmFlluqZ93tCATBG';
+// Optional authenticated Drive browsing starts at the signed-in user's root.
+// Economics study content is embedded and requires no Drive folder access.
+export const USER_DRIVE_FOLDER_ID = 'root';
+export const USER_DRIVE_FOLDER_URL = 'https://drive.google.com/drive/my-drive';
 
 export interface DriveResponse {
   files: DriveItem[];
