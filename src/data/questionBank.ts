@@ -37,7 +37,7 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
       }
     ],
     visualDiagram: {
-      type: 'graph',
+      type: 'calculus_tangent',
       caption: 'Parabola vertex touching the x-axis tangentially when k = 12 or k = -12.'
     }
   },
@@ -75,8 +75,8 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
       }
     ],
     visualDiagram: {
-      type: 'vector',
-      caption: 'Impedance right triangle: Base R = 12, Height X = 16, Hypotenuse |Z| = 20.'
+      type: 'impedance_triangle',
+      caption: 'Impedance right triangle: Base R = 12Ω, Height X = 16Ω, Hypotenuse |Z| = 20Ω.'
     }
   },
   {
@@ -107,7 +107,7 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
       }
     ],
     visualDiagram: {
-      type: 'graph',
+      type: 'calculus_tangent',
       caption: 'Slope of q(t) curve at t = 2 s equals 16 Amperes.'
     }
   },
@@ -137,7 +137,11 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
         explanation: 'For any sine wave, the integral of squared sine over a period yields V_rms = V_peak / √2.',
         calculation: 'V_rms = 325 / √2 = 325 / 1.4142 ≈ 229.81 V ≈ 230 V'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'rms_sine_wave',
+      caption: 'RMS effective voltage V_rms = 230V derived from peak 325V (V_rms = V_peak / √2).'
+    }
   },
   {
     id: 'math-p5',
@@ -165,7 +169,11 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
         explanation: 'τ = R × C.',
         calculation: 'τ = (40 × 10³ Ω) × (50 × 10⁻⁶ F) = 2000 × 10⁻³ = 2.0 seconds'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'rc_transient_curve',
+      caption: 'RC transient exponential voltage rise reaching 63.2% at t = τ = 2.0 seconds.'
+    }
   },
   {
     id: 'math-p6',
@@ -193,153 +201,321 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
         explanation: 'Annual depreciation d = (FC - SV) / n.',
         calculation: 'd = 450,000 / 10 = Php 45,000 per year'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'depreciation_timeline',
+      caption: 'Uniform straight-line depreciation timeline: Initial ₱500,000 to Salvage ₱50,000 over 10 years.'
+    }
   },
 
-  // ===================== ESAS (Items 36 to 65) =====================
+  // ===================== ESAS (Items 36 to 41: Engineering Economics) =====================
+  // Main Reference: Drive Folder "ESAS - Engineering Economics"
   {
     id: 'esas-p1',
     subject: 'ESAS',
     topicId: 'esas-1',
-    topicName: 'General Physics & Energy',
+    topicName: 'Compound Interest & Doubling Time',
     dayNumber: 1,
     questionNumber: 36,
-    question: 'An electric motor delivers 10 Horsepower (HP) to a water pump. Convert this mechanical power output into Watts.',
-    options: ['7,460 W', '7,350 W', '5,500 W', '8,000 W'],
-    correctAnswer: 0, // 7,460 W
-    keyFormulaUsed: '1 HP = 746 Watts',
+    question: 'An electrical contracting firm deposits ₱150,000 in a commercial bank paying 9% compounded quarterly. How many years will it take for the account to double to ₱300,000?',
+    options: ['5.25 years', '7.79 years', '8.04 years', '9.12 years'],
+    correctAnswer: 1, // 7.79 years
+    keyFormulaUsed: 'F = P · (1 + i)^n  =>  n = ln(F / P) / ln(1 + i)',
     difficulty: 'Foundation',
-    eli5Takeaway: '1 mechanical horsepower equals 746 electrical watts. Memorize this constant: 1 HP = 746 W.',
+    eli5Takeaway: 'Money grows exponentially with compound interest. To find how long it takes to double, solve for the unknown exponent using the Canon F-789SGA SOLVE feature.',
     stepByStepSolution: [
       {
         step: 1,
-        title: 'Apply conversion factor',
-        explanation: 'Multiply mechanical HP by 746 Watts/HP.',
-        calculation: 'P = 10 HP × 746 W/HP = 7,460 Watts (or 7.46 kW)'
+        title: 'Identify given parameters',
+        explanation: 'Principal P = ₱150,000, Future amount F = ₱300,000, nominal rate r = 9% = 0.09, compounding frequency m = 4 (quarterly). Periodic interest i = 0.09 / 4 = 0.0225.',
+        calculation: 'P = 150,000\nF = 300,000\ni = 0.09 / 4 = 0.0225\nn = 4 · t'
+      },
+      {
+        step: 2,
+        title: 'Set up the compound interest equation',
+        explanation: 'F = P(1 + i)^n. Substitute the values: 300,000 = 150,000 · (1 + 0.0225)^(4t), which simplifies to 2 = (1.0225)^(4t).',
+        calculation: '2 = (1.0225)^(4t)'
+      },
+      {
+        step: 3,
+        title: 'Solve for time t in years',
+        explanation: 'Take the natural logarithm of both sides: ln(2) = 4t · ln(1.0225) => t = ln(2) / [4 · ln(1.0225)].',
+        calculation: 't = 0.693147 / [4 × 0.022251] = 0.693147 / 0.089003 = 7.788 years ≈ 7.79 years'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'depreciation_timeline',
+      caption: 'Compound interest growth curve: ₱150,000 doubling to ₱300,000 in 7.79 years at 9% compounded quarterly.'
+    },
+    canonCalTech: {
+      calculator: 'Canon F-789SGA',
+      mode: 'COMP (Mode 1)',
+      keystrokes: [
+        'Method 1 (Direct Formula):',
+        '[ln] 2 [)] ÷ ( 4 × [ln] ( 1 + 0.09 ÷ 4 ) [)] [=]',
+        'Display: 7.78772',
+        'Method 2 (Using SOLVE):',
+        '2 [ALPHA] [=] ( 1 + 0.09 ÷ 4 ) [xʸ] ( 4 × [ALPHA] [X] )',
+        '[SHIFT] [SOLVE]',
+        '8 [=] (Initial guess)',
+        'Display: X = 7.7877'
+      ],
+      resultDisplay: '7.79 years',
+      proTip: 'On the Canon F-789SGA, [ALPHA] [=] types the red equal sign. Always provide an initial guess (e.g. 8) for the fastest solve convergence!'
+    }
   },
   {
     id: 'esas-p2',
     subject: 'ESAS',
-    topicId: 'esas-2',
-    topicName: 'Engineering Mechanics (Torque)',
+    topicId: 'esas-1',
+    topicName: 'Effective Annual Interest Rate (ER)',
     dayNumber: 1,
     questionNumber: 37,
-    question: 'A 3-phase induction motor produces a full-load shaft torque of 80 N-m while rotating at a speed of 1750 RPM. What is the shaft mechanical output power?',
-    options: ['12.5 kW', '14.66 kW', '16.2 kW', '18.4 kW'],
-    correctAnswer: 1, // 14.66 kW
-    keyFormulaUsed: 'P = 2πNT / 60  or  P = ω · T',
-    difficulty: 'Moderate',
-    eli5Takeaway: 'Power equals rotational speed in radians per second multiplied by turning twist (torque).',
+    question: 'A commercial bank offers an industrial machinery loan at a nominal interest rate of 12% compounded monthly. What is the true equivalent effective annual interest rate (ER)?',
+    options: ['12.00%', '12.36%', '12.68%', '13.14%'],
+    correctAnswer: 2, // 12.68%
+    keyFormulaUsed: 'ER = (1 + r / m)^m - 1',
+    difficulty: 'Foundation',
+    eli5Takeaway: 'Because monthly interest is added 12 times a year, you pay interest on interest. The actual annual rate you experience is 12.68%, not 12%.',
     stepByStepSolution: [
       {
         step: 1,
-        title: 'Convert speed N from RPM to angular velocity ω in rad/s',
-        explanation: 'ω = 2πN / 60.',
-        calculation: 'ω = (2 × 3.14159 × 1750) / 60 = 183.26 rad/s'
+        title: 'Identify nominal rate and frequency',
+        explanation: 'Nominal annual rate r = 12% = 0.12. Monthly compounding means m = 12 periods per year.',
+        calculation: 'r = 0.12,  m = 12'
       },
       {
         step: 2,
-        title: 'Multiply by torque T',
-        explanation: 'P = ω × T.',
-        calculation: 'P = 183.26 rad/s × 80 N-m = 14,660.8 Watts ≈ 14.66 kW'
+        title: 'Apply the Effective Rate formula',
+        explanation: 'ER = (1 + r/m)^m - 1 = (1 + 0.12/12)^12 - 1 = (1.01)^12 - 1.',
+        calculation: 'ER = (1.01)^12 - 1 = 1.126825 - 1 = 0.126825'
+      },
+      {
+        step: 3,
+        title: 'Convert to percentage',
+        explanation: 'Multiply by 100% to express as an annual percentage.',
+        calculation: 'ER = 0.126825 × 100% = 12.68%'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'depreciation_timeline',
+      caption: 'Nominal 12% compounded monthly yields an effective annual rate of 12.68%.'
+    },
+    canonCalTech: {
+      calculator: 'Canon F-789SGA',
+      mode: 'COMP (Mode 1)',
+      keystrokes: [
+        '( 1 + 0.12 ÷ 12 ) [xʸ] 12 - 1 [=]',
+        '[×] 100 [=]',
+        'Display: 12.682503'
+      ],
+      resultDisplay: '12.68%',
+      proTip: 'For continuous compounding at nominal rate r on Canon F-789SGA: Press [SHIFT] [ln] (e^x), enter 0.12, subtract 1, and multiply by 100.'
+    }
   },
   {
     id: 'esas-p3',
     subject: 'ESAS',
-    topicId: 'esas-3',
-    topicName: 'Strength of Materials (Shaft Torsion)',
+    topicId: 'esas-2',
+    topicName: 'Ordinary Annuity Present Worth & Cash Price',
     dayNumber: 1,
     questionNumber: 38,
-    question: 'Under Hooke\'s law, the ratio of tensile stress (σ) to tensile strain (ε) within the elastic limit of a copper busbar is known as:',
-    options: ['Poisson\'s Ratio', 'Modulus of Elasticity (Young\'s Modulus)', 'Shear Modulus', 'Bulk Modulus'],
-    correctAnswer: 1, // Young's Modulus
-    keyFormulaUsed: 'E = σ / ε (Hooke\'s Law)',
-    difficulty: 'Foundation',
-    eli5Takeaway: 'Young\'s Modulus is the stiffness rating of a material. A high E means it takes huge force to stretch it even a tiny bit.',
+    question: 'A power distribution cooperative purchased an automated sub-station monitoring system with a cash down payment of ₱200,000 and uniform quarterly installments of ₱25,000 for 4 years at 8% compounded quarterly. What was the equivalent cash price of the system?',
+    options: ['₱512,480', '₱539,635', '₱567,110', '₱600,000'],
+    correctAnswer: 1, // ₱539,635
+    keyFormulaUsed: 'Cash Price = Down Payment + A · [ (1 - (1+i)^(-n)) / i ]',
+    difficulty: 'Moderate',
+    eli5Takeaway: 'The total cash price equals the initial cash handed over PLUS the present discounted lump-sum value of all 16 future quarterly payments.',
     stepByStepSolution: [
       {
         step: 1,
-        title: 'Define Hooke\'s Law',
-        explanation: 'Within the proportional elastic limit, stress is directly proportional to strain: σ = E·ε.',
-        calculation: 'E = σ / ε = Young\'s Modulus of Elasticity (Pascals or psi)'
+        title: 'Determine periodic rate and number of periods',
+        explanation: 'Quarterly interest i = 8% / 4 = 2% = 0.02. Total quarterly payments n = 4 years × 4 = 16 payments.',
+        calculation: 'i = 0.08 / 4 = 0.02\nn = 4 × 4 = 16 payments\nA = ₱25,000'
+      },
+      {
+        step: 2,
+        title: 'Calculate Present Worth of the Annuity (P_A)',
+        explanation: 'P_A = A · [(1 - (1 + i)^(-n)) / i] = 25,000 · [(1 - (1.02)^(-16)) / 0.02].',
+        calculation: 'P_A = 25,000 × [ (1 - 0.728446) / 0.02 ] = 25,000 × 13.5777 = ₱339,635'
+      },
+      {
+        step: 3,
+        title: 'Add the initial down payment to get total cash price',
+        explanation: 'Total Cash Price = Down Payment + P_A = 200,000 + 339,635 = ₱539,635.',
+        calculation: 'Total Cash Price = 200,000 + 339,635 = ₱539,635'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'depreciation_timeline',
+      caption: 'Cash price timeline: Down payment ₱200,000 + 16 quarterly payments of ₱25,000 discounted at 2% per quarter.'
+    },
+    canonCalTech: {
+      calculator: 'Canon F-789SGA',
+      mode: 'COMP (Mode 1)',
+      keystrokes: [
+        '200000 + 25000 × ( 1 - ( 1 + 0.02 ) [xʸ] -16 ) ÷ 0.02 [=]',
+        'Display: 539634.93'
+      ],
+      resultDisplay: '₱539,635',
+      proTip: 'Store the interest rate 0.02 into memory A: Type 0.02 [SHIFT] [STO] [A]. Then use [ALPHA] [A] in the formula for zero typos!'
+    }
   },
   {
     id: 'esas-p4',
     subject: 'ESAS',
-    topicId: 'esas-4',
-    topicName: 'Fluid Mechanics & Hydro Power',
+    topicId: 'esas-3',
+    topicName: 'Sum-of-the-Years-Digits (SOYD) Depreciation',
     dayNumber: 1,
     questionNumber: 39,
-    question: 'A hydroelectric generating station has an effective head of 50 meters and water discharge flow of 20 m³/s. If the overall turbine-generator efficiency is 88%, what is the electrical power generated?',
-    options: ['8,633 kW', '9,810 kW', '7,550 kW', '10,250 kW'],
-    correctAnswer: 0, // 8,633 kW
-    keyFormulaUsed: 'P (kW) = 9.81 · Q · H · η',
+    question: 'A 3-phase, 500 kVA pad-mounted distribution transformer has a first cost of ₱500,000 and an estimated scrap value of ₱50,000 at the end of its 8-year useful life. Using the Sum-of-the-Years-Digits (SOYD) method, what is the depreciation charge for the 3rd year?',
+    options: ['₱56,250', '₱75,000', '₱84,375', '₱90,000'],
+    correctAnswer: 1, // ₱75,000
+    keyFormulaUsed: 'd_m = (FC - SV) · [ (n - m + 1) / Σ ],  where Σ = n(n + 1) / 2',
     difficulty: 'Moderate',
-    eli5Takeaway: 'Falling water creates power: 9.81 kN/m³ (water density) × flow rate × drop height × efficiency.',
+    eli5Takeaway: 'In SOYD, the asset loses more value in earlier years. In year 3 of an 8-year life, the numerator is 8 - 3 + 1 = 6 out of total 36 digits.',
     stepByStepSolution: [
       {
         step: 1,
-        title: 'Recall the hydroelectric power formula',
-        explanation: 'P = ρ · g · Q · H · η. Since ρg for water is 9.81 kN/m³, P in kW = 9.81 × Q × H × η.',
-        calculation: 'P = 9.81 × 20 m³/s × 50 m × 0.88'
+        title: 'Calculate the total depreciable base',
+        explanation: 'Depreciable amount = First Cost (FC) - Salvage Value (SV).',
+        calculation: 'Depreciable Base = 500,000 - 50,000 = ₱450,000'
       },
       {
         step: 2,
-        title: 'Compute total kW output',
-        explanation: 'Multiply all terms.',
-        calculation: 'P = 9.81 × 1000 × 0.88 = 8,632.8 kW ≈ 8,633 kW'
+        title: 'Compute the sum of the years digits (Σ)',
+        explanation: 'For n = 8 years, Σ = 1 + 2 + 3 + ... + 8 = n(n + 1) / 2.',
+        calculation: 'Σ = 8 × (8 + 1) / 2 = 8 × 9 / 2 = 36'
+      },
+      {
+        step: 3,
+        title: 'Find the reverse digit for year m = 3',
+        explanation: 'Reverse digit = n - m + 1 = 8 - 3 + 1 = 6.',
+        calculation: 'Digit for Year 3 = 6'
+      },
+      {
+        step: 4,
+        title: 'Calculate Year 3 depreciation d_3',
+        explanation: 'd_3 = 450,000 × (6 / 36) = 450,000 × (1 / 6) = ₱75,000.',
+        calculation: 'd_3 = 450,000 × (6 / 36) = ₱75,000'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'depreciation_timeline',
+      caption: 'SOYD Depreciation schedule: ₱450,000 total depreciation with Year 3 fraction = 6/36 = ₱75,000.'
+    },
+    canonCalTech: {
+      calculator: 'Canon F-789SGA',
+      mode: 'COMP (Mode 1)',
+      keystrokes: [
+        '( 500000 - 50000 ) × ( 8 - 3 + 1 ) ÷ ( 8 × 9 ÷ 2 ) [=]',
+        'Display: 75000'
+      ],
+      resultDisplay: '₱75,000',
+      proTip: 'To find Σ on Canon F-789SGA for any large n: Press [SHIFT] [log] (Σ), type [ALPHA] [X], set lower limit 1 and upper limit 8, press [=]. Output is 36.'
+    }
   },
   {
     id: 'esas-p5',
     subject: 'ESAS',
-    topicId: 'esas-5',
-    topicName: 'RA 7920 (New Electrical Engineering Law)',
+    topicId: 'esas-4',
+    topicName: 'Capitalized Cost of Infrastructure',
     dayNumber: 1,
     questionNumber: 40,
-    question: 'According to Republic Act No. 7920 (New Electrical Engineering Law), to pass the Registered Electrical Engineer (REE) Licensure Examination, a candidate must obtain a weighted general average of at least:',
-    options: ['75% with no grade below 60%', '70% with no grade below 50% in any subject', '70% with no grade below 60%', '75% with no grade below 50%'],
-    correctAnswer: 1, // 70% with no grade below 50%
-    keyFormulaUsed: 'RA 7920 Section 19: Gen Avg ≥ 70%, No Subject < 50%',
+    question: 'A run-of-river hydroelectric diversion canal costs ₱15,000,000 to construct. Annual dredging and gate maintenance costs ₱400,000. Every 12 years, the intake weir and trash racks require major reconstruction costing ₱2,500,000. If the effective interest rate is 8% per annum, what is the capitalized cost of the project?',
+    options: ['₱18,500,000', '₱21,647,000', '₱23,450,000', '₱25,120,000'],
+    correctAnswer: 1, // ₱21,647,000
+    keyFormulaUsed: 'CC = FC + (OM / i) + [ RC / ((1 + i)^k - 1) ]',
     difficulty: 'Board Exam Level',
-    eli5Takeaway: 'You need an overall 70% average across MATH (33%), ESAS (30%), and EE (37%), AND you must not score below 50% on any of the three individual tests.',
+    eli5Takeaway: 'Capitalized cost is the total money you need right now to build the dam, maintain it forever, and rebuild the gates every 12 years indefinitely.',
     stepByStepSolution: [
       {
         step: 1,
-        title: 'Verify RA 7920 Section 19 requirement',
-        explanation: 'Section 19 explicitly dictates that to pass, an examinee must obtain a general average of at least 70% with no grade lower than 50% in any subject.',
-        calculation: 'Passing Criteria: General Average ≥ 70% AND min(MATH, ESAS, EE) ≥ 50%'
+        title: 'Break down the three components of Capitalized Cost',
+        explanation: 'Capitalized cost consists of: (1) First Cost FC, (2) Present worth of perpetual annual maintenance (OM / i), and (3) Present worth of recurring replacement every k years [RC / ((1+i)^k - 1)].',
+        calculation: 'FC = ₱15,000,000\nOM = ₱400,000 / year\nRC = ₱2,500,000 every k = 12 years\ni = 0.08'
+      },
+      {
+        step: 2,
+        title: 'Calculate perpetual annual maintenance present worth',
+        explanation: 'PW_OM = OM / i = 400,000 / 0.08 = ₱5,000,000.',
+        calculation: 'PW_OM = 400,000 / 0.08 = ₱5,000,000'
+      },
+      {
+        step: 3,
+        title: 'Calculate periodic replacement present worth',
+        explanation: 'PW_RC = RC / [(1 + i)^k - 1] = 2,500,000 / [(1.08)^12 - 1] = 2,500,000 / [2.51817 - 1] = 2,500,000 / 1.51817.',
+        calculation: 'PW_RC = 2,500,000 / 1.51817 = ₱1,646,750'
+      },
+      {
+        step: 4,
+        title: 'Sum all three components',
+        explanation: 'Total CC = 15,000,000 + 5,000,000 + 1,646,750 = ₱21,646,750 ≈ ₱21,647,000.',
+        calculation: 'Total CC = ₱21,646,750 ≈ ₱21,647,000'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'depreciation_timeline',
+      caption: 'Capitalized cost components: ₱15M initial + ₱5M perpetual maintenance + ₱1.647M perpetual replacement fund.'
+    },
+    canonCalTech: {
+      calculator: 'Canon F-789SGA',
+      mode: 'COMP (Mode 1)',
+      keystrokes: [
+        '15000000 + 400000 ÷ 0.08 + 2500000 ÷ ( 1.08 [xʸ] 12 - 1 ) [=]',
+        'Display: 21646749.8'
+      ],
+      resultDisplay: '₱21,647,000',
+      proTip: 'On Canon F-789SGA, use the fraction key [■/□] to enter the compound denominator cleanly without misplaced parentheses.'
+    }
   },
   {
     id: 'esas-p6',
     subject: 'ESAS',
     topicId: 'esas-6',
-    topicName: 'Philippine Electrical Code (PEC 1)',
+    topicName: 'Break-Even Analysis & Contribution Margin',
     dayNumber: 1,
     questionNumber: 41,
-    question: 'According to the Philippine Electrical Code (PEC), what is the maximum recommended total voltage drop from the service entrance to the farthest outlet for combined feeder and branch circuits?',
-    options: ['2%', '3%', '5%', '10%'],
-    correctAnswer: 2, // 5%
-    keyFormulaUsed: 'PEC Section 2.10.1.19 / 2.15.1.2: Branch ≤ 3%, Total ≤ 5%',
+    question: 'An electrical manufacturing company produces commercial LED floodlights. Annual fixed overhead cost is ₱1,800,000. The variable manufacturing cost per floodlight is ₱320, and each unit sells for ₱560. What is the annual break-even sales volume in units?',
+    options: ['5,625 units', '7,500 units', '8,150 units', '9,000 units'],
+    correctAnswer: 1, // 7,500 units
+    keyFormulaUsed: 'Q_BEP = Fixed Costs / (Unit Selling Price - Unit Variable Cost)',
     difficulty: 'Foundation',
-    eli5Takeaway: 'The branch circuit alone should drop at most 3%, and the overall total from service entry to outlet should never lose more than 5% voltage.',
+    eli5Takeaway: 'Each floodlight sold gives a ₱240 profit margin (₱560 - ₱320). To cover the ₱1,800,000 rent and overhead, you must sell exactly 7,500 units.',
     stepByStepSolution: [
       {
         step: 1,
-        title: 'Check PEC limits for voltage drop',
-        explanation: 'PEC recommends conductors for branch circuits be sized to prevent a voltage drop exceeding 3% at the farthest outlet, and maximum total voltage drop on both feeder and branch circuit combined shall not exceed 5%.',
-        calculation: 'Branch circuit max VD = 3%\nTotal combined (feeder + branch) max VD = 5%'
+        title: 'Identify cost parameters',
+        explanation: 'Fixed Cost FC = ₱1,800,000, Selling price per unit p = ₱560, Variable cost per unit v = ₱320.',
+        calculation: 'FC = ₱1,800,000\np = ₱560\nv = ₱320'
+      },
+      {
+        step: 2,
+        title: 'Calculate Contribution Margin per unit',
+        explanation: 'Contribution margin = p - v = 560 - 320 = ₱240 per unit.',
+        calculation: 'Margin = 560 - 320 = ₱240'
+      },
+      {
+        step: 3,
+        title: 'Compute break-even volume Q_BEP',
+        explanation: 'Q_BEP = FC / (p - v) = 1,800,000 / 240 = 7,500 units.',
+        calculation: 'Q_BEP = 1,800,000 / 240 = 7,500 units'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'depreciation_timeline',
+      caption: 'Break-even graph: Total Revenue line intersects Total Cost line at Q = 7,500 units.'
+    },
+    canonCalTech: {
+      calculator: 'Canon F-789SGA',
+      mode: 'COMP (Mode 1)',
+      keystrokes: [
+        '1800000 ÷ ( 560 - 320 ) [=]',
+        'Display: 7500'
+      ],
+      resultDisplay: '7,500 units',
+      proTip: 'To find break-even sales revenue in Pesos directly: Multiply Q by selling price: [Ans] × 560 [=] -> ₱4,200,000.'
+    }
   },
 
   // ===================== EE PROFESSIONAL (Items 66 to 100) =====================
@@ -377,7 +553,7 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
       }
     ],
     visualDiagram: {
-      type: 'schematic',
+      type: 'thevenin_circuit',
       caption: 'Thevenin generator Vth = 48V, Rth = 6Ω connected to load RL = 6Ω.'
     }
   },
@@ -409,7 +585,7 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
       }
     ],
     visualDiagram: {
-      type: 'vector',
+      type: 'power_triangle',
       caption: 'Power triangle: Horizontal P = 80 kW, Vertical Q = 60 kVAR, Hypotenuse S = 100 kVA.'
     }
   },
@@ -435,7 +611,7 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
       }
     ],
     visualDiagram: {
-      type: 'vector',
+      type: 'three_phase_wye',
       caption: 'Two 230V phasors 120° apart subtract to form a line-to-line vector of 398V.'
     }
   },
@@ -465,7 +641,11 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
         explanation: 'I₂ = 25,000 / 240.',
         calculation: 'I₂ = 104.167 A ≈ 104.17 A'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'transformer_schematic',
+      caption: '2400V to 240V step-down transformer secondary current calculation.'
+    }
   },
   {
     id: 'ee-p5',
@@ -493,7 +673,11 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
         explanation: 's = (N_s - N_r) / N_s.',
         calculation: 's = (1800 - 1728) / 1800 = 72 / 1800 = 0.04 = 4.0%'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'motor_torque_speed',
+      caption: 'Torque-speed relation: Ns = 1800 RPM, Nr = 1728 RPM (Slip = 4%).'
+    }
   },
   {
     id: 'ee-p6',
@@ -521,7 +705,11 @@ export const CORE_BOARD_PROBLEMS: BoardProblem[] = [
         explanation: 'Because zero sequence currents sum up to 3·Ia0 at the neutral node, they cannot circulate unless there is a physical path to ground. Hence, line-to-line faults have zero sequence = 0.',
         calculation: 'Zero sequence flows ONLY in ground faults (SLG, DLG).'
       }
-    ]
+    ],
+    visualDiagram: {
+      type: 'three_phase_wye',
+      caption: 'Zero sequence currents require neutral/ground return path.'
+    }
   }
 ];
 
@@ -565,6 +753,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'Sum of roots: x₁ + x₂ = -b / a',
           difficulty: 'Foundation',
           eli5Takeaway: 'You do not even need to solve the full equation! In ax² + bx + c = 0, the sum of both answers is always equal to -b divided by a.',
+          visualDiagram: {
+            type: 'calculus_tangent',
+            caption: `Parabola quadratic curve for ${a}x² + ${b}x + ${c} = 0.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -599,6 +791,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: '|Z| = √(R² + XL²)',
           difficulty: 'Foundation',
           eli5Takeaway: 'Reactance and resistance are at right angles (90 degrees). Use Pythagoras: A² + B² = C².',
+          visualDiagram: {
+            type: 'impedance_triangle',
+            caption: `Impedance triangle: R = ${r}Ω, XL = ${xl}Ω, |Z| = ${z}Ω.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -626,6 +822,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'i(t) = dq/dt = d/dt(a · t³)',
           difficulty: 'Moderate',
           eli5Takeaway: 'Derivative tells you instantaneous speed of coulombs. Take the derivative and plug in time t.',
+          visualDiagram: {
+            type: 'calculus_tangent',
+            caption: `Derivative tangent slope at t = ${tVal}s gives ${current}A.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -660,6 +860,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'F = P · (1 + i)^n',
           difficulty: 'Foundation',
           eli5Takeaway: 'Compound interest earns interest on top of past interest every year, multiplying by (1 + i) each year.',
+          visualDiagram: {
+            type: 'power_triangle',
+            caption: `Compounded interest growth curve over ${nYears} years at ${iRate}%.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -685,6 +889,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'v(t) = V · (1 - e^(-t/τ))',
           difficulty: 'Foundation',
           eli5Takeaway: 'When t = τ, e^(-1) ≈ 0.368. So 1 - 0.368 = 0.632 or 63.2%. Memorize 63.2% for 1 time constant!',
+          visualDiagram: {
+            type: 'thevenin_circuit',
+            caption: `RC exponential charging transient reaching 63.2% at t = ${tau}s.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -720,6 +928,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'RA 7920 Section 31 (Field of Practice of RME)',
           difficulty: 'Board Exam Level',
           eli5Takeaway: 'RMEs can install and maintain systems up to 600 Volts and 500 kVA. Above that requires an REE or PEE.',
+          visualDiagram: {
+            type: 'pec_branch_circuit',
+            caption: 'RA 7920 Section 31: Maximum ceiling for RME practice (600V, 500kVA).'
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -744,6 +956,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'PEC Section 2.10.2.1: Minimum 2.0 mm² for 15A branch',
           difficulty: 'Foundation',
           eli5Takeaway: 'In the Philippines: 2.0 mm² (14 AWG) is standard for lighting circuits (15A breaker), while 3.5 mm² (12 AWG) is used for convenience outlets (20A breaker).',
+          visualDiagram: {
+            type: 'pec_branch_circuit',
+            caption: 'PEC 1 minimum conductor sizes: 2.0 mm² lighting, 3.5 mm² convenience outlets.'
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -771,6 +987,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'R = √(Fx² + Fy²)',
           difficulty: 'Foundation',
           eli5Takeaway: 'Since the two forces are perpendicular (90 degrees apart), treat them like the sides of a right triangle to find the diagonal hypotenuse.',
+          visualDiagram: {
+            type: 'impedance_triangle',
+            caption: `Perpendicular force vector addition: ${f1}N horizontal and ${f2}N vertical yields resultant ${rForce}N.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -800,6 +1020,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'η_Carnot = 1 - (T_cold / T_hot) in Kelvin',
           difficulty: 'Moderate',
           eli5Takeaway: 'Always convert Celsius into Kelvin (+273) first! If you use Celsius directly, your answer will be completely wrong.',
+          visualDiagram: {
+            type: 'calculus_tangent',
+            caption: `Carnot maximum thermal cycle efficiency operating between ${tHighK}K and ${tLowK}K.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -830,6 +1054,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'Conductivity ranking: Silver (106%) > Copper (100% IACS) > Gold (70%) > Aluminum (61%)',
           difficulty: 'Foundation',
           eli5Takeaway: 'Silver is number 1 in conductivity! Copper is second, but copper is used for wires because silver is far too expensive.',
+          visualDiagram: {
+            type: 'impedance_triangle',
+            caption: 'Relative conductivity comparison: Silver > Copper > Gold > Aluminum.'
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -870,6 +1098,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'Ns = 120f / P,  Nr = Ns · (1 - s)',
           difficulty: 'Foundation',
           eli5Takeaway: 'Find the magnetic field speed (Ns) first using 120f/P, then subtract the 5% slip to get shaft speed.',
+          visualDiagram: {
+            type: 'motor_torque_speed',
+            caption: `Induction motor: ${poles}-pole 60Hz produces synchronous speed ${ns} RPM with rotor speed ${nr} RPM.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -904,6 +1136,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'P_3φ = √3 · V_line · I_line · cos(θ)',
           difficulty: 'Moderate',
           eli5Takeaway: 'For any balanced 3-phase system, active power is ALWAYS √3 × V_line × I_line × pf. Do not forget the √3!',
+          visualDiagram: {
+            type: 'three_phase_wye',
+            caption: `Balanced 3-phase load: P = √3 · ${vLine}V · ${iLine}A · 0.80 = ${pKw} kW.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -939,6 +1175,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'I_primary = S_rated / V_primary',
           difficulty: 'Foundation',
           eli5Takeaway: 'High voltage side means low current. Low voltage side means high current. Power stays the same (50 kVA).',
+          visualDiagram: {
+            type: 'transformer_schematic',
+            caption: `Transformer ${v1}V to ${v2}V core turns ratio with I_primary = ${i1}A.`
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -963,6 +1203,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'Capacitors supply local reactive power Q_c without consuming true power P',
           difficulty: 'Foundation',
           eli5Takeaway: 'Capacitors provide the magnetizing energy locally so the electric utility does not have to send it over long wires. Real work done (kW) stays the same!',
+          visualDiagram: {
+            type: 'power_triangle',
+            caption: 'Power factor improvement: Shunt capacitors counter lagging inductive reactive power.'
+          },
           stepByStepSolution: [
             {
               step: 1,
@@ -987,6 +1231,10 @@ export const generateDaily100Set = (day: number): BoardProblem[] => {
           keyFormulaUsed: 'ANSI Device 50 = Instantaneous Overcurrent, 51 = AC Time Overcurrent',
           difficulty: 'Board Exam Level',
           eli5Takeaway: 'Remember: 50 acts in an instant (zero delay). 51 waits on an inverse time curve so downstream branch breakers get a chance to trip first.',
+          visualDiagram: {
+            type: 'thevenin_circuit',
+            caption: 'ANSI Standard device 51 protective time-overcurrent trip coordination.'
+          },
           stepByStepSolution: [
             {
               step: 1,

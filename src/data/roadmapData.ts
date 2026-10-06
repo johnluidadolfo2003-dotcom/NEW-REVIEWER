@@ -201,266 +201,275 @@ export const MASTER_STUDY_ROADMAP: StudyTopic[] = [
   {
     id: 'math-6',
     subject: 'MATH',
-    title: 'Engineering Economy & Probability',
+    title: 'Probability, Statistics & Vector Analysis',
     orderPriority: 6,
     phase: 1,
-    description: 'Time value of money, present worth, annual annuity, depreciation methods (straight-line, sinking fund), permutations, and probability.',
-    visualSummary: 'Cash flow timeline with arrows pointing down for costs and arrows pointing up for future revenues compounded by interest.',
-    eli5Intuition: 'Money today is worth more than money tomorrow because you can invest it to earn interest. Engineering economy calculates which generator or transformer is cheapest over 20 years.',
+    description: 'Permutations, combinations, conditional probability, normal distribution, standard deviation, vector dot/cross products, and gradient/divergence.',
+    visualSummary: 'Bell curve distribution and 3D coordinate vector diagram showing dot product projection and cross product orthogonal vector.',
+    eli5Intuition: 'Probability measures the likelihood of events occurring, like lightning striking a substation or component failures over an operating year.',
     boardExamWeight: '14% of Mathematics',
     recommendedDays: 4,
     subtopics: [
-      'Simple & Compound Interest: F = P(1 + i)^n',
-      'Uniform Series Compound Amount & Sinking Fund: A = P(A/P, i, n)',
-      'Depreciation Methods: Straight Line (SLD), Sum of Years Digits (SOYD), Declining Balance',
-      'Capitalized Cost (Infinite life equipment)',
-      'Permutations, Combinations, and Independent Probability'
+      'Fundamental Principle of Counting, Permutations: nPr = n! / (n - r)!',
+      'Combinations: nCr = n! / [r! · (n - r)!]',
+      'Independent and Conditional Probability: P(A ∩ B) = P(A) · P(B|A)',
+      'Normal Distribution (Gaussian Curve) and Z-score calculations',
+      'Vector Dot Product (A · B = |A||B| cos θ) and Cross Product (A × B = |A||B| sin θ n)'
     ],
     keyFormulas: [
       {
-        name: 'Compound Future Worth',
-        formula: 'F = P · (1 + i)^n',
-        explanation: 'Computes future lump sum value after n periods at interest rate i.',
-        variables: ['P: Principal present worth', 'i: interest rate per period', 'n: number of periods']
+        name: 'Permutations & Combinations',
+        formula: 'P(n, r) = n! / (n - r)!,   C(n, r) = n! / [ r! · (n - r)! ]',
+        explanation: 'Counting formulas where order matters (permutation) vs order does not matter (combination).',
+        variables: ['n: total pool size', 'r: number chosen']
       },
       {
-        name: 'Capitalized Cost',
-        formula: 'CC = First Cost + (Annual Operating Cost / i)',
-        explanation: 'Used for permanent installations like hydro dams and long-term transmission towers.',
-        variables: ['CC: Capitalized cost', 'i: annual discount rate']
+        name: 'Vector Dot Product',
+        formula: 'A · B = A_x B_x + A_y B_y + A_z B_z = |A| |B| cos(θ)',
+        explanation: 'Yields a scalar quantity such as electrical work W = F · d.',
+        variables: ['θ: angle between vectors A and B']
       },
       {
-        name: 'Straight Line Depreciation',
-        formula: 'D = (FC - SV) / n',
-        explanation: 'Uniform yearly drop in asset book value.',
-        variables: ['FC: First cost', 'SV: Salvage value', 'n: useful life in years']
+        name: 'Standard Normal Z-Score',
+        formula: 'Z = (X - μ) / σ',
+        explanation: 'Normalizes raw measurements into standard normal deviations.',
+        variables: ['μ: mean', 'σ: standard deviation']
       }
     ]
   },
 
-  // ==================== PHASE 2: ESAS (ENGINEERING SCIENCES & ALLIED SUBJECTS) ====================
+  // ==================== PHASE 2: ESAS (ENGINEERING ECONOMICS MASTER MODULES) ====================
+  // Main Reference: Drive Folder "ESAS - Engineering Economics" & Canon F-789SGA CalTech
   {
     id: 'esas-1',
     subject: 'ESAS',
-    title: 'General Chemistry & Physics Mechanics',
+    title: 'Time Value of Money: Simple & Compound Interest',
     orderPriority: 7,
     phase: 2,
-    description: 'Atomic structure, periodic table, oxidation states, Newton\'s laws of motion, kinematics, work, kinetic/potential energy, and momentum.',
-    visualSummary: 'Free body diagram of a mass on an inclined plane showing normal force, friction vector, and gravity components.',
-    eli5Intuition: 'An object will keep resting or moving forever unless you push it. When you push, Force equals Mass times Acceleration (F = ma).',
-    boardExamWeight: '12% of ESAS',
+    description: 'Ordinary vs exact simple interest, compound interest accumulation, nominal vs effective annual interest rate (ER), continuous compounding, and Canon F-789SGA fast SOLVE techniques.',
+    visualSummary: 'Cash flow timeline comparing simple interest straight line vs compound interest exponential growth curve over n periods.',
+    eli5Intuition: 'Money today is worth more than money tomorrow because today\'s money earns interest. Compound interest means you earn interest on top of your previous interest.',
+    boardExamWeight: '20% of Engineering Economics (ESAS)',
     recommendedDays: 4,
     subtopics: [
-      'Atomic Number, Valence Electrons, Conductors vs Insulators vs Semiconductors',
-      'Kinematics: v = v₀ + at, s = v₀t + ½at², v² = v₀² + 2as',
-      'Newton\'s Laws of Motion & Friction (f = μN)',
-      'Work, Kinetic Energy (½mv²), Potential Energy (mgh), and Power (P = W/t)',
-      'Impulse and Conservation of Momentum'
+      'Simple Interest: Ordinary vs Exact (360 vs 365 Days)',
+      'Compound Interest Lump Sum & Present Worth',
+      'Compounding Periods (Annual, Semi-Annual, Quarterly, Monthly)',
+      'Nominal vs Effective Annual Interest Rate (ER)',
+      'Continuous Compounding Interest',
+      'Canon F-789SGA CalTech: Unknown n or i via SOLVE'
     ],
     keyFormulas: [
       {
-        name: 'Newton\'s Second Law',
-        formula: 'ΣF = m · a',
-        explanation: 'Net force accelerates a mass.',
-        variables: ['m: mass in kg', 'a: acceleration in m/s²']
+        name: 'Compound Interest Lump Sum',
+        formula: 'F = P(1 + i)^n  |  P = \\frac{F}{(1 + i)^n} = F(1 + i)^{-n}',
+        explanation: 'Future lump sum accumulated from principal P at periodic rate i after n periods.',
+        variables: ['P: Present worth (principal)', 'F: Future compound amount', 'i: rate per period (r/m)', 'n: total periods (m · t)']
       },
       {
-        name: 'Kinetic Energy & Work',
-        formula: 'W = ΔKE = ½m(v₂² - v₁²)',
-        explanation: 'Work done on a body equals change in its kinetic energy.',
-        variables: ['m: mass', 'v: velocity']
+        name: 'Effective Annual Rate (ER)',
+        formula: 'ER = \\left(1 + \\frac{r}{m}\\right)^m - 1  |  ER_{cont} = e^r - 1',
+        explanation: 'True annual interest rate earned after compounding m times per year at nominal rate r.',
+        variables: ['r: nominal annual interest rate', 'm: compounding periods per year']
       },
       {
-        name: 'Mechanical to Electrical Power',
-        formula: '1 Horsepower (HP) = 746 Watts',
-        explanation: 'Crucial bridge between mechanical motor output and electrical kW ratings.',
-        variables: ['1 HP = 550 ft-lb/s = 746 W']
+        name: 'Continuous Compounding',
+        formula: 'F = P \\cdot e^{r \\cdot n}',
+        explanation: 'Compounding where frequency m approaches infinity.',
+        variables: ['e: Euler constant ≈ 2.71828', 'r: nominal annual rate', 'n: number of years']
       }
     ]
   },
   {
     id: 'esas-2',
     subject: 'ESAS',
-    title: 'Engineering Mechanics: Statics & Dynamics',
+    title: 'Annuities: Ordinary, Due, Deferred & Perpetuity',
     orderPriority: 8,
     phase: 2,
-    description: 'Equilibrium of concurrent forces, moment of force (torque), 2D trusses (method of joints/sections), center of gravity, and rotational dynamics.',
-    visualSummary: 'Truss bridge diagram with tension members in blue and compression members in red meeting at pin joints.',
-    eli5Intuition: 'If something is not falling, sliding, or spinning, all the pushes cancel out (ΣF = 0) and all the twisting turns cancel out (ΣM = 0).',
-    boardExamWeight: '14% of ESAS',
-    recommendedDays: 4,
+    description: 'Equal uniform series payments, Ordinary Annuity (end of period), Annuity Due (beginning of period), Deferred Annuity with grace periods, Perpetuity, and Canon F-789SGA keystroke shortcuts.',
+    visualSummary: 'Timeline with equal uniform vertical arrows A at regular intervals discounted back to single Present Worth P or forward to Future Worth F.',
+    eli5Intuition: 'Annuity is a steady stream of equal payments, like paying monthly amortizations for a car or receiving a fixed pension every year.',
+    boardExamWeight: '25% of Engineering Economics (ESAS)',
+    recommendedDays: 5,
     subtopics: [
-      'Conditions of Static Equilibrium: ΣFx = 0, ΣFy = 0, ΣM = 0',
-      'Resultant of Coplanar Force Systems',
-      'Analysis of Simple Pin-Connected Trusses',
-      'Centroids and Moments of Inertia of Structural Shapes',
-      'Rotational Dynamics: Torque τ = I·α, Rotational Kinetic Energy ½Iω²'
+      'Ordinary Annuity: Present Worth & Future Worth',
+      'Annuity Due: Immediate Beginning-of-Period Payments',
+      'Deferred Annuity: Grace Periods & Discounting',
+      'Perpetuity: Capitalized Value of Infinite Series',
+      'Sinking Fund Annuity & Periodic Reserve Allocation',
+      'Canon F-789SGA CalTech: One-Line Annuity Evaluation'
     ],
     keyFormulas: [
       {
-        name: 'Torque / Moment of a Force',
-        formula: 'M = F · d',
-        explanation: 'Force multiplied by perpendicular distance to pivot point.',
-        variables: ['F: force in Newtons', 'd: perpendicular moment arm in meters']
+        name: 'Ordinary Annuity Present Worth',
+        formula: 'P = A \\left[ \\frac{1 - (1 + i)^{-n}}{i} \\right]',
+        explanation: 'Equivalent present lump sum of n uniform end-of-period payments A.',
+        variables: ['P: Present Worth', 'A: Uniform periodic payment', 'i: interest rate per period', 'n: number of payments']
       },
       {
-        name: 'Motor Shaft Torque Relation',
-        formula: 'P = 2π · N · T / 60 = ω · T',
-        explanation: 'Relates electric motor mechanical power P (Watts), speed N (RPM), and torque T (N-m).',
-        variables: ['P: power in Watts', 'N: shaft speed in RPM', 'T: torque in N-m']
+        name: 'Ordinary Annuity Future Worth',
+        formula: 'F = A \\left[ \\frac{(1 + i)^n - 1}{i} \\right]',
+        explanation: 'Accumulated future amount of n uniform payments deposited into an interest-bearing fund.',
+        variables: ['F: Future compound amount', 'A: Periodic deposit']
+      },
+      {
+        name: 'Perpetuity Present Worth',
+        formula: 'P = \\frac{A}{i}',
+        explanation: 'Present worth of an infinite uniform periodic payment (n = ∞).',
+        variables: ['P: Capitalized value', 'A: Endless periodic cash flow', 'i: interest rate']
       }
     ]
   },
   {
     id: 'esas-3',
     subject: 'ESAS',
-    title: 'Strength of Materials & Mechanics of Deformable Bodies',
+    title: 'Depreciation Analysis: SLM, SFM, SOYD, DBM & DDBM',
     orderPriority: 9,
     phase: 2,
-    description: 'Normal stress, shear stress, Hooke\'s law, thermal stress, torsion in circular shafts, and bending stress in beams.',
-    visualSummary: 'Stress-strain curve showing proportional limit, elastic region, yield point, and ultimate tensile strength.',
-    eli5Intuition: 'Stress is pressure inside a solid beam (force divided by area). Strain is how much it stretched. If you don\'t pull too hard, it springs right back like a rubber band.',
-    boardExamWeight: '12% of ESAS',
-    recommendedDays: 4,
+    description: 'The 5 standard engineering asset depreciation methods: Straight Line, Sinking Fund, Sum-of-the-Years-Digits, Declining Balance (Matheson), Double Declining Balance, and Canon F-789SGA STAT mode shortcuts.',
+    visualSummary: 'Comparative asset book value degradation curves: Straight-line diagonal vs rapid accelerated SOYD/DBM curves.',
+    eli5Intuition: 'When an electrical contractor buys a ₱1,000,000 transformer, it loses value each year as it ages. Depreciation calculates its tax and accounting value each year.',
+    boardExamWeight: '22% of Engineering Economics (ESAS)',
+    recommendedDays: 5,
     subtopics: [
-      'Tensile & Compressive Stress: σ = P / A',
-      'Hooke\'s Law & Modulus of Elasticity: σ = E · ε',
-      'Axial Deformation: δ = (P·L) / (A·E)',
-      'Torsional Shear Stress in Solid & Hollow Shafts: τ = (T·r) / J',
-      'Bending Stress in Beams: σ = (M·c) / I'
+      'Straight-Line Method (SLM)',
+      'Sinking Fund Method (SFM)',
+      'Sum-of-the-Years-Digits (SOYD)',
+      'Declining Balance Method (DBM / Matheson)',
+      'Double Declining Balance Method (DDBM)',
+      'Canon F-789SGA CalTech: STAT Mode & SOYD Summation'
     ],
     keyFormulas: [
       {
-        name: 'Axial Elongation',
-        formula: 'δ = (P · L) / (A · E)',
-        explanation: 'How much a rod or overhead conductor stretches under tension.',
-        variables: ['P: applied force', 'L: original length', 'A: cross-sectional area', 'E: Young\'s modulus']
+        name: 'Straight Line Depreciation (SLM)',
+        formula: 'd = \\frac{FC - SV}{n}, \\quad BV_m = FC - m \\cdot d',
+        explanation: 'Constant annual depreciation and book value at year m.',
+        variables: ['FC: First cost', 'SV: Salvage value', 'n: useful life', 'BV_m: Book value after m years']
       },
       {
-        name: 'Torsion Formula for Shafts',
-        formula: 'τ_max = (16 · T) / (π · d³)',
-        explanation: 'Maximum shear stress on the outer surface of a solid circular motor drive shaft.',
-        variables: ['T: twisting torque', 'd: shaft diameter']
+        name: 'Sum-of-the-Years-Digits (SOYD)',
+        formula: 'd_m = (FC - SV) \\left[ \\frac{n - m + 1}{\\Sigma} \\right], \\quad \\Sigma = \\frac{n(n + 1)}{2}',
+        explanation: 'Accelerated depreciation method where earlier years carry much higher deductions.',
+        variables: ['m: current year (1, 2, ... n)', 'Σ = sum of year integers']
       },
       {
-        name: 'Factor of Safety',
-        formula: 'FS = Ultimate Stress / Allowable Stress',
-        explanation: 'Safety margin required for towers, poles, and conduit supports.',
-        variables: ['FS > 1.0']
+        name: 'Declining Balance (Matheson Formula)',
+        formula: 'k = 1 - \\sqrt[n]{\\frac{SV}{FC}}, \\quad BV_m = FC(1 - k)^m',
+        explanation: 'Constant percentage write-down of beginning-of-year book value.',
+        variables: ['k: constant depreciation rate', 'BV_m: Book value at end of year m']
       }
     ]
   },
   {
     id: 'esas-4',
     subject: 'ESAS',
-    title: 'Fluid Mechanics & Thermodynamics',
+    title: 'Capitalized Cost & Perpetual Asset Replacement',
     orderPriority: 10,
     phase: 2,
-    description: 'Fluid statics, pressure head, continuity equation, Bernoulli\'s energy equation, ideal gas law PV=mRT, laws of thermodynamics, and power cycles.',
-    visualSummary: 'Hydroelectric dam cross-section showing head water level, penstock conduit, turbine runner, and tailrace.',
-    eli5Intuition: 'Water high up in a dam has stored pressure. When it shoots down the pipe (Bernoulli), pressure turns into roaring speed that spins the electrical generator.',
-    boardExamWeight: '14% of ESAS',
+    description: 'Capitalized cost evaluation for long-lived civil and electrical utility installations (dams, transmission towers, substations) with perpetual operation, maintenance, and periodic renewals.',
+    visualSummary: 'Diagram of a 100-year infrastructure project with initial capital cost, continuous annual maintenance, and recurring replacement spikes every k years.',
+    eli5Intuition: 'Capitalized cost is the huge lump sum you must deposit in a bank today so that the interest alone will maintain and rebuild a power plant forever without touching the principal.',
+    boardExamWeight: '15% of Engineering Economics (ESAS)',
     recommendedDays: 4,
     subtopics: [
-      'Fluid Pressure: P = γ·h = ρ·g·h',
-      'Continuity of Flow: Q = A₁v₁ = A₂v₂',
-      'Bernoulli\'s Energy Equation',
-      'Ideal Gas Law: P·V = m·R·T',
-      'First Law of Thermodynamics: Q - W = ΔU',
-      'Carnot Heat Engine Efficiency: η = 1 - (T_cold / T_hot)'
+      'Capitalized Cost & Perpetual Life Concept',
+      'Perpetual Operation & Maintenance Cost (OM / i)',
+      'Periodic Replacement Cost Every k Years',
+      'Comparing Perpetual Infrastructure Alternatives',
+      'Canon F-789SGA CalTech: One-Line Memory Storage [STO] [A]'
     ],
     keyFormulas: [
       {
-        name: 'Hydroelectric Power Output',
-        formula: 'P = 9.81 · Q · H · η',
-        explanation: 'Electrical power generated in kW from flowing water head.',
-        variables: ['Q: flow discharge in m³/s', 'H: effective head in meters', 'η: overall efficiency']
+        name: 'Capitalized Cost (Full Form)',
+        formula: 'CC = FC + \\frac{OM}{i} + \\frac{RC - SV}{(1 + i)^k - 1}',
+        explanation: 'Total present investment required to construct, operate, and periodically replace an asset forever.',
+        variables: ['FC: First cost', 'OM: Annual Operation & Maintenance', 'RC: Replacement cost', 'k: replacement interval in years', 'i: annual discount rate']
       },
       {
-        name: 'Carnot Maximum Efficiency',
-        formula: 'η_max = (T_H - T_C) / T_H',
-        explanation: 'Maximum theoretical efficiency of any thermal power plant operating between absolute temperatures in Kelvin.',
-        variables: ['T_H: boiler temperature (K)', 'T_C: condenser temperature (K)']
-      },
-      {
-        name: 'Bernoulli Equation',
-        formula: 'P₁/γ + v₁²/(2g) + z₁ = P₂/γ + v₂²/(2g) + z₂ + h_L',
-        explanation: 'Energy balance along a streamline of liquid flow.',
-        variables: ['P/γ: pressure head', 'v²/2g: velocity head', 'z: elevation head', 'h_L: friction loss']
+        name: 'Periodic Sinking Fund Replacement',
+        formula: 'PW_{replacement} = \\frac{RC - SV}{(1 + i)^k - 1}',
+        explanation: 'Present worth of an infinite sequence of replacements occurring every k years.',
+        variables: ['RC: Cost each time replacement occurs', 'k: cycle length in years']
       }
     ]
   },
   {
     id: 'esas-5',
     subject: 'ESAS',
-    title: 'Philippine Electrical Engineering Law (RA 7920)',
+    title: 'Gradient Cash Flow Series & Bond Valuation',
     orderPriority: 11,
     phase: 2,
-    description: 'Provisions of Republic Act 7920: Board of Electrical Engineering composition, grades of practice (PEE, REE, RME), exam qualifications, seal, and penalties.',
-    visualSummary: 'Hierarchy diagram comparing Professional Electrical Engineer (PEE), Registered Electrical Engineer (REE), and Registered Master Electrician (RME).',
-    eli5Intuition: 'RA 7920 is the Philippine law that protects the profession. It defines who can sign blueprints (PEE), who can install and operate plants up to any voltage (REE), and up to 600V / 500kVA (RME).',
-    boardExamWeight: '18% of ESAS (Mandatory memorization for Philippine Board Exam)',
+    description: 'Arithmetic gradient series (cash flows increasing by a constant amount G), Geometric gradient series (cash flows changing by constant percentage g), and municipal/corporate bond pricing.',
+    visualSummary: 'Stepped staircase cash flow diagram showing base annuity A1 plus incremental gradient stairs G, 2G, 3G...',
+    eli5Intuition: 'Maintenance on an electrical vehicle or generator gets more expensive every year as parts wear out. Gradient formulas calculate the equivalent flat annual budget.',
+    boardExamWeight: '14% of Engineering Economics (ESAS)',
     recommendedDays: 4,
     subtopics: [
-      'RA 7920 Title, Declaration of Policy, and Definition of Terms',
-      'Composition and Qualifications of the Board of Electrical Engineering (BEE)',
-      'Qualifications for Examination: PEE, REE, and RME criteria',
-      'Passing Grade: General Average of at least 70% with no grade below 50% in any subject',
-      'Scope of Practice & Field of Practice Limitations',
-      'Prohibitions, Penalties, Fines (Php 10,000 to 50,000) and Imprisonment (6 mos to 5 yrs)'
+      'Arithmetic Gradient Series (Linear Increase G)',
+      'Geometric Gradient Series (Percentage Growth g)',
+      'Equivalent Uniform Annual Cost (EUAC)',
+      'Bond Valuation: Purchase Price of Coupon Bonds',
+      'Bond Yield to Maturity (YTM) & Current Yield',
+      'Canon F-789SGA CalTech: Gradient & Bond Shortcuts'
     ],
     keyFormulas: [
       {
-        name: 'REE Exam Passing Criteria',
-        formula: 'Weighted Average ≥ 70% and No Subject < 50%',
-        explanation: 'Mathematics: 33%, ESAS: 30%, EE Professional: 37%.',
-        variables: ['Gen Avg = 0.33·MATH + 0.30·ESAS + 0.37·EE']
+        name: 'Arithmetic Gradient to Annuity Factor',
+        formula: '(A/G, i, n) = \\frac{1}{i} - \\frac{n}{(1 + i)^n - 1}',
+        explanation: 'Converts a linear increase G into an equivalent uniform periodic series.',
+        variables: ['G: constant dollar increase per period', 'A_1: base payment at period 1', 'i: interest rate', 'n: periods']
       },
       {
-        name: 'RME Practice Ceiling',
-        formula: 'Voltage ≤ 600 Volts, Total Capacity ≤ 500 kVA',
-        explanation: 'Registered Master Electrician scope limitation under Section 31 of RA 7920.',
-        variables: ['Voltage limit: 600V', 'Capacity limit: 500kVA']
+        name: 'Total Equivalent Uniform Cost',
+        formula: 'A_{total} = A_1 \\pm G(A/G, i, n)',
+        explanation: 'Combines base first-year cost with increasing (+G) or decreasing (-G) gradient.',
+        variables: ['A_total: equivalent uniform annual cost']
+      },
+      {
+        name: 'Bond Present Price',
+        formula: 'P = \\frac{C}{(1 + i)^n} + Fr \\left[ \\frac{1 - (1 + i)^{-n}}{i} \\right]',
+        explanation: 'Fair market value of a coupon bond discounting coupons and redemption value C.',
+        variables: ['Fr: periodic coupon dividend', 'C: redemption value', 'i: yield rate', 'n: coupon periods']
       }
     ]
   },
   {
     id: 'esas-6',
     subject: 'ESAS',
-    title: 'Philippine Electrical Code (PEC 1) Essentials',
+    title: 'Break-Even Analysis, Payback Period & Rate of Return',
     orderPriority: 12,
     phase: 2,
-    description: 'PEC Article 100 Definitions, Article 210 Branch Circuits, Article 215 Feeders, Article 250 Grounding and Bonding, wire ampacities, and conduit fill.',
-    visualSummary: 'Color-coded wiring schematic showing Hot wire (Black/Red), Neutral wire (White/Gray), and Grounding conductor (Green/Bare).',
-    eli5Intuition: 'The Philippine Electrical Code is the safety rulebook. It prevents fires and electrocutions by specifying how thick wires must be for a given circuit breaker size.',
-    boardExamWeight: '16% of ESAS & heavily tested in EE Professional',
-    recommendedDays: 5,
+    description: 'Break-even production volume (TR = TC), simple and discounted payback period, Internal Rate of Return (IRR / ROR), Benefit-Cost ratio (B/C), and Canon F-789SGA SOLVE techniques.',
+    visualSummary: 'Graph of Total Revenue line crossing Total Cost line at the Break-Even Point Q_BEP.',
+    eli5Intuition: 'Break-even tells an electrical contractor exactly how many solar panels or motors they must sell before they stop losing money and start making a profit.',
+    boardExamWeight: '18% of Engineering Economics (ESAS)',
+    recommendedDays: 4,
     subtopics: [
-      'Standard Conductor Colors: Ground (Green/Bare), Neutral (White/Natural Gray), Phase conductors',
-      'Continuous Loads 125% rule: Overcurrent device must be rated at least 125% of continuous load',
-      'Standard Ampere Ratings for Fuses and Circuit Breakers (15, 20, 30, 40, 50, 60, 100A, etc.)',
-      'Minimum Wire Gauge for Lighting (2.0 mm² / 14 AWG) and Convenience Outlets (3.5 mm² / 12 AWG)',
-      'Conduit Fill Percentages: 53% for 1 conductor, 31% for 2 conductors, 40% for 3 or more conductors',
-      'Permissible Voltage Drop: 3% for branch circuit, 5% maximum total from service to outlet'
+      'Break-Even Sales & Production Volume (Q_BEP)',
+      'Contribution Margin & Operational Profitability',
+      'Simple & Discounted Payback Period',
+      'Internal Rate of Return (IRR / ROR Analysis)',
+      'Benefit-Cost Ratio (B/C ≥ 1.0 Feasibility)',
+      'Canon F-789SGA CalTech: Instant IRR via SHIFT SOLVE'
     ],
     keyFormulas: [
       {
-        name: 'Continuous Load Sizing',
-        formula: 'Rating_min = 1.25 · I_continuous + I_noncontinuous',
-        explanation: 'PEC requires branch circuit conductors and breakers to carry 125% of loads running for 3 hours or more.',
-        variables: ['I_continuous: loads on for 3+ hours']
+        name: 'Break-Even Volume & Sales Revenue',
+        formula: 'Q_{BEP} = \\frac{FC}{p - v}, \\quad S_{BEP} = \\frac{FC}{1 - \\frac{v}{p}}',
+        explanation: 'Number of units needed to cover fixed costs FC with unit selling price p and unit variable cost v.',
+        variables: ['FC: Total fixed costs', 'p: selling price per unit', 'v: variable cost per unit']
       },
       {
-        name: 'Single-Phase Voltage Drop',
-        formula: 'VD = (2 · I · L · R) / 1000',
-        explanation: 'Voltage drop across two conductors of length L (one way).',
-        variables: ['I: current (A)', 'L: one-way distance (m)', 'R: resistance (Ω/km)']
+        name: 'Rate of Return (IRR Condition)',
+        formula: 'NPV(IRR) = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0',
+        explanation: 'The internal discount rate that drives net present worth of all project cash flows to zero.',
+        variables: ['CF_t: cash flow at period t', 'IRR: Internal Rate of Return']
       },
       {
-        name: 'Maximum Allowable Voltage Drop',
-        formula: 'VD_branch ≤ 3% · V_nominal,  VD_total ≤ 5% · V_nominal',
-        explanation: 'Standard PEC design criteria for lighting and power.',
-        variables: ['V_nominal: 230V standard in the Philippines']
+        name: 'Benefit-Cost Ratio (B/C)',
+        formula: 'B/C = \\frac{PW(Benefits)}{PW(Costs)} \\ge 1.0',
+        explanation: 'Decision rule: project is economically justified if benefit-to-cost ratio is at least 1.0.',
+        variables: ['PW: Present Worth discounted at Minimum Attractive Rate of Return (MARR)']
       }
     ]
   },

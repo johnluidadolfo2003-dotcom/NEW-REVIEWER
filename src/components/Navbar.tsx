@@ -1,9 +1,10 @@
 import React from 'react';
 import { User } from 'firebase/auth';
+import { ESAS_DRIVE_SAMPLE_PROBLEMS } from '../data/driveSampleProblems';
 
 interface NavbarProps {
-  currentTab: 'roadmap' | 'daily100' | 'simulators' | 'drive' | 'formulas';
-  onSelectTab: (tab: 'roadmap' | 'daily100' | 'simulators' | 'drive' | 'formulas') => void;
+  currentTab: 'roadmap' | 'mathBasics' | 'caltech' | 'foundations' | 'daily100' | 'simulators' | 'drive' | 'formulas' | 'fastTrack';
+  onSelectTab: (tab: 'roadmap' | 'mathBasics' | 'caltech' | 'foundations' | 'daily100' | 'simulators' | 'drive' | 'formulas' | 'fastTrack') => void;
   user: User | null;
   onGoogleSignIn: () => void;
   onSignOut: () => void;
@@ -19,24 +20,21 @@ export const Navbar: React.FC<NavbarProps> = ({
   isLoggingIn,
 }) => {
   return (
-    <header className="border-b border-slate-800 bg-slate-950/95 sticky top-0 z-50 backdrop-blur-sm">
+    <header className="border-b border-slate-800 bg-slate-950 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col md:flex-row md:items-center justify-between gap-3">
         {/* Brand / Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-black text-sm shrink-0">
+          <div className="w-8 h-8 rounded bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-xs shrink-0">
             REE
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-base font-bold text-slate-100 tracking-tight">
-                REE Board Exam Visual Mastery
+              <h1 className="text-sm font-bold text-slate-100 tracking-tight">
+                REE Licensure Review
               </h1>
-              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">
-                PRC Syllabus
-              </span>
             </div>
-            <p className="text-xs text-slate-400">
-              Personalized for Visual &amp; Slow Learners • ESAS • EE • MATH
+            <p className="text-[11px] text-slate-400">
+              Math (33%) · ESAS (30%) · EE (37%)
             </p>
           </div>
         </div>
@@ -45,62 +43,111 @@ export const Navbar: React.FC<NavbarProps> = ({
         <nav className="flex items-center gap-1 overflow-x-auto pb-1 md:pb-0">
           <button
             onClick={() => onSelectTab('roadmap')}
-            className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors ${
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors ${
               currentTab === 'roadmap'
-                ? 'bg-amber-500 text-slate-950'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
                 : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
             }`}
           >
-            What to Study First
+            Study Sequence
           </button>
 
           <button
-            onClick={() => onSelectTab('daily100')}
-            className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5 ${
-              currentTab === 'daily100'
-                ? 'bg-amber-500 text-slate-950'
-                : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
+            onClick={() => onSelectTab('fastTrack')}
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors flex items-center gap-1.5 ${
+              currentTab === 'fastTrack'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
+                : 'text-amber-300/90 hover:bg-slate-900 hover:text-amber-200'
             }`}
           >
-            <span>Daily 100 Problems</span>
-            <span className={`text-[10px] px-1 py-0.2 rounded font-mono ${
-              currentTab === 'daily100' ? 'bg-slate-950 text-amber-300' : 'bg-slate-800 text-amber-400'
+            <span>1-Week Pass Plan</span>
+            <span className={`text-[10px] font-mono px-1 rounded ${
+              currentTab === 'fastTrack' ? 'bg-slate-950/20 text-slate-950 font-bold' : 'bg-slate-800 text-amber-400'
             }`}>
-              100/day
+              7d
             </span>
           </button>
 
           <button
-            onClick={() => onSelectTab('simulators')}
-            className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors ${
-              currentTab === 'simulators'
-                ? 'bg-amber-500 text-slate-950'
+            onClick={() => onSelectTab('mathBasics')}
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors ${
+              currentTab === 'mathBasics'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
                 : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
             }`}
           >
-            Visual Simulators
+            Math Basics
           </button>
 
           <button
-            onClick={() => onSelectTab('drive')}
-            className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors ${
-              currentTab === 'drive'
-                ? 'bg-amber-500 text-slate-950'
+            onClick={() => onSelectTab('caltech')}
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors ${
+              currentTab === 'caltech'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
                 : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
             }`}
           >
-            Google Drive Files
+            Canon CalTech
+          </button>
+
+          <button
+            onClick={() => onSelectTab('foundations')}
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors ${
+              currentTab === 'foundations'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
+                : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
+            }`}
+          >
+            Core Foundations
+          </button>
+
+          <button
+            onClick={() => onSelectTab('daily100')}
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors ${
+              currentTab === 'daily100'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
+                : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
+            }`}
+          >
+            Daily 100
+          </button>
+
+          <button
+            onClick={() => onSelectTab('simulators')}
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors ${
+              currentTab === 'simulators'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
+                : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
+            }`}
+          >
+            Simulators
           </button>
 
           <button
             onClick={() => onSelectTab('formulas')}
-            className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors ${
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors ${
               currentTab === 'formulas'
-                ? 'bg-amber-500 text-slate-950'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
                 : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
             }`}
           >
             Formula Bank
+          </button>
+
+          <button
+            onClick={() => onSelectTab('drive')}
+            className={`px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap transition-colors flex items-center gap-1.5 ${
+              currentTab === 'drive'
+                ? 'bg-amber-500 text-slate-950 font-semibold'
+                : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
+            }`}
+          >
+            <span>Drive Problems</span>
+            <span className={`text-[10px] font-mono px-1 rounded ${
+              currentTab === 'drive' ? 'bg-slate-950/20 text-slate-950 font-bold' : 'bg-slate-800 text-amber-400'
+            }`}>
+              {ESAS_DRIVE_SAMPLE_PROBLEMS.length}
+            </span>
           </button>
         </nav>
 

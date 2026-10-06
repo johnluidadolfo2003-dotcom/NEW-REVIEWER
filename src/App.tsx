@@ -2,14 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { User } from 'firebase/auth';
 import { Navbar } from './components/Navbar';
 import { RoadmapView } from './components/RoadmapView';
+import { MathBasicsView } from './components/MathBasicsView';
+import { CoreFoundationsView } from './components/CoreFoundationsView';
 import { Daily100View } from './components/Daily100View';
 import { SimulatorsView } from './components/SimulatorsView';
 import { DriveFolderView } from './components/DriveFolderView';
 import { VisualFormulaCheatSheet } from './components/VisualFormulaCheatSheet';
+import { CanonCalTechView } from './components/CanonCalTechView';
+import { EconFastTrackView } from './components/EconFastTrackView';
 import { initAuth, googleSignIn, logout, setCachedToken } from './services/firebase';
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState<'roadmap' | 'daily100' | 'simulators' | 'drive' | 'formulas'>('roadmap');
+  const [currentTab, setCurrentTab] = useState<'roadmap' | 'mathBasics' | 'caltech' | 'foundations' | 'daily100' | 'simulators' | 'drive' | 'formulas' | 'fastTrack'>('roadmap');
+  const [driveInitialDay, setDriveInitialDay] = useState<number | undefined>(undefined);
   const [user, setUser] = useState<User | null>(null);
   const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
   const [authError, setAuthError] = useState<string | null>(null);
@@ -81,20 +86,73 @@ export default function App() {
           <RoadmapView
             onSelectTopicForPractice={() => setCurrentTab('daily100')}
             onOpenSimulator={() => setCurrentTab('simulators')}
+            onGoToFoundations={() => setCurrentTab('foundations')}
+            onGoToMathBasics={() => setCurrentTab('mathBasics')}
+            onGoToFastTrack={() => setCurrentTab('fastTrack')}
           />
         )}
 
-        {/* Tab 2: 100 Problem Per Day Set */}
+        {/* Tab: 1-Week Engineering Economics Fast-Track (Pass Plan) */}
+        {currentTab === 'fastTrack' && (
+          <EconFastTrackView
+            onGoToDriveProblems={(day) => {
+              setDriveInitialDay(day);
+              setCurrentTab('drive');
+            }}
+            onGoToCalTech={() => setCurrentTab('caltech')}
+            onGoToFormulas={() => setCurrentTab('formulas')}
+          />
+        )}
+
+        {/* Tab: Math from Scratch (Zero-Level Primer) */}
+        {currentTab === 'mathBasics' && (
+          <MathBasicsView
+            onGoToFoundations={() => setCurrentTab('foundations')}
+            onGoToDaily100={() => setCurrentTab('daily100')}
+            onOpenSimulator={(tab) => {
+              setCurrentTab('simulators');
+            }}
+          />
+        )}
+
+        {/* Tab: Canon F-789SGA Calculator Techniques */}
+        {currentTab === 'caltech' && (
+          <CanonCalTechView
+            onSelectTopicForPractice={() => setCurrentTab('daily100')}
+            onGoToDriveProblems={() => setCurrentTab('drive')}
+          />
+        )}
+
+        {/* Tab 2: Core Foundations (Zero-to-Hero) */}
+        {currentTab === 'foundations' && (
+          <CoreFoundationsView
+            onOpenSimulator={() => setCurrentTab('simulators')}
+            onGoToDaily100={() => setCurrentTab('daily100')}
+            onGoToMathBasics={() => setCurrentTab('mathBasics')}
+          />
+        )}
+
+        {/* Tab 3: 100 Problem Per Day Set */}
         {currentTab === 'daily100' && (
-          <Daily100View onOpenSimulator={() => setCurrentTab('simulators')} />
+          <Daily100View
+            onOpenSimulator={() => setCurrentTab('simulators')}
+            onGoToFoundations={() => setCurrentTab('foundations')}
+          />
         )}
 
         {/* Tab 3: Interactive Visual Simulators */}
         {currentTab === 'simulators' && <SimulatorsView />}
 
-        {/* Tab 4: Google Drive Folder Files */}
+        {/* Tab 4: Google Drive Folder Files & ESAS Economics Sample Problems */}
         {currentTab === 'drive' && (
-          <DriveFolderView onSelectSubject={() => setCurrentTab('roadmap')} />
+          <DriveFolderView
+            initialDayFilter={driveInitialDay}
+            onSelectSubject={() => setCurrentTab('roadmap')}
+            onGoToPractice={() => setCurrentTab('daily100')}
+            onOpenSimulator={() => setCurrentTab('simulators')}
+            onGoToCalTech={() => setCurrentTab('caltech')}
+            onGoToFastTrack={() => setCurrentTab('fastTrack')}
+          />
         )}
 
         {/* Tab 5: Visual Formula Cheat Sheet */}
