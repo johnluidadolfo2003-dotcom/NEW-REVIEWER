@@ -115,7 +115,7 @@ assert.ok(
 assert.equal(document.querySelector('a[href*="drive.google.com"]'), null);
 assert.ok(
   view.getByText(
-    "Future amount ₱1,210; interest ₱210. For nominal r compounded m times/year, use i=r/m and n=m×years.",
+    "Future amount ₱1,210; interest ₱210. For nominal R compounded m times/year, use i=R/m and n=mN, with N in years.",
   ),
 );
 cleanup();

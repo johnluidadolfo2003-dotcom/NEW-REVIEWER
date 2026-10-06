@@ -117,12 +117,15 @@ for (const lesson of ECONOMICS_LESSONS)
   for (const example of lesson.examples)
     for (const math of [example.formulaMath, example.substitutionMath])
       katex.renderToString(math, { throwOnError: true, strict: "ignore" });
-// A yield substitution must show the residual equation, not just X × 100.
+// Yield problems retain the handout's present-worth equation with unknown i.
 for (const n of [4, 73, 100, 161, 162, 165]) {
-  assert.ok(problems[n - 1].substitutionMath!.startsWith("0="));
-  assert.ok(problems[n - 1].substitutionMath!.includes("x"));
+  assert.ok(problems[n - 1].substitutionMath!.includes("i"));
+  assert.ok(problems[n - 1].substitutionMath!.includes("\\frac"));
 }
 assert.ok(problems[0].governingFormula.includes("1+i"));
 assert.ok(problems[0].governingFormula.includes("1+f"));
 assert.ok(problems[94].substitutionMath!.includes("F"));
+assert.ok(problems[70].governingFormula.includes("1+i"));
+assert.ok(problems[121].governingFormula.includes("C_{0}"));
+assert.ok(problems[31].governingFormula.includes("\\sqrt[n]"));
 console.log("PASS: question-specific formulas, paired answers, yield equations, and all 14 lesson examples render correctly.");

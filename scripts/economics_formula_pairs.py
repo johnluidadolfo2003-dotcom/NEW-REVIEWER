@@ -161,9 +161,9 @@ def render(node, values=None):
         name=node.func.id
         if name in ['pa','fa','cr','sf']:
             i,n=[render(a,values) for a in node.args]
-            return {'pa':rf'\frac{{1-\left(1+{i}\right)^{{-{n}}}}}{{{i}}}',
+            return {'pa':rf'\frac{{\left(1+{i}\right)^{{{n}}}-1}}{{\left(1+{i}\right)^{{{n}}}\,{i}}}',
                     'fa':rf'\frac{{\left(1+{i}\right)^{{{n}}}-1}}{{{i}}}',
-                    'cr':rf'\frac{{{i}}}{{1-\left(1+{i}\right)^{{-{n}}}}}',
+                    'cr':rf'\frac{{{i}\left(1+{i}\right)^{{{n}}}}}{{\left(1+{i}\right)^{{{n}}}-1}}',
                     'sf':rf'\frac{{{i}}}{{\left(1+{i}\right)^{{{n}}}-1}}'}[name]
         if name=='exp':return rf'e^{{{render(node.args[0],values)}}}'
         if name=='log':return rf'\ln\left({render(node.args[0],values)}\right)'

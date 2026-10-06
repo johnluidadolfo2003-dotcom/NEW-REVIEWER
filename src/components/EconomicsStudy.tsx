@@ -142,9 +142,9 @@ export function EconomicsTopics() {
               "Periods n",
               "Count of compounding or payment intervals; use the same clock as i.",
             ],
-            ["Salvage S", "Net value remaining when an asset is retired."],
+            ["Salvage Cₙ", "Net value remaining when an asset is retired."],
             [
-              "Book value BV",
+              "Book value Cₘ",
               "First cost minus accumulated depreciation; it need not equal resale price.",
             ],
             [
@@ -349,6 +349,9 @@ export function EconomicsProblemCard({
         <div className="mt-3 space-y-4 border-t border-slate-800 pt-4">
           <section data-solution-stage="formula">
             <h4 className="text-sm font-semibold">1 · Formula</h4>
+            {p.formulaOrigin && <p className="text-xs text-slate-400 mt-1">
+              {p.formulaOrigin === "handout" ? "Handout form" : "Derived from the handout formulas"}
+            </p>}
             <EconomicsMath formula={p.governingFormula} />
             <p className="text-xs text-slate-400">
               {p.formulaSymbols || formulaById[p.formulaId || ""].symbols}

@@ -16,7 +16,7 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
     example:
       "Borrow ₱1,000 for 90 days at 12% ordinary simple interest. Find interest and amount due.",
     steps: [
-      "Convert the rate: 12% = 0.12. Ordinary interest uses t=90/360=0.25 year.",
+      "Convert the rate: 12% = 0.12. Ordinary interest uses n=90/360=0.25 year.",
       "Interest I=1000×0.12×0.25=₱30.",
       "Amount due F=P+I=1000+30.",
     ],
@@ -35,7 +35,7 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
       "Shortcut: enter 1000×1.10^2. Interest earned is 1210−1000.",
     ],
     answer:
-      "Future amount ₱1,210; interest ₱210. For nominal r compounded m times/year, use i=r/m and n=m×years.",
+      "Future amount ₱1,210; interest ₱210. For nominal R compounded m times/year, use i=R/m and n=mN, with N in years.",
   },
   {
     id: "rate",
@@ -54,12 +54,12 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
   },
   {
     id: "continuous",
-    idea: "Continuous compounding is the limiting case of compounding more and more frequently. Its growth factor is e^(rt).",
+    idea: "Continuous compounding is the limiting case of compounding more and more frequently. Its growth factor is e^(rN).",
     recognize: "The question explicitly says “compounded continuously.”",
     example: "How long to double money at a continuous 10% annual rate?",
     steps: [
       "F/P=2 and r=0.10.",
-      "Take natural logarithms: t=ln(2)/0.10.",
+      "Take natural logarithms: N=ln(2)/0.10.",
       "Canon entry: ln(2)÷0.10.",
     ],
     answer:
@@ -74,7 +74,7 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
       "Receive ₱1,000 at each year-end for 3 years at 10%. What is the value today?",
     steps: [
       "Payments occur at years 1, 2, and 3, so this is an ordinary annuity.",
-      "P=1000×(1−1.10^(−3))÷0.10.",
+      "P=1000×(1.10^3−1)÷(1.10^3×0.10).",
       "Check by adding 1000/1.10 + 1000/1.10^2 + 1000/1.10^3.",
     ],
     answer:
@@ -101,7 +101,7 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
     example: "Repay a ₱10,000 loan in 3 year-end payments at 10%.",
     steps: [
       "P=10000, i=0.10, n=3.",
-      "A=10000×0.10÷(1−1.10^(−3)).",
+      "Use the printed form: 10000=A×(1.10^3−1)/(1.10^3×0.10), then solve for A.",
       "Enter the whole denominator in parentheses.",
     ],
     answer:
@@ -127,7 +127,7 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
     recognize: "“Beginning,” “in advance,” or “first payment now.”",
     example: "Pay ₱1,000 at years 0, 1, and 2. Find present worth at 10%.",
     steps: [
-      "An ordinary three-payment present worth is 1000×(1−1.10^(−3))÷0.10.",
+      "An ordinary three-payment present worth is 1000×(1.10^3−1)/(1.10^3×0.10).",
       "Multiply that value by 1.10 because every payment is one year earlier.",
       "Check: 1000 + 1000/1.10 + 1000/1.10^2.",
     ],
@@ -142,7 +142,7 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
       "Receive ₱1,000 yearly at years 4, 5, and 6. Find present worth at 10%.",
     steps: [
       "The P/A value is at year 3: one period before the first payment at year 4.",
-      "At year 3, value=1000×(1−1.10^(−3))÷0.10.",
+      "At year 3, value=1000×(1.10^3−1)/(1.10^3×0.10).",
       "Discount three more years: divide that value by 1.10^3.",
     ],
     answer:
@@ -186,9 +186,9 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
     example:
       "Cost ₱10,000; salvage ₱1,000; life 5 years. Find book value after year 2.",
     steps: [
-      "Depreciable base C−S=10000−1000=9000.",
-      "Annual charge D=9000/5=1800.",
-      "Book value BV2=10000−2×1800.",
+      "Depreciable base C₀−Cₙ=10000−1000=9000.",
+      "Annual charge d=9000/5=1800.",
+      "D₂=2×1800; book value C₂=10000−D₂.",
     ],
     answer:
       "Book value ₱6,400. Annual depreciation is ₱1,800; accumulated depreciation after 2 years is ₱3,600.",
@@ -202,7 +202,7 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
     steps: [
       "SYD=5×6/2=15. The yearly digits are 5,4,3,2,1.",
       "Year 2 uses 5−2+1=4.",
-      "D2=(10000−1000)×4/15.",
+      "d₂=(10000−1000)×4/15.",
     ],
     answer:
       "Second-year charge ₱2,400. After year 2, book value is 10000−9000×(5+4)/15=₱4,600.",
@@ -215,9 +215,9 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
     example:
       "Cost ₱10,000; life 5 years; salvage ₱1,000. Find DDB book value after year 2.",
     steps: [
-      "DDB rate k=2/5=0.40. Keep 60% of the previous book value yearly.",
-      "BV2=10000×0.60^2. This is still above the salvage floor.",
-      "For ordinary salvage-derived DB instead, k=1−(S/C)^(1/n); that is a different rate.",
+      "DDB rate K=2/5=0.40. Keep 60% of the previous book value yearly.",
+      "C₂=10000×0.60^2. This is still above the salvage floor.",
+      "For ordinary salvage-derived DB instead, K=1−(Cₙ/C₀)^(1/n); that is a different rate.",
     ],
     answer:
       "DDB book value ₱3,600. First-year charge ₱4,000; second-year charge ₱2,400. Never depreciate below the salvage floor.",
@@ -229,9 +229,9 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
       "Depreciation computed through an actual or imaginary interest-earning fund.",
     example: "Cost ₱10,000; salvage ₱1,000; life 3 years; fund earns 10%.",
     steps: [
-      "Fund target is C−S=9000.",
-      "Fixed yearly deposit A=9000×0.10/(1.10^3−1)=2719.0332.",
-      "Accumulated depreciation at year 2 is A×(1.10^2−1)/0.10; year-2 charge is A×1.10.",
+      "Fund target is C₀−Cₙ=9000.",
+      "Fixed yearly deposit d=9000×0.10/(1.10^3−1)=2719.0332.",
+      "Accumulated depreciation at year 2 is D₂=d×(1.10^2−1)/0.10; year-2 charge is d×1.10.",
     ],
     answer:
       "Deposit ₱2,719.03; accumulated depreciation at year 2 ₱5,709.97; year-2 charge ₱2,990.94.",
@@ -303,8 +303,8 @@ export const ECONOMICS_TOPIC_NOTES: EconomicsTopicNote[] = [
     example:
       "A facility costs ₱10,000 and requires ₱500/year forever at 10%. No replacement cost is specified.",
     steps: [
-      "Include the initial cost once: C=10000.",
-      "Perpetual maintenance is worth O/i=500/0.10=5000.",
+      "Include the initial cost once: C₀=10000.",
+      "Perpetual maintenance is worth P=A/i=500/0.10=5000.",
       "Add both present values. For replacements every n years, also add net replacement/(growth factor−1).",
     ],
     answer:

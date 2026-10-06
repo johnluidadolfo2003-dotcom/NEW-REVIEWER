@@ -114,6 +114,7 @@ export interface DriveSampleProblem {
   given: { symbol: string; meaning: string; value: string }[];
   governingFormula: string;
   formulaSymbols?: string;
+  formulaOrigin?: "handout" | "derived";
   solutionSteps: {
     step: number;
     title: string;

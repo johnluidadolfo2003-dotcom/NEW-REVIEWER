@@ -1,3 +1,4 @@
+import { ECONOMICS_HANDOUT_FORMS } from "./economicsHandoutForms";
 export interface EconomicsFormula {
   id: string;
   title: string;
@@ -266,7 +267,7 @@ export const ECONOMICS_FORMULAS: EconomicsFormula[] = [
     trap: "Round Q upward for indivisible units. Simple payback ignores the time value of money.",
     day: 7,
   },
-];
+].map((f) => ({ ...f, ...ECONOMICS_HANDOUT_FORMS[f.id] }));
 export const formulaById = Object.fromEntries(
   ECONOMICS_FORMULAS.map((f) => [f.id, f]),
 );

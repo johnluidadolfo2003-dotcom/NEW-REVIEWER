@@ -1,3 +1,4 @@
+import { ECONOMICS_HANDOUT_FORMS } from "../data/economicsHandoutForms";
 import { ECONOMICS_FORMULAS } from "../data/economicsFormulas";
 const latex: Record<string, string[]> = {
   simple: [String.raw`I=Prt`, String.raw`F=P(1+rt),\quad P=\frac{F}{1+rt}`],
@@ -73,5 +74,5 @@ const latex: Record<string, string[]> = {
 };
 export const economicsFormulaLatex = (formula: string): string[] => {
   const f = ECONOMICS_FORMULAS.find((f) => f.formula === formula);
-  return f ? latex[f.id] : [formula];
+  return f ? (ECONOMICS_HANDOUT_FORMS[f.id]?.latex || latex[f.id]) : [formula];
 };
