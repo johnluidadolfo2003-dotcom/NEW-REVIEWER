@@ -1,7 +1,7 @@
 import { DriveItem, SubjectType } from '../types';
 
-export const USER_DRIVE_FOLDER_ID = '1QuOW-WCYJ-kdQXTLGrh3V_OHTq3awb3d';
-export const USER_DRIVE_FOLDER_URL = 'https://drive.google.com/drive/folders/1QuOW-WCYJ-kdQXTLGrh3V_OHTq3awb3d';
+export const USER_DRIVE_FOLDER_ID = '13xPdd6pHRaJ_HsX3cmFlluqZ93tCATBG';
+export const USER_DRIVE_FOLDER_URL = 'https://drive.google.com/drive/folders/13xPdd6pHRaJ_HsX3cmFlluqZ93tCATBG';
 
 export interface DriveResponse {
   files: DriveItem[];
@@ -52,6 +52,7 @@ export const ESAS_MAIN_FOLDER_NAME = 'ESAS - Engineering Economics';
 export const ESAS_RELATED_FOLDER_NAMES = [
   'ESAS - Engineering Economics',
   'ESAS-Engineering Economics',
+  'ESAS-Engineeering Economics',
   'economics sample problem',
   'Economics Sample Problems',
   'economics sample problems',

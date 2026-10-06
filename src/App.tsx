@@ -1,20 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { User } from 'firebase/auth';
-import { Navbar } from './components/Navbar';
-import { RoadmapView } from './components/RoadmapView';
-import { MathBasicsView } from './components/MathBasicsView';
-import { CoreFoundationsView } from './components/CoreFoundationsView';
-import { Daily100View } from './components/Daily100View';
-import { SimulatorsView } from './components/SimulatorsView';
-import { DriveFolderView } from './components/DriveFolderView';
-import { VisualFormulaCheatSheet } from './components/VisualFormulaCheatSheet';
-import { CanonCalTechView } from './components/CanonCalTechView';
-import { EconFastTrackView } from './components/EconFastTrackView';
-import { initAuth, googleSignIn, logout, setCachedToken } from './services/firebase';
+import React, { useState, useEffect } from "react";
+import { User } from "firebase/auth";
+import { Navbar } from "./components/Navbar";
+import { RoadmapView } from "./components/RoadmapView";
+import { MathBasicsView } from "./components/MathBasicsView";
+import { CoreFoundationsView } from "./components/CoreFoundationsView";
+import { Daily100View } from "./components/Daily100View";
+import { SimulatorsView } from "./components/SimulatorsView";
+import { VisualFormulaCheatSheet } from "./components/VisualFormulaCheatSheet";
+import { EconFastTrackView } from "./components/EconFastTrackView";
+import {
+  EconomicsStudyHub,
+  EconomicsFormulaBank,
+} from "./components/EconomicsStudy";
+import {
+  initAuth,
+  googleSignIn,
+  logout,
+  setCachedToken,
+} from "./services/firebase";
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState<'roadmap' | 'mathBasics' | 'caltech' | 'foundations' | 'daily100' | 'simulators' | 'drive' | 'formulas' | 'fastTrack'>('roadmap');
-  const [driveInitialDay, setDriveInitialDay] = useState<number | undefined>(undefined);
+  const [currentTab, setCurrentTab] = useState<
+    | "roadmap"
+    | "mathBasics"
+    | "caltech"
+    | "foundations"
+    | "daily100"
+    | "simulators"
+    | "drive"
+    | "formulas"
+    | "fastTrack"
+  >("fastTrack");
   const [user, setUser] = useState<User | null>(null);
   const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
   const [authError, setAuthError] = useState<string | null>(null);
@@ -28,7 +44,7 @@ export default function App() {
       () => {
         setUser(null);
         setCachedToken(null);
-      }
+      },
     );
     return () => unsubscribe();
   }, []);
@@ -42,8 +58,8 @@ export default function App() {
         setUser(res.user);
       }
     } catch (err: any) {
-      console.error('Google sign-in error:', err);
-      setAuthError('Google sign in was cancelled or requires permission.');
+      console.error("Google sign-in error:", err);
+      setAuthError("Google sign in was cancelled or requires permission.");
     } finally {
       setIsLoggingIn(false);
     }
@@ -75,88 +91,92 @@ export default function App() {
         {authError && (
           <div className="mb-6 p-3 bg-amber-950/40 border border-amber-800 text-amber-300 text-xs rounded flex justify-between items-center">
             <span>{authError}</span>
-            <button onClick={() => setAuthError(null)} className="text-slate-400 hover:text-slate-200">
+            <button
+              onClick={() => setAuthError(null)}
+              className="text-slate-400 hover:text-slate-200"
+            >
               ✕
             </button>
           </div>
         )}
 
         {/* Tab 1: What to Study First (Roadmap) */}
-        {currentTab === 'roadmap' && (
+        {currentTab === "roadmap" && (
           <RoadmapView
-            onSelectTopicForPractice={() => setCurrentTab('daily100')}
-            onOpenSimulator={() => setCurrentTab('simulators')}
-            onGoToFoundations={() => setCurrentTab('foundations')}
-            onGoToMathBasics={() => setCurrentTab('mathBasics')}
-            onGoToFastTrack={() => setCurrentTab('fastTrack')}
+            onSelectTopicForPractice={() => setCurrentTab("daily100")}
+            onOpenSimulator={() => setCurrentTab("simulators")}
+            onGoToFoundations={() => setCurrentTab("foundations")}
+            onGoToMathBasics={() => setCurrentTab("mathBasics")}
+            onGoToFastTrack={() => setCurrentTab("fastTrack")}
           />
         )}
 
         {/* Tab: 1-Week Engineering Economics Fast-Track (Pass Plan) */}
-        {currentTab === 'fastTrack' && (
+        {currentTab === "fastTrack" && (
           <EconFastTrackView
-            onGoToDriveProblems={(day) => {
-              setDriveInitialDay(day);
-              setCurrentTab('drive');
+            onGoToDriveProblems={() => {
+              setCurrentTab("drive");
             }}
-            onGoToCalTech={() => setCurrentTab('caltech')}
-            onGoToFormulas={() => setCurrentTab('formulas')}
+            onGoToCalTech={() => setCurrentTab("caltech")}
+            onGoToFormulas={() => setCurrentTab("formulas")}
           />
         )}
 
         {/* Tab: Math from Scratch (Zero-Level Primer) */}
-        {currentTab === 'mathBasics' && (
+        {currentTab === "mathBasics" && (
           <MathBasicsView
-            onGoToFoundations={() => setCurrentTab('foundations')}
-            onGoToDaily100={() => setCurrentTab('daily100')}
+            onGoToFoundations={() => setCurrentTab("foundations")}
+            onGoToDaily100={() => setCurrentTab("daily100")}
             onOpenSimulator={(tab) => {
-              setCurrentTab('simulators');
+              setCurrentTab("simulators");
             }}
           />
         )}
 
         {/* Tab: Canon F-789SGA Calculator Techniques */}
-        {currentTab === 'caltech' && (
-          <CanonCalTechView
-            onSelectTopicForPractice={() => setCurrentTab('daily100')}
-            onGoToDriveProblems={() => setCurrentTab('drive')}
-          />
+        {currentTab === "caltech" && (
+          <EconomicsStudyHub initialSection="calculator" />
         )}
 
         {/* Tab 2: Core Foundations (Zero-to-Hero) */}
-        {currentTab === 'foundations' && (
+        {currentTab === "foundations" && (
           <CoreFoundationsView
-            onOpenSimulator={() => setCurrentTab('simulators')}
-            onGoToDaily100={() => setCurrentTab('daily100')}
-            onGoToMathBasics={() => setCurrentTab('mathBasics')}
+            onOpenSimulator={() => setCurrentTab("simulators")}
+            onGoToDaily100={() => setCurrentTab("daily100")}
+            onGoToMathBasics={() => setCurrentTab("mathBasics")}
           />
         )}
 
         {/* Tab 3: 100 Problem Per Day Set */}
-        {currentTab === 'daily100' && (
+        {currentTab === "daily100" && (
           <Daily100View
-            onOpenSimulator={() => setCurrentTab('simulators')}
-            onGoToFoundations={() => setCurrentTab('foundations')}
+            onOpenSimulator={() => setCurrentTab("simulators")}
+            onGoToFoundations={() => setCurrentTab("foundations")}
           />
         )}
 
         {/* Tab 3: Interactive Visual Simulators */}
-        {currentTab === 'simulators' && <SimulatorsView />}
+        {currentTab === "simulators" && <SimulatorsView />}
 
         {/* Tab 4: Google Drive Folder Files & ESAS Economics Sample Problems */}
-        {currentTab === 'drive' && (
-          <DriveFolderView
-            initialDayFilter={driveInitialDay}
-            onSelectSubject={() => setCurrentTab('roadmap')}
-            onGoToPractice={() => setCurrentTab('daily100')}
-            onOpenSimulator={() => setCurrentTab('simulators')}
-            onGoToCalTech={() => setCurrentTab('caltech')}
-            onGoToFastTrack={() => setCurrentTab('fastTrack')}
-          />
+        {currentTab === "drive" && (
+          <EconomicsStudyHub initialSection="references" />
         )}
 
         {/* Tab 5: Visual Formula Cheat Sheet */}
-        {currentTab === 'formulas' && <VisualFormulaCheatSheet />}
+        {currentTab === "formulas" && (
+          <div className="space-y-8">
+            <EconomicsFormulaBank />
+            <details className="border border-slate-800 rounded-xl p-5">
+              <summary className="cursor-pointer text-slate-400">
+                Other subject formula banks
+              </summary>
+              <div className="mt-5">
+                <VisualFormulaCheatSheet />
+              </div>
+            </details>
+          </div>
+        )}
       </main>
 
       {/* Clean Technical Footer */}
@@ -167,11 +187,12 @@ export default function App() {
               REE Licensure Examination Visual Study Companion
             </span>
             <div className="text-[11px] text-slate-400 mt-0.5">
-              Mathematics (33%) • Engineering Sciences &amp; Allied Subjects (30%) • EE Professional (37%)
+              Mathematics • Engineering Sciences &amp; Allied Subjects • EE
+              Professional
             </div>
           </div>
           <div className="font-mono text-[11px] text-slate-400">
-            PRC Passing Standard: Weighted Average ≥ 70% • No Subject &lt; 50%
+            ESAS focus: Engineering Economics
           </div>
         </div>
       </footer>

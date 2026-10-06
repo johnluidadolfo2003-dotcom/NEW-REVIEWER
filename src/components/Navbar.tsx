@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </h1>
             </div>
             <p className="text-[11px] text-slate-400">
-              Math (33%) · ESAS (30%) · EE (37%)
+              Math · ESAS · EE
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-amber-300/90 hover:bg-slate-900 hover:text-amber-200'
             }`}
           >
-            <span>1-Week Pass Plan</span>
+            <span>Economics Week Plan</span>
             <span className={`text-[10px] font-mono px-1 rounded ${
               currentTab === 'fastTrack' ? 'bg-slate-950/20 text-slate-950 font-bold' : 'bg-slate-800 text-amber-400'
             }`}>

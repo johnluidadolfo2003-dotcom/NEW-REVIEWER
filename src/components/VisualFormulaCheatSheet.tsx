@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ECONOMICS_FORMULAS } from '../data/economicsFormulas';
 import { SubjectType } from '../types';
 import { CleanMath, StackedFraction } from './CleanMath';
 
@@ -11,7 +12,7 @@ interface FormulaCard {
   tip: string;
 }
 
-const CHEAT_SHEET_FORMULAS: FormulaCard[] = [
+const LEGACY_FORMULAS: FormulaCard[] = [
   // ==================== MATHEMATICS ====================
   {
     subject: 'MATH',
@@ -323,6 +324,8 @@ const CHEAT_SHEET_FORMULAS: FormulaCard[] = [
     tip: 'Inverse square law: Illuminance E = I / d² where I is luminous intensity in Candelas.'
   }
 ];
+
+const CHEAT_SHEET_FORMULAS: FormulaCard[] = [...LEGACY_FORMULAS.filter(f => f.subject !== 'ESAS'), ...ECONOMICS_FORMULAS.map(f => ({subject: 'ESAS' as const, category: `Day ${f.day}`, name:f.title, formula:f.formula, variables:f.symbols, tip:f.trap}))];
 
 export const VisualFormulaCheatSheet: React.FC = () => {
   const [filterSub, setFilterSub] = useState<'ALL' | SubjectType>('ALL');

@@ -91,6 +91,11 @@ export interface DriveScannedTopic {
 }
 
 export interface DriveSampleProblem {
+  formulaId?: string;
+  resultValue?: number | null;
+  calculatorEntry?: string;
+  assumption?: boolean;
+  answerStatus?: "matched" | "nearest-choice" | "choice-mismatch" | "missing-given" | "ambiguous";
   id: string;
   sourceFile: string;
   sourceDocumentName: string;
@@ -125,6 +130,7 @@ export interface DriveSampleProblem {
 }
 
 export interface EconTermQuestion {
+  sourceFile?: string;
   id: string; // 'term-econ-01' to 'term-econ-100'
   termNumber: number; // 1 to 100
   category: string; // e.g. 'Foundations of Economics', 'Cost Concepts', etc.
@@ -133,7 +139,7 @@ export interface EconTermQuestion {
   difficulty: 'Foundation' | 'Moderate' | 'Board Exam Standard' | 'Advanced';
   question: string;
   choices: string[]; // [A, B, C, D]
-  correctLetter: 'A' | 'B' | 'C' | 'D';
+  correctLetter?: 'A' | 'B' | 'C' | 'D' | null;
   correctDefinition: string;
   examExplanation: string;
   boardExamTrapOrNote?: string;
