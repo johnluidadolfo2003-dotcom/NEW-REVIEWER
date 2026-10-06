@@ -47,8 +47,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)\\times\\left(\\left(\\frac{1.15}{1.06}\\right)^{5}\\right)",
+    "governingFormula": "F_{real}=P\\times \\left(\\frac{1+i}{1+f}\\right)^{t}",
+    "substitutionMath": "F_{real}=10000\\times \\left(\\frac{1+0.15}{1+0.06}\\right)^{5}",
+    "formulaSymbols": "P = principal or present worth; f = annual inflation rate; i = effective rate per payment period; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -126,8 +127,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)+\\left(\\left(5\\right)\\times\\left(4000\\right)\\right)",
+    "governingFormula": "C=BV+t\\times D",
+    "substitutionMath": "C=10000+5\\times 4000",
+    "formulaSymbols": "BV = book value; D = annual depreciation; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -208,8 +210,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(30\\right)\\times\\left(\\frac{1-(1+0.04)^{-10}}{0.04}\\right)\\right)+\\left(\\frac{1000}{\\left(1.04\\right)^{10}}\\right)",
+    "governingFormula": "Price=K\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}+\\frac{R}{\\left(1+i\\right)^{n}}",
+    "substitutionMath": "Price=30\\times \\frac{1-\\left(1+0.04\\right)^{-10}}{0.04}+\\frac{1000}{\\left(1+0.04\\right)^{10}}",
+    "formulaSymbols": "K = coupon per period; R = redemption or recurring replacement cost; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -301,8 +304,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "3"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(X\\right)\\times\\left(100\\right)",
+    "governingFormula": "0=A\\times \\frac{1-\\left(1+x\\right)^{-n}}{x}-P",
+    "substitutionMath": "0=200000\\times \\frac{1-\\left(1+x\\right)^{-3}}{x}-350000",
+    "formulaSymbols": "A = equal payment; P = principal or present worth; n = number of periods or useful life; x = unknown decimal yield",
     "solutionSteps": [
       {
         "step": 1,
@@ -397,8 +401,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "6 months from now"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)\\times\\left(\\frac{0.05}{1-(1+0.05)^{-10}}\\right)",
+    "governingFormula": "A=P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=10000\\times \\frac{0.05}{1-\\left(1+0.05\\right)^{-10}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -474,8 +479,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Beginning of each quarter"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(60000\\right)\\times\\left(\\frac{0.06}{1-(1+0.06)^{-12}}\\right)}{1.06}",
+    "governingFormula": "A_{due}=\\frac{P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}}{1+i}",
+    "substitutionMath": "A_{due}=\\frac{60000\\times \\frac{0.06}{1-\\left(1+0.06\\right)^{-12}}}{1+0.06}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -563,8 +569,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "SYD"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(10000\\right)\\times\\left(18\\right)}{210}",
+    "governingFormula": "D_{m}=\\frac{\\left(C-S\\right)\\times \\left(n-m+1\\right)}{\\frac{n\\times \\left(n+1\\right)}{2}}",
+    "substitutionMath": "D_{m}=\\frac{\\left(10000-0\\right)\\times \\left(20-3+1\\right)}{\\frac{20\\times \\left(20+1\\right)}{2}}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = compounding periods per year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -645,8 +652,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Nearest equivalent annual cost"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(15000\\right)\\times\\left(\\frac{0.12}{1-(1+0.12)^{-6}}\\right)\\right)-\\left(\\left(2000\\right)\\times\\left(\\frac{0.12}{(1+0.12)^{6}-1}\\right)\\right)",
+    "governingFormula": "EUAC=C\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}-S\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "EUAC=15000\\times \\frac{0.12}{1-\\left(1+0.12\\right)^{-6}}-2000\\times \\frac{0.12}{\\left(1+0.12\\right)^{6}-1}",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -743,8 +751,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Indefinite"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(250\\right)+\\left(\\frac{100}{\\left(\\left(1.06\\right)^{20}\\right)-\\left(1\\right)}\\right)",
+    "governingFormula": "CC=C+\\frac{R}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "CC=250+\\frac{100}{\\left(1+0.06\\right)^{20}-1}",
+    "formulaSymbols": "C = first cost; R = redemption or recurring replacement cost; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -829,8 +838,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Monthly for 10 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(1000000\\right)\\times\\left(\\frac{0.00948879}{1-(1+0.00948879)^{-120}}\\right)",
+    "governingFormula": "A=P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=1000000\\times \\frac{\\left((1+0.12)^{1/12}-1\\right)}{1-\\left(1+\\left((1+0.12)^{1/12}-1\\right)\\right)^{-120}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -937,8 +947,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Straight line"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(120000\\right)-\\left(\\frac{\\left(5\\right)\\times\\left(\\left(120000\\right)-\\left(10000\\right)\\right)}{10}\\right)\\right)-\\left(30000\\right)",
+    "governingFormula": "Loss=C-\\frac{m\\times \\left(C-S\\right)}{n}-V",
+    "substitutionMath": "Loss=120000-\\frac{5\\times \\left(120000-10000\\right)}{10}-30000",
+    "formulaSymbols": "C = first cost; S = salvage value; V = sale value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -1030,8 +1041,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Minimum whole-year life"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": null,
+    "governingFormula": "\\frac{D_1}{C}=\\frac{2}{n+1}\\leq q",
+    "substitutionMath": "\\frac{D_1}{C}=\\frac{2}{n+1}\\leq0.20",
+    "formulaSymbols": "n = useful life in years; q = maximum annual fraction of first cost",
     "solutionSteps": [
       {
         "step": 1,
@@ -1111,8 +1123,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "360-day assumption"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\frac{0.03}{0.97}\\right)\\times\\left(\\frac{360}{69}\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\frac{\\frac{d}{1-d}\\times Y}{h}\\times 100",
+    "substitutionMath": "r_{percent}=\\frac{\\frac{0.03}{1-0.03}\\times 360}{69}\\times 100",
+    "formulaSymbols": "Y = days per year; d = discount fraction; h = elapsed intervals",
     "solutionSteps": [
       {
         "step": 1,
@@ -1197,8 +1210,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Quarterly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(4\\right)\\times\\left(\\left(\\left(1.06\\right)^{0.5}\\right)-\\left(1\\right)\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{2,percent}=m_{2}\\times \\left(\\left(1+\\frac{r_{1}}{m_{1}}\\right)^{\\frac{m_{1}}{m_{2}}}-1\\right)\\times 100",
+    "substitutionMath": "r_{2,percent}=4\\times \\left(\\left(1+\\frac{0.12}{2}\\right)^{\\frac{2}{4}}-1\\right)\\times 100",
+    "formulaSymbols": "m_1 = compounding periods per year or requested year; m_2 = compounding periods per year or requested year; r_1 = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -1283,8 +1297,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "15% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(6000\\right)\\times\\left(\\frac{(1+0.15)^{5}-1}{0.15}\\right)",
+    "governingFormula": "F=A\\times \\frac{\\left(1+i\\right)^{n}-1}{i}",
+    "substitutionMath": "F=6000\\times \\frac{\\left(1+0.15\\right)^{5}-1}{0.15}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -1365,8 +1380,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "12% semiannual compounding"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(100000\\right)+\\left(\\frac{\\left(8000\\right)\\times\\left(\\frac{1-(1+0.06)^{-10}}{0.06}\\right)}{\\left(1.06\\right)^{5}}\\right)",
+    "governingFormula": "P_{0}=P_{d}+\\frac{A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}}{\\left(1+i\\right)^{k-1}}",
+    "substitutionMath": "P_{0}=100000+\\frac{8000\\times \\frac{1-\\left(1+0.06\\right)^{-10}}{0.06}}{\\left(1+0.06\\right)^{6-1}}",
+    "formulaSymbols": "A = equal payment; P_d = down payment; i = effective rate per payment period; k = first payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -1463,8 +1479,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Total depreciation"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(720000\\right)\\times\\left(\\left(1\\right)-\\left(\\left(0.75\\right)^{10}\\right)\\right)",
+    "governingFormula": "TD=C\\times \\left(1-\\left(1-k\\right)^{n}\\right)",
+    "substitutionMath": "TD=720000\\times \\left(1-\\left(1-0.25\\right)^{10}\\right)",
+    "formulaSymbols": "C = first cost; k = annual depreciation fraction; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -1557,8 +1574,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "4% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(\\left(\\left(5000\\right)\\times\\left(\\frac{0.04}{1-(1+0.04)^{-2}}\\right)\\right)-\\left(\\left(800\\right)\\times\\left(\\frac{0.04}{(1+0.04)^{2}-1}\\right)\\right)\\right)+\\left(\\left(1000\\right)\\times\\left(\\frac{0.04}{(1+0.04)^{3}-1}\\right)\\right)}{\\frac{0.04}{1-(1+0.04)^{-3}}}",
+    "governingFormula": "C_{2}=\\frac{C_{1}\\times \\frac{i}{1-\\left(1+i\\right)^{-n_{1}}}-S_{1}\\times \\frac{i}{\\left(1+i\\right)^{n_{1}}-1}+S_{2}\\times \\frac{i}{\\left(1+i\\right)^{n_{2}}-1}}{\\frac{i}{1-\\left(1+i\\right)^{-n_{2}}}}",
+    "substitutionMath": "C_{2}=\\frac{5000\\times \\frac{0.04}{1-\\left(1+0.04\\right)^{-2}}-800\\times \\frac{0.04}{\\left(1+0.04\\right)^{2}-1}+1000\\times \\frac{0.04}{\\left(1+0.04\\right)^{3}-1}}{\\frac{0.04}{1-\\left(1+0.04\\right)^{-3}}}",
+    "formulaSymbols": "C_1 = first cost; S_1 = salvage value; S_2 = salvage value; i = effective rate per payment period; n_1 = number of periods or useful life; n_2 = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -1695,8 +1713,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Identical replacements forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(300000\\right)+\\left(\\frac{270000}{\\left(\\left(1.18\\right)^{15}\\right)-\\left(1\\right)}\\right)",
+    "governingFormula": "CC=C+\\frac{C-S}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "CC=300000+\\frac{300000-30000}{\\left(1+0.18\\right)^{15}-1}",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -1781,8 +1800,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(500000\\right)\\times\\left(e^{\\left(0.12\\right)\\times\\left(5\\right)}\\right)",
+    "governingFormula": "F=P\\times e^{r\\times t}",
+    "substitutionMath": "F=500000\\times e^{0.12\\times 5}",
+    "formulaSymbols": "P = principal or present worth; r = annual interest rate; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -1865,8 +1885,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Straight line"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(6\\right)\\times\\left(30833.33\\right)\\right)-\\left(\\left(5\\right)\\times\\left(12000\\right)\\right)",
+    "governingFormula": "C=\\frac{n\\times BV-m\\times S}{n-m}",
+    "substitutionMath": "C=\\frac{6\\times 30833.33-5\\times 12000}{6-5}",
+    "formulaSymbols": "BV = book value; S = salvage value; m = compounding periods per year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -1954,8 +1975,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "10% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(80000\\right)\\times\\left(\\frac{0.1}{1-(1+0.1)^{-20}}\\right)\\right)-\\left(\\left(20000\\right)\\times\\left(\\frac{0.1}{(1+0.1)^{20}-1}\\right)\\right)\\right)+\\left(18000\\right)",
+    "governingFormula": "EUAC=C\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}-S\\times \\frac{i}{\\left(1+i\\right)^{n}-1}+O",
+    "substitutionMath": "EUAC=80000\\times \\frac{0.1}{1-\\left(1+0.1\\right)^{-20}}-20000\\times \\frac{0.1}{\\left(1+0.1\\right)^{20}-1}+18000",
+    "formulaSymbols": "C = first cost; O = annual operating cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -2054,8 +2076,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{1000}{\\left(\\left(1.03\\right)^{\\frac{1}{3}}\\right)-\\left(1\\right)}",
+    "governingFormula": "P=\\frac{A}{\\left(1+\\frac{r}{m}\\right)^{\\frac{m}{p}}-1}",
+    "substitutionMath": "P=\\frac{1000}{\\left(1+\\frac{0.12}{4}\\right)^{\\frac{4}{12}}-1}",
+    "formulaSymbols": "A = equal payment; m = compounding periods per year; p = p; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -2145,8 +2168,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "End of year 4"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(100000\\right)\\times\\left(\\frac{1-(1+0.035)^{-40}}{0.035}\\right)\\right)\\times\\left(\\left(1.035\\right)^{16}\\right)",
+    "governingFormula": "V_{h}=A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}\\times \\left(1+i\\right)^{h}",
+    "substitutionMath": "V_{h}=100000\\times \\frac{1-\\left(1+0.035\\right)^{-40}}{0.035}\\times \\left(1+0.035\\right)^{16}",
+    "formulaSymbols": "A = equal payment; h = elapsed intervals; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -2231,8 +2255,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Semiannual for 3 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(12000\\right)\\times\\left(\\frac{0.1025}{1-(1+0.1025)^{-6}}\\right)",
+    "governingFormula": "A=P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=12000\\times \\frac{\\left((1+0.05)^2-1\\right)}{1-\\left(1+\\left((1+0.05)^2-1\\right)\\right)^{-6}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -2317,8 +2342,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 beginning-of-year payments"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(12000\\right)\\times\\left(\\frac{0.08}{1-(1+0.08)^{-5}}\\right)}{1.08}",
+    "governingFormula": "A_{due}=\\frac{P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}}{1+i}",
+    "substitutionMath": "A_{due}=\\frac{12000\\times \\frac{0.08}{1-\\left(1+0.08\\right)^{-5}}}{1+0.08}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -2401,8 +2427,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "10% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\frac{\\left(100\\right)\\times\\left(\\frac{1-(1+0.1)^{-3}}{0.1}\\right)}{\\left(1.1\\right)^{2}}\\right)\\times\\left(\\frac{0.1}{1-(1+0.1)^{-5}}\\right)",
+    "governingFormula": "EUAC=\\frac{M\\times \\frac{1-\\left(1+i\\right)^{-n_{c}}}{i}}{\\left(1+i\\right)^{w}}\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "EUAC=\\frac{100\\times \\frac{1-\\left(1+0.1\\right)^{-3}}{0.1}}{\\left(1+0.1\\right)^{2}}\\times \\frac{0.1}{1-\\left(1+0.1\\right)^{-5}}",
+    "formulaSymbols": "M = annual maintenance cost; i = effective rate per payment period; n = number of periods or useful life; n_c = number of periods or useful life; w = warranty years",
     "solutionSteps": [
       {
         "step": 1,
@@ -2506,8 +2533,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "₱80,000"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\frac{20000}{80000}\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\frac{I}{P}\\times 100",
+    "substitutionMath": "r_{percent}=\\frac{20000}{80000}\\times 100",
+    "formulaSymbols": "I = interest; P = principal or present worth",
     "solutionSteps": [
       {
         "step": 1,
@@ -2583,8 +2611,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "6%"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(1000\\right)\\times\\left(\\frac{1-(1+0.113)^{-10}}{0.113}\\right)",
+    "governingFormula": "P=A\\times \\frac{1-\\left(1+\\left(1+i_{real}\\right)\\times \\left(1+f\\right)-1\\right)^{-n}}{\\left(1+i_{real}\\right)\\times \\left(1+f\\right)-1}",
+    "substitutionMath": "P=1000\\times \\frac{1-\\left(1+\\left(1+0.05\\right)\\times \\left(1+0.06\\right)-1\\right)^{-10}}{\\left(1+0.05\\right)\\times \\left(1+0.06\\right)-1}",
+    "formulaSymbols": "A = equal payment; f = annual inflation rate; i_real = real annual rate; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -2674,8 +2703,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "18% compounded quarterly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(\\left(15000\\right)\\times\\left(\\left(1.045\\right)^{7}\\right)\\right)-\\left(\\left(4000\\right)\\times\\left(\\left(1.045\\right)^{6}\\right)\\right)\\right)-\\left(\\left(5000\\right)\\times\\left(\\left(1.045\\right)^{3}\\right)\\right)\\right)-\\left(\\left(3000\\right)\\times\\left(\\left(1.045\\right)^{2}\\right)\\right)",
+    "governingFormula": "F=P\\times \\left(1+i\\right)^{N}-C_{1}\\times \\left(1+i\\right)^{N-t_{1}}-C_{2}\\times \\left(1+i\\right)^{N-t_{2}}-C_{3}\\times \\left(1+i\\right)^{N-t_{3}}",
+    "substitutionMath": "F=15000\\times \\left(1+0.045\\right)^{7}-4000\\times \\left(1+0.045\\right)^{7-1}-5000\\times \\left(1+0.045\\right)^{7-4}-3000\\times \\left(1+0.045\\right)^{7-5}",
+    "formulaSymbols": "C_1 = first cost; C_2 = first cost; C_3 = first cost; N = n; P = principal or present worth; i = effective rate per payment period; t_1 = time in years; t_2 = time in years; t_3 = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -2814,8 +2844,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Minimum whole units"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{70000}{\\left(125\\right)-\\left(56\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC}",
+    "substitutionMath": "Q=\\frac{70000}{125-56}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -2893,8 +2924,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Constant-percentage declining balance"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(1\\right)-\\left(\\left(\\frac{4350}{45000}\\right)^{\\frac{1}{6}}\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "k_{percent}=\\left(1-\\left(\\frac{S}{C}\\right)^{\\frac{1}{n}}\\right)\\times 100",
+    "substitutionMath": "k_{percent}=\\left(1-\\left(\\frac{4350}{45000}\\right)^{\\frac{1}{6}}\\right)\\times 100",
+    "formulaSymbols": "C = first cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -2991,8 +3023,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "360-day assumption"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)\\times\\left(\\left(1\\right)+\\left(\\frac{\\left(0.08\\right)\\times\\left(90\\right)}{360}\\right)\\right)",
+    "governingFormula": "F=P\\times \\left(1+\\frac{r\\times d}{Y}\\right)",
+    "substitutionMath": "F=10000\\times \\left(1+\\frac{0.08\\times 90}{360}\\right)",
+    "formulaSymbols": "P = principal or present worth; Y = days per year; d = number of days; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -3077,8 +3110,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "6 years, not needed for annual conversion"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\ln\\left(1.0833\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\ln\\left(1+i_{e}\\right)\\times 100",
+    "substitutionMath": "r_{percent}=\\ln\\left(1+0.0833\\right)\\times 100",
+    "formulaSymbols": "i_e = effective annual rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -3149,8 +3183,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Year 4"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(\\left(5000\\right)\\times\\left(\\left(1.05\\right)^{3}\\right)\\right)+\\left(\\left(4500\\right)\\times\\left(\\left(1.05\\right)^{2}\\right)\\right)\\right)+\\left(\\left(4000\\right)\\times\\left(1.05\\right)\\right)\\right)+\\left(3500\\right)",
+    "governingFormula": "F_{N}=C_{1}\\times \\left(1+i\\right)^{3}+C_{2}\\times \\left(1+i\\right)^{2}+C_{3}\\times \\left(1+i\\right)+C_{4}",
+    "substitutionMath": "F_{N}=5000\\times \\left(1+0.05\\right)^{3}+4500\\times \\left(1+0.05\\right)^{2}+4000\\times \\left(1+0.05\\right)+3500",
+    "formulaSymbols": "C_1 = first cost; C_2 = first cost; C_3 = first cost; C_4 = first cost; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -3268,8 +3303,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "3% compounded semiannually"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(40000\\right)\\times\\left(\\frac{0.015}{(1+0.015)^{36}-1}\\right)",
+    "governingFormula": "A=F\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "A=40000\\times \\frac{0.015}{\\left(1+0.015\\right)^{36}-1}",
+    "formulaSymbols": "F = future amount; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -3340,8 +3376,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Constant-percentage declining balance"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(1\\right)-\\left(\\left(\\frac{40545.73}{720000}\\right)^{0.1}\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "k_{percent}=\\left(1-\\left(\\frac{S}{C}\\right)^{\\frac{1}{n}}\\right)\\times 100",
+    "substitutionMath": "k_{percent}=\\left(1-\\left(\\frac{40545.73}{720000}\\right)^{\\frac{1}{10}}\\right)\\times 100",
+    "formulaSymbols": "C = first cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -3431,8 +3468,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "4% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(18000\\right)\\times\\left(\\frac{0.04}{(1+0.04)^{8}-1}\\right)",
+    "governingFormula": "A=\\left(C-S\\right)\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "A=\\left(20000-2000\\right)\\times \\frac{0.04}{\\left(1+0.04\\right)^{8}-1}",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -3503,8 +3541,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "3% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(150000\\right)\\times\\left(\\frac{0.03}{(1+0.03)^{10}-1}\\right)",
+    "governingFormula": "A=F\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "A=150000\\times \\frac{0.03}{\\left(1+0.03\\right)^{10}-1}",
+    "formulaSymbols": "F = future amount; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -3580,8 +3619,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "“34 years” is inconsistent with its year-4 target"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(3000\\right)\\times\\left(\\frac{(1+0.015)^{16}-1}{0.015}\\right)\\right)\\times\\left(1.015\\right)",
+    "governingFormula": "F_{due}=A\\times \\frac{\\left(1+i\\right)^{n}-1}{i}\\times \\left(1+i\\right)",
+    "substitutionMath": "F_{due}=3000\\times \\frac{\\left(1+0.015\\right)^{16}-1}{0.015}\\times \\left(1+0.015\\right)",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -3659,8 +3699,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "12 years at 5% annual compounding"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(600\\right)\\times\\left(\\left(1\\right)+\\left(\\left(0.06\\right)\\times\\left(4\\right)\\right)\\right)\\right)\\times\\left(\\left(1.05\\right)^{12}\\right)",
+    "governingFormula": "F=P\\times \\left(1+r\\times t_{s}\\right)\\times \\left(1+i\\right)^{n}",
+    "substitutionMath": "F=600\\times \\left(1+0.06\\times 4\\right)\\times \\left(1+0.05\\right)^{12}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life; r = annual interest rate; t_s = simple-interest years",
     "solutionSteps": [
       {
         "step": 1,
@@ -3767,8 +3808,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Straight line"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(800000\\right)-\\left(\\frac{\\left(6\\right)\\times\\left(\\left(\\left(800000\\right)-\\left(50000\\right)\\right)+\\left(15000\\right)\\right)}{10}\\right)",
+    "governingFormula": "BV_{m}=C-\\frac{m\\times \\left(C-S+L\\right)}{n}",
+    "substitutionMath": "BV_{m}=800000-\\frac{6\\times \\left(800000-50000+15000\\right)}{10}",
+    "formulaSymbols": "C = first cost; L = dismantling cost; S = salvage value; m = compounding periods per year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -3860,8 +3902,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "25% of beginning book value"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(1000000\\right)\\times\\left(\\left(1\\right)-\\left(\\left(0.75\\right)^{10}\\right)\\right)",
+    "governingFormula": "TD=C\\times \\left(1-\\left(1-k\\right)^{n}\\right)",
+    "substitutionMath": "TD=1000000\\times \\left(1-\\left(1-0.25\\right)^{10}\\right)",
+    "formulaSymbols": "C = first cost; k = annual depreciation fraction; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -3939,8 +3982,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "2 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{328}{\\left(0.085\\right)\\times\\left(2\\right)}",
+    "governingFormula": "P=\\frac{I}{r\\times t}",
+    "substitutionMath": "P=\\frac{328}{0.085\\times 2}",
+    "formulaSymbols": "I = interest; r = annual interest rate; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -4011,8 +4055,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "6 year-end payments"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)\\times\\left(\\frac{0.12}{1-(1+0.12)^{-6}}\\right)",
+    "governingFormula": "A=P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=10000\\times \\frac{0.12}{1-\\left(1+0.12\\right)^{-6}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -4088,8 +4133,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "4% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(15000\\right)\\times\\left(\\frac{0.04}{1-(1+0.04)^{-12}}\\right)",
+    "governingFormula": "A=P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=15000\\times \\frac{0.04}{1-\\left(1+0.04\\right)^{-12}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -4165,8 +4211,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "4% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(18000\\right)\\times\\left(\\frac{0.04}{(1+0.04)^{10}-1}\\right)",
+    "governingFormula": "A=\\left(C-S\\right)\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "A=\\left(20000-2000\\right)\\times \\frac{0.04}{\\left(1+0.04\\right)^{10}-1}",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -4242,8 +4289,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "10 years, not the requested target"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(500\\right)\\times\\left(\\frac{(1+0.01)^{24}-1}{0.01}\\right)",
+    "governingFormula": "F=A\\times \\frac{\\left(1+i\\right)^{n}-1}{i}",
+    "substitutionMath": "F=500\\times \\frac{\\left(1+0.01\\right)^{24}-1}{0.01}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -4319,8 +4367,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "8 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(350\\right)\\times\\left(\\frac{1-(1+0.08)^{-8}}{0.08}\\right)\\right)+\\left(\\frac{5000}{\\left(1.08\\right)^{8}}\\right)",
+    "governingFormula": "Price=K\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}+\\frac{R}{\\left(1+i\\right)^{n}}",
+    "substitutionMath": "Price=350\\times \\frac{1-\\left(1+0.08\\right)^{-8}}{0.08}+\\frac{5000}{\\left(1+0.08\\right)^{8}}",
+    "formulaSymbols": "K = coupon per period; R = redemption or recurring replacement cost; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -4437,8 +4486,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Not stated"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\frac{\\left(10500\\right)-\\left(400\\right)}{10}\\right)+\\left(300\\right)\\right)+\\left(\\left(1600\\right)\\times\\left(0.85\\right)\\right)",
+    "governingFormula": "AC=\\frac{C-S}{n}+M+H\\times c_{h}",
+    "substitutionMath": "AC=\\frac{10500-400}{10}+300+1600\\times 0.85",
+    "formulaSymbols": "C = first cost; H = operating hours per year; M = annual maintenance cost; S = salvage value; c_h = operating cost per hour; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -4530,8 +4580,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "15 months"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(5000\\right)\\times\\left(\\left(1\\right)+\\left(\\frac{\\left(0.15\\right)\\times\\left(15\\right)}{12}\\right)\\right)",
+    "governingFormula": "F=P\\times \\left(1+\\frac{r\\times h}{12}\\right)",
+    "substitutionMath": "F=5000\\times \\left(1+\\frac{0.15\\times 15}{12}\\right)",
+    "formulaSymbols": "P = principal or present worth; h = elapsed intervals; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -4621,8 +4672,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "360-day assumption"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)\\times\\left(\\left(1\\right)+\\left(\\frac{\\left(0.08\\right)\\times\\left(90\\right)}{360}\\right)\\right)",
+    "governingFormula": "F=P\\times \\left(1+\\frac{r\\times d}{Y}\\right)",
+    "substitutionMath": "F=10000\\times \\left(1+\\frac{0.08\\times 90}{360}\\right)",
+    "formulaSymbols": "P = principal or present worth; Y = days per year; d = number of days; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -4707,8 +4759,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "2 years 6 months"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{450}{\\left(0.06\\right)\\times\\left(2.5\\right)}",
+    "governingFormula": "P=\\frac{I}{r\\times t}",
+    "substitutionMath": "P=\\frac{450}{0.06\\times 2.5}",
+    "formulaSymbols": "I = interest; r = annual interest rate; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -4784,8 +4837,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "360-day assumption"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{25000}{\\left(1\\right)+\\left(\\frac{\\left(0.14\\right)\\times\\left(60\\right)}{360}\\right)}",
+    "governingFormula": "P=\\frac{F}{1+\\frac{r\\times d}{Y}}",
+    "substitutionMath": "P=\\frac{25000}{1+\\frac{0.14\\times 60}{360}}",
+    "formulaSymbols": "F = future amount; Y = days per year; d = number of days; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -4880,8 +4934,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Not specified, both 360 and 365 discussed"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\frac{890.39}{\\left(0.8\\right)\\times\\left(110000\\right)}\\right)\\times\\left(\\frac{360}{31}\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\frac{\\frac{I_{net}}{\\left(1-tax\\right)\\times P}\\times Y}{d}\\times 100",
+    "substitutionMath": "r_{percent}=\\frac{\\frac{890.39}{\\left(1-0.2\\right)\\times 110000}\\times 360}{31}\\times 100",
+    "formulaSymbols": "I_net = after-tax interest; P = principal or present worth; Y = days per year; d = number of days; tax = withholding-tax fraction",
     "solutionSteps": [
       {
         "step": 1,
@@ -4978,8 +5033,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "360-day assumption"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{1500}{\\left(1\\right)+\\left(\\frac{\\left(0.1\\right)\\times\\left(90\\right)}{360}\\right)}",
+    "governingFormula": "P=\\frac{F}{1+\\frac{r\\times d}{Y}}",
+    "substitutionMath": "P=\\frac{1500}{1+\\frac{0.1\\times 90}{360}}",
+    "formulaSymbols": "F = future amount; Y = days per year; d = number of days; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -5069,8 +5125,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "360-day assumption"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\frac{0.03}{0.97}\\right)\\times\\left(\\frac{360}{69}\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\frac{\\frac{d}{1-d}\\times Y}{h}\\times 100",
+    "substitutionMath": "r_{percent}=\\frac{\\frac{0.03}{1-0.03}\\times 360}{69}\\times 100",
+    "formulaSymbols": "Y = days per year; d = discount fraction; h = elapsed intervals",
     "solutionSteps": [
       {
         "step": 1,
@@ -5160,8 +5217,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "365 days, no leap year stated"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10500\\right)\\times\\left(\\left(1\\right)+\\left(\\frac{\\left(0.05\\right)\\times\\left(75\\right)}{365}\\right)\\right)",
+    "governingFormula": "F=P\\times \\left(1+\\frac{r\\times d}{Y}\\right)",
+    "substitutionMath": "F=10500\\times \\left(1+\\frac{0.05\\times 75}{365}\\right)",
+    "formulaSymbols": "P = principal or present worth; Y = days per year; d = number of days; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -5256,8 +5314,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "366 days"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(\\left(5000\\right)\\times\\left(0.22\\right)\\right)\\times\\left(318\\right)}{366}",
+    "governingFormula": "I=\\frac{P\\times r\\times d}{Y}",
+    "substitutionMath": "I=\\frac{5000\\times 0.22\\times 318}{366}",
+    "formulaSymbols": "P = principal or present worth; Y = days per year; d = number of days; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -5335,8 +5394,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{9600}{\\left(0.16\\right)\\times\\left(5\\right)}",
+    "governingFormula": "P=\\frac{I}{r\\times t}",
+    "substitutionMath": "P=\\frac{9600}{0.16\\times 5}",
+    "formulaSymbols": "I = interest; r = annual interest rate; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -5412,8 +5472,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Interest only"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(6800\\right)\\times\\left(0.11\\right)\\right)\\times\\left(3\\right)",
+    "governingFormula": "I=P\\times r\\times t",
+    "substitutionMath": "I=6800\\times 0.11\\times 3",
+    "formulaSymbols": "P = principal or present worth; r = annual interest rate; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -5489,8 +5550,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Interest only"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(5000\\right)\\times\\left(\\left(\\left(\\left(1\\right)+\\left(\\frac{0.08}{4}\\right)\\right)^{40}\\right)-\\left(1\\right)\\right)",
+    "governingFormula": "I=P\\times \\left(\\left(1+\\frac{r}{m}\\right)^{n}-1\\right)",
+    "substitutionMath": "I=5000\\times \\left(\\left(1+\\frac{0.08}{4}\\right)^{40}-1\\right)",
+    "formulaSymbols": "P = principal or present worth; m = compounding periods per year; n = number of periods or useful life; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -5582,8 +5644,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "10 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(300\\right)\\times\\left(\\frac{(1+0.01)^{20}-1}{0.01}\\right)",
+    "governingFormula": "F=A\\times \\frac{\\left(1+i\\right)^{n}-1}{i}",
+    "substitutionMath": "F=300\\times \\frac{\\left(1+0.01\\right)^{20}-1}{0.01}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -5649,8 +5712,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "15% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(30000\\right)\\times\\left(\\frac{1-(1+0.15)^{-6}}{0.15}\\right)\\right)+\\left(\\frac{\\left(40000\\right)\\times\\left(\\frac{1-(1+0.15)^{-4}}{0.15}\\right)}{\\left(1.15\\right)^{6}}\\right)\\right)+\\left(\\frac{\\frac{50000}{0.15}}{\\left(1.15\\right)^{10}}\\right)",
+    "governingFormula": "P=A_{1}\\times \\frac{1-\\left(1+i\\right)^{-n_{1}}}{i}+\\frac{A_{2}\\times \\frac{1-\\left(1+i\\right)^{-n_{2}}}{i}}{\\left(1+i\\right)^{n_{1}}}+\\frac{\\frac{A_{3}}{i}}{\\left(1+i\\right)^{n_{1}+n_{2}}}",
+    "substitutionMath": "P=30000\\times \\frac{1-\\left(1+0.15\\right)^{-6}}{0.15}+\\frac{40000\\times \\frac{1-\\left(1+0.15\\right)^{-4}}{0.15}}{\\left(1+0.15\\right)^{6}}+\\frac{\\frac{50000}{0.15}}{\\left(1+0.15\\right)^{6+4}}",
+    "formulaSymbols": "A_1 = equal payment; A_2 = equal payment; A_3 = equal payment; i = effective rate per payment period; n_1 = number of periods or useful life; n_2 = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -5784,8 +5848,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(50000\\right)\\times\\left(\\left(1.075\\right)^{5}\\right)",
+    "governingFormula": "F=P\\times \\left(1+i\\right)^{n}",
+    "substitutionMath": "F=50000\\times \\left(1+0.075\\right)^{5}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -5866,8 +5931,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Double declining balance"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(100000\\right)\\times\\left(\\left(\\left(1\\right)-\\left(\\frac{2}{25}\\right)\\right)^{3}\\right)",
+    "governingFormula": "BV_{m}=C\\times \\left(1-\\frac{2}{n}\\right)^{m}",
+    "substitutionMath": "BV_{m}=100000\\times \\left(1-\\frac{2}{25}\\right)^{3}",
+    "formulaSymbols": "C = first cost; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -5957,8 +6023,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Interest only"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(500000\\right)\\times\\left(\\left(\\left(\\left(1\\right)+\\left(\\frac{0.1125}{12}\\right)\\right)^{93}\\right)-\\left(1\\right)\\right)",
+    "governingFormula": "I=P\\times \\left(\\left(1+\\frac{r}{m}\\right)^{n}-1\\right)",
+    "substitutionMath": "I=500000\\times \\left(\\left(1+\\frac{0.1125}{12}\\right)^{93}-1\\right)",
+    "formulaSymbols": "P = principal or present worth; m = compounding periods per year; n = number of periods or useful life; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -6060,8 +6127,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "20% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(800000\\right)\\times\\left(\\left(1.2\\right)^{5}\\right)\\right)-\\left(\\left(300000\\right)\\times\\left(\\left(1.2\\right)^{4}\\right)\\right)\\right)-\\left(\\left(400000\\right)\\times\\left(\\left(1.2\\right)^{2}\\right)\\right)",
+    "governingFormula": "F=P\\times \\left(1+i\\right)^{N}-C_{1}\\times \\left(1+i\\right)^{N-t_{1}}-C_{2}\\times \\left(1+i\\right)^{N-t_{2}}",
+    "substitutionMath": "F=800000\\times \\left(1+0.2\\right)^{5}-300000\\times \\left(1+0.2\\right)^{5-1}-400000\\times \\left(1+0.2\\right)^{5-3}",
+    "formulaSymbols": "C_1 = first cost; C_2 = first cost; N = n; P = principal or present worth; i = effective rate per payment period; t_1 = time in years; t_2 = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -6179,8 +6247,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "“Present day pesos” has no specified purchasing-power convention"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)\\times\\left(\\left(\\left(1.12\\right)^{5}\\right)-\\left(1\\right)\\right)",
+    "governingFormula": "I=P\\times \\left(\\left(1+i\\right)^{n}-1\\right)",
+    "substitutionMath": "I=10000\\times \\left(\\left(1+0.12\\right)^{5}-1\\right)",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -6258,8 +6327,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "12% nominal compounded quarterly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{20000}{\\left(\\left(1.08\\right)^{5}\\right)\\times\\left(\\left(1.03\\right)^{20}\\right)}",
+    "governingFormula": "P=\\frac{F}{\\left(1+i_{1}\\right)^{n_{1}}\\times \\left(1+i_{2}\\right)^{n_{2}}}",
+    "substitutionMath": "P=\\frac{20000}{\\left(1+0.08\\right)^{5}\\times \\left(1+0.03\\right)^{20}}",
+    "formulaSymbols": "F = future amount; i_1 = effective rate per payment period; i_2 = effective rate per payment period; n_1 = number of periods or useful life; n_2 = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -6344,8 +6414,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "4% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(1000\\right)\\times\\left(\\frac{1-(1+0.04)^{-5}}{0.04}\\right)",
+    "governingFormula": "P=A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}",
+    "substitutionMath": "P=1000\\times \\frac{1-\\left(1+0.04\\right)^{-5}}{0.04}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -6416,8 +6487,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "8 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(2825\\right)\\times\\left(\\left(1.0125\\right)^{32}\\right)",
+    "governingFormula": "F=P\\times \\left(1+i\\right)^{n}",
+    "substitutionMath": "F=2825\\times \\left(1+0.0125\\right)^{32}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -6488,8 +6560,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "3"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(X\\right)\\times\\left(100\\right)",
+    "governingFormula": "0=A\\times \\frac{1-\\left(1+x\\right)^{-n}}{x}-P",
+    "substitutionMath": "0=200000\\times \\frac{1-\\left(1+x\\right)^{-3}}{x}-350000",
+    "formulaSymbols": "A = equal payment; P = principal or present worth; n = number of periods or useful life; x = unknown decimal yield",
     "solutionSteps": [
       {
         "step": 1,
@@ -6574,8 +6647,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "12 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(1000\\right)\\times\\left(\\left(1.06\\right)^{12}\\right)",
+    "governingFormula": "F=P\\times \\left(1+i\\right)^{n}",
+    "substitutionMath": "F=1000\\times \\left(1+0.06\\right)^{12}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -6651,8 +6725,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Same compound rate throughout"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(3000\\right)\\times\\left(\\left(\\left(\\frac{3500}{3000}\\right)^{2}\\right)-\\left(1\\right)\\right)",
+    "governingFormula": "I_{4}=P\\times \\left(\\left(\\frac{F_{2}}{P}\\right)^{2}-1\\right)",
+    "substitutionMath": "I_{4}=3000\\times \\left(\\left(\\frac{3500}{3000}\\right)^{2}-1\\right)",
+    "formulaSymbols": "F_2 = amount after two years; P = principal or present worth",
     "solutionSteps": [
       {
         "step": 1,
@@ -6737,8 +6812,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{10000}{\\left(1.03\\right)^{10}}",
+    "governingFormula": "P=\\frac{F}{\\left(1+i\\right)^{n}}",
+    "substitutionMath": "P=\\frac{10000}{\\left(1+0.03\\right)^{10}}",
+    "formulaSymbols": "F = future amount; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -6814,8 +6890,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Total amount"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(5000\\right)\\times\\left(\\left(1.02\\right)^{40}\\right)",
+    "governingFormula": "F=P\\times \\left(1+i\\right)^{n}",
+    "substitutionMath": "F=5000\\times \\left(1+0.02\\right)^{40}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -6886,8 +6963,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Equivalent annual compounded rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(1.02\\right)^{4}\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{e,percent}=\\left(\\left(1+\\frac{r}{m}\\right)^{m}-1\\right)\\times 100",
+    "substitutionMath": "i_{e,percent}=\\left(\\left(1+\\frac{0.08}{4}\\right)^{4}-1\\right)\\times 100",
+    "formulaSymbols": "m = compounding periods per year; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -6965,8 +7043,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "20 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)\\times\\left(\\left(1.005\\right)^{240}\\right)",
+    "governingFormula": "F=P\\times \\left(1+i\\right)^{n}",
+    "substitutionMath": "F=10000\\times \\left(1+0.005\\right)^{240}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -7032,8 +7111,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Semi-quarterly, 8 periods/year"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(\\left(1\\right)+\\left(\\frac{0.18}{8}\\right)\\right)^{8}\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{e,percent}=\\left(\\left(1+\\frac{r}{m}\\right)^{m}-1\\right)\\times 100",
+    "substitutionMath": "i_{e,percent}=\\left(\\left(1+\\frac{0.18}{8}\\right)^{8}-1\\right)\\times 100",
+    "formulaSymbols": "m = compounding periods per year; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -7120,8 +7200,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Effective annual rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(1.015\\right)^{12}\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{e,percent}=\\left(\\left(1+i\\right)^{m}-1\\right)\\times 100",
+    "substitutionMath": "i_{e,percent}=\\left(\\left(1+0.015\\right)^{12}-1\\right)\\times 100",
+    "formulaSymbols": "i = effective rate per payment period; m = compounding periods per year",
     "solutionSteps": [
       {
         "step": 1,
@@ -7199,8 +7280,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Compounding frequency"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": null,
+    "governingFormula": "i_{e}=\\left(1+\\frac{r}{m}\\right)^{m}-1",
+    "substitutionMath": "0.0984\\approx\\left(1+\\frac{0.095}{m}\\right)^{m}-1",
+    "formulaSymbols": "r = nominal annual rate; m = unknown compounding periods per year; iₑ = effective annual rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -7290,8 +7372,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Effective annual rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(1.02\\right)^{4}\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{e,percent}=\\left(\\left(1+\\frac{r}{m}\\right)^{m}-1\\right)\\times 100",
+    "substitutionMath": "i_{e,percent}=\\left(\\left(1+\\frac{0.08}{4}\\right)^{4}-1\\right)\\times 100",
+    "formulaSymbols": "m = compounding periods per year; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -7369,8 +7452,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Every two months, 6 periods/year"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(6\\right)\\times\\left(\\left(\\left(1.01\\right)^{2}\\right)-\\left(1\\right)\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{2,percent}=m_{2}\\times \\left(\\left(1+\\frac{r_{1}}{m_{1}}\\right)^{\\frac{m_{1}}{m_{2}}}-1\\right)\\times 100",
+    "substitutionMath": "r_{2,percent}=6\\times \\left(\\left(1+\\frac{0.12}{12}\\right)^{\\frac{12}{6}}-1\\right)\\times 100",
+    "formulaSymbols": "m_1 = compounding periods per year or requested year; m_2 = compounding periods per year or requested year; r_1 = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -7450,8 +7534,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Effective annual rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(e^{0.12}\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{e,percent}=\\left(e^{r}-1\\right)\\times 100",
+    "substitutionMath": "i_{e,percent}=\\left(e^{0.12}-1\\right)\\times 100",
+    "formulaSymbols": "r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -7529,8 +7614,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Nominal annual rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(12\\right)\\times\\left(\\left(\\left(1.1956\\right)^{\\frac{1}{12}}\\right)-\\left(1\\right)\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=m\\times \\left(\\left(1+i_{e}\\right)^{\\frac{1}{m}}-1\\right)\\times 100",
+    "substitutionMath": "r_{percent}=12\\times \\left(\\left(1+0.1956\\right)^{\\frac{1}{12}}-1\\right)\\times 100",
+    "formulaSymbols": "i_e = effective annual rate; m = compounding periods per year",
     "solutionSteps": [
       {
         "step": 1,
@@ -7632,8 +7718,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Nominal and effective annual rates"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(2\\right)\\times\\left(\\left(\\left(1.12649\\right)^{\\frac{1}{8}}\\right)-\\left(1\\right)\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "\\begin{gathered}r_{percent}=m\\times \\left(\\left(\\frac{F}{P}\\right)^{\\frac{1}{m\\times t}}-1\\right)\\times 100\\\\i_{e,percent}=\\left(\\left(\\frac{F}{P}\\right)^{\\frac{1}{t}}-1\\right)\\times 100\\end{gathered}",
+    "substitutionMath": "\\begin{gathered}r_{percent}=2\\times \\left(\\left(\\frac{1126.49}{1000}\\right)^{\\frac{1}{2\\times 4}}-1\\right)\\times 100\\\\i_{e,percent}=\\left(\\left(\\frac{1126.49}{1000}\\right)^{\\frac{1}{4}}-1\\right)\\times 100\\end{gathered}",
+    "formulaSymbols": "F = future amount; P = principal or present worth; m = compounding periods per year; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -7727,8 +7814,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Continuous nominal annual rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\ln\\left(1.1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\ln\\left(1+i_{e}\\right)\\times 100",
+    "substitutionMath": "r_{percent}=\\ln\\left(1+0.1\\right)\\times 100",
+    "formulaSymbols": "i_e = effective annual rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -7799,8 +7887,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "10 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(5000\\right)\\times\\left(e^{\\left(0.03\\right)\\times\\left(10\\right)}\\right)",
+    "governingFormula": "F=P\\times e^{r\\times t}",
+    "substitutionMath": "F=5000\\times e^{0.03\\times 10}",
+    "formulaSymbols": "P = principal or present worth; r = annual interest rate; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -7878,8 +7967,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Time"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\ln\\left(2\\right)}{0.1}",
+    "governingFormula": "t=\\frac{\\ln\\left(a\\right)}{r}",
+    "substitutionMath": "t=\\frac{\\ln\\left(2\\right)}{0.1}",
+    "formulaSymbols": "a = growth factor f/p; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -7945,8 +8035,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Equivalent continuous annual rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\ln\\left(1.04\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\ln\\left(1+i_{e}\\right)\\times 100",
+    "substitutionMath": "r_{percent}=\\ln\\left(1+0.04\\right)\\times 100",
+    "formulaSymbols": "i_e = effective annual rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -8012,8 +8103,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Equivalent continuous annual rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\ln\\left(1.24\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\ln\\left(1+i_{e}\\right)\\times 100",
+    "substitutionMath": "r_{percent}=\\ln\\left(1+0.24\\right)\\times 100",
+    "formulaSymbols": "i_e = effective annual rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -8089,8 +8181,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Annual nominal rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\frac{\\ln\\left(1.34986\\right)}{10}\\right)\\times\\left(100\\right)",
+    "governingFormula": "r_{percent}=\\frac{\\ln\\left(a\\right)}{t}\\times 100",
+    "substitutionMath": "r_{percent}=\\frac{\\ln\\left(1.34986\\right)}{10}\\times 100",
+    "formulaSymbols": "a = growth factor f/p; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -8168,8 +8261,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Effective annual rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(e^{\\left(0.015\\right)\\times\\left(12\\right)}\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{e,percent}=\\left(e^{r_{month}\\times m}-1\\right)\\times 100",
+    "substitutionMath": "i_{e,percent}=\\left(e^{0.015\\times 12}-1\\right)\\times 100",
+    "formulaSymbols": "m = compounding periods per year; r_month = continuous monthly rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -8259,8 +8353,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Time, which cannot be determined"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": null,
+    "governingFormula": "t=\\frac{\\ln\\left(\\frac{F}{P}\\right)}{r}",
+    "substitutionMath": "t=\\frac{\\ln\\left(\\frac{F}{2000}\\right)}{0.08}",
+    "formulaSymbols": "F = missing target amount; P = principal; r = continuous annual rate; t = years",
     "solutionSteps": [
       {
         "step": 1,
@@ -8333,8 +8428,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Annual vs continuous compounding"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(500\\right)\\times\\left(\\left(e^{\\left(0.05\\right)\\times\\left(5\\right)}\\right)-\\left(\\left(1.05\\right)^{5}\\right)\\right)",
+    "governingFormula": "Delta_{F}=P\\times \\left(e^{r\\times t}-\\left(1+r\\right)^{t}\\right)",
+    "substitutionMath": "Delta_{F}=500\\times \\left(e^{0.05\\times 5}-\\left(1+0.05\\right)^{5}\\right)",
+    "formulaSymbols": "P = principal or present worth; r = annual interest rate; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -8426,8 +8522,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "4% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(2000\\right)\\times\\left(\\frac{1-(1+0.04)^{-5}}{0.04}\\right)\\right)\\times\\left(1.04\\right)",
+    "governingFormula": "P_{due}=A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}\\times \\left(1+i\\right)",
+    "substitutionMath": "P_{due}=2000\\times \\frac{1-\\left(1+0.04\\right)^{-5}}{0.04}\\times \\left(1+0.04\\right)",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -8505,8 +8602,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "12% compounded quarterly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(2000\\right)\\times\\left(\\frac{1-(1+0.03)^{-6}}{0.03}\\right)",
+    "governingFormula": "P=A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}",
+    "substitutionMath": "P=2000\\times \\frac{1-\\left(1+0.03\\right)^{-6}}{0.03}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -8577,8 +8675,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "15% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(6000\\right)\\times\\left(\\frac{(1+0.15)^{5}-1}{0.15}\\right)",
+    "governingFormula": "F=A\\times \\frac{\\left(1+i\\right)^{n}-1}{i}",
+    "substitutionMath": "F=6000\\times \\frac{\\left(1+0.15\\right)^{5}-1}{0.15}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -8659,8 +8758,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Annual interest rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(X\\right)\\times\\left(100\\right)",
+    "governingFormula": "0=A\\times \\frac{1-\\left(1+x\\right)^{-n}}{x}-P",
+    "substitutionMath": "0=750\\times \\frac{1-\\left(1+x\\right)^{-15}}{x}-8000",
+    "formulaSymbols": "A = equal payment; P = principal or present worth; n = number of periods or useful life; x = unknown decimal yield",
     "solutionSteps": [
       {
         "step": 1,
@@ -8745,8 +8845,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "10% compounded quarterly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(2000\\right)\\times\\left(\\frac{1-(1+0.025)^{-10}}{0.025}\\right)",
+    "governingFormula": "P=A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}",
+    "substitutionMath": "P=2000\\times \\frac{1-\\left(1+0.025\\right)^{-10}}{0.025}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -8822,8 +8923,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "7% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\sum_{t=1}^{8}\\left(\\frac{\\left(20000\\right)+\\left(\\left(1500\\right)\\times\\left(\\left(t\\right)-\\left(1\\right)\\right)\\right)}{\\left(1.07\\right)^{t}}\\right)",
+    "governingFormula": "P=\\sum_{t=1}^{n}\\left(\\frac{A+G\\times \\left(t-1\\right)}{\\left(1+i\\right)^{t}}\\right)",
+    "substitutionMath": "P=\\sum_{t=1}^{8}\\left(\\frac{20000+1500\\times \\left(t-1\\right)}{\\left(1+0.07\\right)^{t}}\\right)",
+    "formulaSymbols": "A = equal payment; G = yearly increase; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -8943,8 +9045,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "6% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(200\\right)\\times\\left(\\frac{1-(1+0.06)^{-10}}{0.06}\\right)",
+    "governingFormula": "P=A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}",
+    "substitutionMath": "P=200\\times \\frac{1-\\left(1+0.06\\right)^{-10}}{0.06}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9020,8 +9123,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Monthly compounding"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(100000\\right)\\times\\left(\\frac{0.01}{1-(1+0.01)^{-240}}\\right)",
+    "governingFormula": "A=P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=100000\\times \\frac{0.01}{1-\\left(1+0.01\\right)^{-240}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9092,8 +9196,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "6% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(20000\\right)\\times\\left(\\frac{0.06}{(1+0.06)^{12}-1}\\right)",
+    "governingFormula": "A=F\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "A=20000\\times \\frac{0.06}{\\left(1+0.06\\right)^{12}-1}",
+    "formulaSymbols": "F = future amount; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9164,8 +9269,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "10% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(100000\\right)\\times\\left(\\frac{0.1}{(1+0.1)^{5}-1}\\right)",
+    "governingFormula": "A=F\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "A=100000\\times \\frac{0.1}{\\left(1+0.1\\right)^{5}-1}",
+    "formulaSymbols": "F = future amount; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9236,8 +9342,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "15% compounded monthly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(1800000\\right)\\times\\left(\\frac{0.0125}{1-(1+0.0125)^{-60}}\\right)",
+    "governingFormula": "A=P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=1800000\\times \\frac{0.0125}{1-\\left(1+0.0125\\right)^{-60}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9315,8 +9422,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "12% compounded annually"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)\\times\\left(\\frac{1-(1+0.00948879)^{-60}}{0.00948879}\\right)",
+    "governingFormula": "P=A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}",
+    "substitutionMath": "P=10000\\times \\frac{1-\\left(1+\\left((1+0.12)^{1/12}-1\\right)\\right)^{-60}}{\\left((1+0.12)^{1/12}-1\\right)}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9408,8 +9516,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "6% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{5000}{\\frac{(1+0.06)^{6}-1}{0.06}}",
+    "governingFormula": "A=\\frac{F}{\\frac{\\left(1+i\\right)^{n}-1}{i}}",
+    "substitutionMath": "A=\\frac{5000}{\\frac{\\left(1+0.06\\right)^{6}-1}{0.06}}",
+    "formulaSymbols": "F = future amount; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9480,8 +9589,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "15% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(120000\\right)\\times\\left(\\frac{1-(1+0.15)^{-6}}{0.15}\\right)\\right)\\times\\left(1.15\\right)",
+    "governingFormula": "P_{due}=A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}\\times \\left(1+i\\right)",
+    "substitutionMath": "P_{due}=120000\\times \\frac{1-\\left(1+0.15\\right)^{-6}}{0.15}\\times \\left(1+0.15\\right)",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9559,8 +9669,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "7% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(200\\right)\\times\\left(\\frac{(1+0.07)^{15}-1}{0.07}\\right)\\right)\\times\\left(1.07\\right)",
+    "governingFormula": "F_{due}=A\\times \\frac{\\left(1+i\\right)^{n}-1}{i}\\times \\left(1+i\\right)",
+    "substitutionMath": "F_{due}=200\\times \\frac{\\left(1+0.07\\right)^{15}-1}{0.07}\\times \\left(1+0.07\\right)",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9648,8 +9759,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Nominal rate compounded semiannually"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(2000\\right)\\times\\left(\\left(1.0225\\right)^{5}\\right)\\right)\\times\\left(\\frac{0.0225}{1-(1+0.0225)^{-10}}\\right)",
+    "governingFormula": "A=P\\times \\left(1+i\\right)^{k-1}\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=2000\\times \\left(1+0.0225\\right)^{6-1}\\times \\frac{0.0225}{1-\\left(1+0.0225\\right)^{-10}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; k = first payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9739,8 +9851,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "End of year 10"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(187400\\right)\\times\\left(\\left(1.05\\right)^{9}\\right)\\right)\\times\\left(\\frac{0.05}{1-(1+0.05)^{-8}}\\right)",
+    "governingFormula": "A=P\\times \\left(1+i\\right)^{k-1}\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=187400\\times \\left(1+0.05\\right)^{10-1}\\times \\frac{0.05}{1-\\left(1+0.05\\right)^{-8}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; k = first payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9835,8 +9948,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "12% compounded semiannually"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(100000\\right)+\\left(\\frac{\\left(8000\\right)\\times\\left(\\frac{1-(1+0.06)^{-10}}{0.06}\\right)}{\\left(1.06\\right)^{5}}\\right)",
+    "governingFormula": "P_{0}=P_{d}+\\frac{A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}}{\\left(1+i\\right)^{k-1}}",
+    "substitutionMath": "P_{0}=100000+\\frac{8000\\times \\frac{1-\\left(1+0.06\\right)^{-10}}{0.06}}{\\left(1+0.06\\right)^{6-1}}",
+    "formulaSymbols": "A = equal payment; P_d = down payment; i = effective rate per payment period; k = first payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -9933,8 +10047,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "4% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(2000\\right)\\times\\left(\\frac{1-(1+0.04)^{-3}}{0.04}\\right)}{\\left(1.04\\right)^{3}}",
+    "governingFormula": "P_{0}=\\frac{A\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}}{\\left(1+i\\right)^{k-1}}",
+    "substitutionMath": "P_{0}=\\frac{2000\\times \\frac{1-\\left(1+0.04\\right)^{-3}}{0.04}}{\\left(1+0.04\\right)^{4-1}}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; k = first payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -10019,8 +10134,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{5000}{0.1}",
+    "governingFormula": "P=\\frac{A}{i}",
+    "substitutionMath": "P=\\frac{5000}{0.1}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -10089,8 +10205,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\frac{1000}{0.08}}{\\left(1.08\\right)^{4}}",
+    "governingFormula": "P_{0}=\\frac{A}{i\\times \\left(1+i\\right)^{k-1}}",
+    "substitutionMath": "P_{0}=\\frac{1000}{0.08\\times \\left(1+0.08\\right)^{5-1}}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period; k = first payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -10168,8 +10285,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{2000}{\\left(\\left(1.025\\right)^{4}\\right)-\\left(1\\right)}",
+    "governingFormula": "P=\\frac{A}{\\left(1+\\frac{r}{m}\\right)^{m}-1}",
+    "substitutionMath": "P=\\frac{2000}{\\left(1+\\frac{0.1}{4}\\right)^{4}-1}",
+    "formulaSymbols": "A = equal payment; m = compounding periods per year; r = annual interest rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -10247,8 +10365,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{10000}{0.1}",
+    "governingFormula": "P=\\frac{A}{i}",
+    "substitutionMath": "P=\\frac{10000}{0.1}",
+    "formulaSymbols": "A = equal payment; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -10317,8 +10436,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Periodic payment"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(1000\\right)\\times\\left(0.155\\right)",
+    "governingFormula": "A=P\\times i",
+    "substitutionMath": "A=1000\\times 0.155",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -10382,8 +10502,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{15000}{\\left(\\left(1.02\\right)^{2}\\right)-\\left(1\\right)}",
+    "governingFormula": "P=\\frac{A}{\\left(1+i\\right)^{h}-1}",
+    "substitutionMath": "P=\\frac{15000}{\\left(1+0.02\\right)^{2}-1}",
+    "formulaSymbols": "A = equal payment; h = elapsed intervals; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -10466,8 +10587,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Straight line"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(10000\\right)-\\left(500\\right)}{10}",
+    "governingFormula": "D=\\frac{C-S}{n}",
+    "substitutionMath": "D=\\frac{10000-500}{10}",
+    "formulaSymbols": "C = first cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -10543,8 +10665,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "After 6 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(10000\\right)-\\left(\\frac{\\left(6\\right)\\times\\left(\\left(10000\\right)-\\left(1000\\right)\\right)}{10}\\right)",
+    "governingFormula": "BV_{m}=C-\\frac{m\\times \\left(C-S\\right)}{n}",
+    "substitutionMath": "BV_{m}=10000-\\frac{6\\times \\left(10000-1000\\right)}{10}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -10634,8 +10757,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Straight line"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(15000\\right)-\\left(1000\\right)}{3}",
+    "governingFormula": "D=\\frac{C-S}{n}",
+    "substitutionMath": "D=\\frac{15000-1000}{3}",
+    "formulaSymbols": "C = first cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -10716,8 +10840,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Straight line"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(\\left(800000\\right)-\\left(50000\\right)\\right)+\\left(15000\\right)}{10}",
+    "governingFormula": "D=\\frac{C-S+L}{n}",
+    "substitutionMath": "D=\\frac{800000-50000+15000}{10}",
+    "formulaSymbols": "C = first cost; L = dismantling cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -10800,8 +10925,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Annual straight-line charge as percentage of cost"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\frac{\\frac{\\left(45000\\right)-\\left(2500\\right)}{5}}{45000}\\right)\\times\\left(100\\right)",
+    "governingFormula": "d_{percent}=\\frac{\\frac{C-S}{n}}{C}\\times 100",
+    "substitutionMath": "d_{percent}=\\frac{\\frac{45000-2500}{5}}{45000}\\times 100",
+    "formulaSymbols": "C = first cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -10896,8 +11022,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Straight line"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(900000\\right)-\\left(\\frac{\\left(5\\right)\\times\\left(\\left(900000\\right)-\\left(200000\\right)\\right)}{8}\\right)",
+    "governingFormula": "BV_{m}=C-\\frac{m\\times \\left(C-S\\right)}{n}",
+    "substitutionMath": "BV_{m}=900000-\\frac{5\\times \\left(900000-200000\\right)}{8}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -10992,8 +11119,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Straight line"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(200000\\right)-\\left(\\frac{\\left(12\\right)\\times\\left(\\left(200000\\right)-\\left(25000\\right)\\right)}{20}\\right)",
+    "governingFormula": "BV_{m}=C-\\frac{m\\times \\left(C-S\\right)}{n}",
+    "substitutionMath": "BV_{m}=200000-\\frac{12\\times \\left(200000-25000\\right)}{20}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11083,8 +11211,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "First 3 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(3\\right)\\times\\left(\\left(500000\\right)-\\left(100000\\right)\\right)}{25}",
+    "governingFormula": "TD_{m}=\\frac{m\\times \\left(C-S\\right)}{n}",
+    "substitutionMath": "TD_{m}=\\frac{3\\times \\left(500000-100000\\right)}{25}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11172,8 +11301,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "5 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(530000\\right)-\\left(\\frac{\\left(5\\right)\\times\\left(\\left(530000\\right)-\\left(53000\\right)\\right)}{10}\\right)",
+    "governingFormula": "BV_{m}=C-\\frac{m\\times \\left(C-S\\right)}{n}",
+    "substitutionMath": "BV_{m}=530000-\\frac{5\\times \\left(530000-53000\\right)}{10}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11263,8 +11393,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Annual straight-line rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\frac{\\frac{\\left(45000\\right)-\\left(2500\\right)}{5}}{45000}\\right)\\times\\left(100\\right)",
+    "governingFormula": "d_{percent}=\\frac{\\frac{C-S}{n}}{C}\\times 100",
+    "substitutionMath": "d_{percent}=\\frac{\\frac{45000-2500}{5}}{45000}\\times 100",
+    "formulaSymbols": "C = first cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11359,8 +11490,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Annual fund deposit"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(9500\\right)\\times\\left(\\frac{0.04}{(1+0.04)^{10}-1}\\right)",
+    "governingFormula": "A=\\left(C-S\\right)\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "A=\\left(10000-500\\right)\\times \\frac{0.04}{\\left(1+0.04\\right)^{10}-1}",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11441,8 +11573,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Sinking-fund annual cost"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(20000\\right)\\times\\left(\\frac{0.08}{(1+0.08)^{5}-1}\\right)\\right)+\\left(\\left(30000\\right)\\times\\left(0.08\\right)\\right)",
+    "governingFormula": "AC=\\left(C-S\\right)\\times \\frac{i}{\\left(1+i\\right)^{n}-1}+C\\times i",
+    "substitutionMath": "AC=\\left(30000-10000\\right)\\times \\frac{0.08}{\\left(1+0.08\\right)^{5}-1}+30000\\times 0.08",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11532,8 +11665,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "4%"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(18000\\right)\\times\\left(\\frac{0.04}{(1+0.04)^{10}-1}\\right)",
+    "governingFormula": "A=\\left(C-S\\right)\\times \\frac{i}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "A=\\left(20000-2000\\right)\\times \\frac{0.04}{\\left(1+0.04\\right)^{10}-1}",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11614,8 +11748,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "SYD"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(8000\\right)\\times\\left(\\left(\\left(10\\right)+\\left(9\\right)\\right)+\\left(8\\right)\\right)}{55}",
+    "governingFormula": "TD_{m}=\\frac{\\left(C-S\\right)\\times \\sum_{j=1}^{m}\\left(n-j+1\\right)}{\\frac{n\\times \\left(n+1\\right)}{2}}",
+    "substitutionMath": "TD_{m}=\\frac{\\left(9000-1000\\right)\\times \\sum_{j=1}^{3}\\left(10-j+1\\right)}{\\frac{10\\times \\left(10+1\\right)}{2}}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11710,8 +11845,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "SYD"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(10000\\right)\\times\\left(18\\right)}{210}",
+    "governingFormula": "D_{m}=\\frac{\\left(C-S\\right)\\times \\left(n-m+1\\right)}{\\frac{n\\times \\left(n+1\\right)}{2}}",
+    "substitutionMath": "D_{m}=\\frac{\\left(10000-0\\right)\\times \\left(20-3+1\\right)}{\\frac{20\\times \\left(20+1\\right)}{2}}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = compounding periods per year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11792,8 +11928,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "SYD"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(10000\\right)\\times\\left(18\\right)}{210}",
+    "governingFormula": "D_{m}=\\frac{\\left(C-S\\right)\\times \\left(n-m+1\\right)}{\\frac{n\\times \\left(n+1\\right)}{2}}",
+    "substitutionMath": "D_{m}=\\frac{\\left(10000-0\\right)\\times \\left(20-3+1\\right)}{\\frac{20\\times \\left(20+1\\right)}{2}}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = compounding periods per year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11874,8 +12011,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "SYD"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(9000\\right)-\\left(\\frac{\\left(8000\\right)\\times\\left(10\\right)}{55}\\right)",
+    "governingFormula": "BV_{1}=C-\\frac{\\left(C-S\\right)\\times n}{\\frac{n\\times \\left(n+1\\right)}{2}}",
+    "substitutionMath": "BV_{1}=9000-\\frac{\\left(9000-1000\\right)\\times 10}{\\frac{10\\times \\left(10+1\\right)}{2}}",
+    "formulaSymbols": "C = first cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -11963,8 +12101,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "SYD"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(15000\\right)\\times\\left(\\left(1\\right)-\\left(\\frac{\\left(\\left(5\\right)+\\left(4\\right)\\right)+\\left(3\\right)}{15}\\right)\\right)",
+    "governingFormula": "BV_{m}=C-\\frac{\\left(C-S\\right)\\times \\sum_{j=1}^{m}\\left(n-j+1\\right)}{\\frac{n\\times \\left(n+1\\right)}{2}}",
+    "substitutionMath": "BV_{m}=15000-\\frac{\\left(15000-0\\right)\\times \\sum_{j=1}^{3}\\left(5-j+1\\right)}{\\frac{5\\times \\left(5+1\\right)}{2}}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -12066,8 +12205,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "SYD"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(8000\\right)\\times\\left(\\left(\\left(\\left(10\\right)+\\left(9\\right)\\right)+\\left(8\\right)\\right)+\\left(7\\right)\\right)}{55}",
+    "governingFormula": "TD_{m}=\\frac{\\left(C-S\\right)\\times \\sum_{j=1}^{m}\\left(n-j+1\\right)}{\\frac{n\\times \\left(n+1\\right)}{2}}",
+    "substitutionMath": "TD_{m}=\\frac{\\left(9000-1000\\right)\\times \\sum_{j=1}^{4}\\left(10-j+1\\right)}{\\frac{10\\times \\left(10+1\\right)}{2}}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -12159,8 +12299,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "9 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(50000\\right)\\times\\left(\\left(0.8\\right)^{9}\\right)",
+    "governingFormula": "BV_{m}=C\\times \\left(1-k\\right)^{m}",
+    "substitutionMath": "BV_{m}=50000\\times \\left(1-0.2\\right)^{9}",
+    "formulaSymbols": "C = first cost; k = annual depreciation fraction; m = requested depreciation year",
     "solutionSteps": [
       {
         "step": 1,
@@ -12241,8 +12382,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Salvage-derived declining balance"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(480000\\right)\\times\\left(\\left(0.1\\right)^{\\frac{5}{12}}\\right)",
+    "governingFormula": "BV_{m}=C\\times \\left(\\frac{S}{C}\\right)^{\\frac{m}{n}}",
+    "substitutionMath": "BV_{m}=480000\\times \\left(\\frac{48000}{480000}\\right)^{\\frac{5}{12}}",
+    "formulaSymbols": "C = first cost; S = salvage value; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -12330,8 +12472,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Double declining balance"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(90000\\right)\\times\\left(\\left(0.75\\right)^{5}\\right)",
+    "governingFormula": "\\begin{gathered}BV_{m}=C\\times \\left(1-\\frac{2}{n}\\right)^{m}\\\\TD_m=C-C\\times \\left(1-\\frac{2}{n}\\right)^{m}\\end{gathered}",
+    "substitutionMath": "\\begin{gathered}BV_{m}=90000\\times \\left(1-\\frac{2}{8}\\right)^{5}\\\\TD_m=90000-90000\\times \\left(1-\\frac{2}{8}\\right)^{5}\\end{gathered}",
+    "formulaSymbols": "C = first cost; m = requested depreciation year; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -12414,8 +12557,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Constant-percentage declining balance"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(1\\right)-\\left(\\left(\\frac{40545.73}{720000}\\right)^{0.1}\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "k_{percent}=\\left(1-\\left(\\frac{S}{C}\\right)^{\\frac{1}{n}}\\right)\\times 100",
+    "substitutionMath": "k_{percent}=\\left(1-\\left(\\frac{40545.73}{720000}\\right)^{\\frac{1}{10}}\\right)\\times 100",
+    "formulaSymbols": "C = first cost; S = salvage value; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -12500,8 +12644,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Combined nominal rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(1.09\\right)\\times\\left(1.15\\right)\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{nominal,percent}=\\left(\\left(1+f\\right)\\times \\left(1+i_{real}\\right)-1\\right)\\times 100",
+    "substitutionMath": "i_{nominal,percent}=\\left(\\left(1+0.09\\right)\\times \\left(1+0.15\\right)-1\\right)\\times 100",
+    "formulaSymbols": "f = annual inflation rate; i_real = real annual rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -12579,8 +12724,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "10 years"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(100\\right)\\times\\left(\\left(1.07\\right)^{10}\\right)",
+    "governingFormula": "C_{future}=C\\times \\left(1+f\\right)^{t}",
+    "substitutionMath": "C_{future}=100\\times \\left(1+0.07\\right)^{10}",
+    "formulaSymbols": "C = first cost; f = annual inflation rate; t = time in years",
     "solutionSteps": [
       {
         "step": 1,
@@ -12656,8 +12802,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "2% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\frac{1.05}{1.02}\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{real,percent}=\\left(\\frac{1+i}{1+f}-1\\right)\\times 100",
+    "substitutionMath": "i_{real,percent}=\\left(\\frac{1+0.05}{1+0.02}-1\\right)\\times 100",
+    "formulaSymbols": "f = annual inflation rate; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -12735,8 +12882,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Combined nominal rate"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\left(1.06\\right)\\times\\left(1.1\\right)\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{nominal,percent}=\\left(\\left(1+f\\right)\\times \\left(1+i_{real}\\right)-1\\right)\\times 100",
+    "substitutionMath": "i_{nominal,percent}=\\left(\\left(1+0.06\\right)\\times \\left(1+0.1\\right)-1\\right)\\times 100",
+    "formulaSymbols": "f = annual inflation rate; i_real = real annual rate",
     "solutionSteps": [
       {
         "step": 1,
@@ -12809,8 +12957,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "6% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\sum_{t=1}^{4}\\left(\\frac{\\left(100\\right)\\times\\left(t\\right)}{\\left(1.06\\right)^{t}}\\right)\\right)\\times\\left(\\frac{0.06}{1-(1+0.06)^{-4}}\\right)",
+    "governingFormula": "EUAC=\\sum_{t=1}^{n}\\left(\\frac{G\\times t}{\\left(1+i\\right)^{t}}\\right)\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "EUAC=\\sum_{t=1}^{4}\\left(\\frac{100\\times t}{\\left(1+0.06\\right)^{t}}\\right)\\times \\frac{0.06}{1-\\left(1+0.06\\right)^{-4}}",
+    "formulaSymbols": "G = yearly increase; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -12926,8 +13075,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Handout straight-line annual cost"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\frac{\\left(100000\\right)-\\left(5000\\right)}{10}\\right)+\\left(\\left(100000\\right)\\times\\left(0.05\\right)\\right)",
+    "governingFormula": "AC=\\frac{C-S}{n}+C\\times i",
+    "substitutionMath": "AC=\\frac{100000-5000}{10}+100000\\times 0.05",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -13017,8 +13167,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Zero, none stated"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(100000\\right)\\times\\left(\\frac{0.06}{1-(1+0.06)^{-20}}\\right)",
+    "governingFormula": "A=P\\times \\frac{i}{1-\\left(1+i\\right)^{-n}}",
+    "substitutionMath": "A=100000\\times \\frac{0.06}{1-\\left(1+0.06\\right)^{-20}}",
+    "formulaSymbols": "P = principal or present worth; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -13094,8 +13245,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(500000\\right)+\\left(\\frac{10000}{0.06}\\right)",
+    "governingFormula": "CC=C+\\frac{O}{i}",
+    "substitutionMath": "CC=500000+\\frac{10000}{0.06}",
+    "formulaSymbols": "C = first cost; O = annual operating cost; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -13181,8 +13333,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Repeated service forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(50000\\right)+\\left(\\frac{48000}{\\left(\\left(1.1\\right)^{10}\\right)-\\left(1\\right)}\\right)\\right)+\\left(\\frac{1200}{0.1}\\right)",
+    "governingFormula": "CC=C+\\frac{C-S}{\\left(1+i\\right)^{n}-1}+\\frac{O}{i}",
+    "substitutionMath": "CC=50000+\\frac{50000-2000}{\\left(1+0.1\\right)^{10}-1}+\\frac{1200}{0.1}",
+    "formulaSymbols": "C = first cost; O = annual operating cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -13286,8 +13439,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(500000\\right)+\\left(\\frac{90000}{0.15}\\right)",
+    "governingFormula": "CC=C+\\frac{O}{i}",
+    "substitutionMath": "CC=500000+\\frac{90000}{0.15}",
+    "formulaSymbols": "C = first cost; O = annual operating cost; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -13363,8 +13517,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(100000\\right)+\\left(\\frac{18000}{0.08}\\right)",
+    "governingFormula": "CC=C+\\frac{O}{i}",
+    "substitutionMath": "CC=100000+\\frac{18000}{0.08}",
+    "formulaSymbols": "C = first cost; O = annual operating cost; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -13440,8 +13595,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(250000000\\right)+\\left(\\frac{100000000}{\\left(\\left(1.06\\right)^{20}\\right)-\\left(1\\right)}\\right)",
+    "governingFormula": "CC=C+\\frac{R}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "CC=250000000+\\frac{100000000}{\\left(1+0.06\\right)^{20}-1}",
+    "formulaSymbols": "C = first cost; R = redemption or recurring replacement cost; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -13531,8 +13687,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(1500000\\right)+\\left(\\frac{150000}{0.15}\\right)",
+    "governingFormula": "CC=C+\\frac{O}{i}",
+    "substitutionMath": "CC=1500000+\\frac{150000}{0.15}",
+    "formulaSymbols": "C = first cost; O = annual operating cost; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -13613,8 +13770,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Repeated replacements forever"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(324000\\right)+\\left(\\frac{274000}{\\left(\\left(1.06\\right)^{4}\\right)-\\left(1\\right)}\\right)",
+    "governingFormula": "CC=C+\\frac{C-S}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "CC=324000+\\frac{324000-50000}{\\left(1+0.06\\right)^{4}-1}",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -13704,8 +13862,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "First tractor now, then indefinite replacements"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(24000\\right)+\\left(\\frac{24000}{\\left(\\left(1.06\\right)^{5}\\right)-\\left(1\\right)}\\right)",
+    "governingFormula": "CC=C+\\frac{C-S}{\\left(1+i\\right)^{n}-1}",
+    "substitutionMath": "CC=24000+\\frac{24000-0}{\\left(1+0.06\\right)^{5}-1}",
+    "formulaSymbols": "C = first cost; S = salvage value; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -13805,8 +13964,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Redemption price"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(1080\\right)-\\left(\\left(100\\right)\\times\\left(\\frac{1-(1+0.12)^{-8}}{0.12}\\right)\\right)\\right)\\times\\left(\\left(1.12\\right)^{8}\\right)",
+    "governingFormula": "R=\\left(Price-K\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}\\right)\\times \\left(1+i\\right)^{n}",
+    "substitutionMath": "R=\\left(1080-100\\times \\frac{1-\\left(1+0.12\\right)^{-8}}{0.12}\\right)\\times \\left(1+0.12\\right)^{8}",
+    "formulaSymbols": "K = coupon per period; Price = bond price; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -13913,8 +14073,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Yield"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(X\\right)\\times\\left(100\\right)",
+    "governingFormula": "0=K\\times \\frac{1-\\left(1+x\\right)^{-n}}{x}+\\frac{R}{\\left(1+x\\right)^{n}}-Price",
+    "substitutionMath": "0=100\\times \\frac{1-\\left(1+x\\right)^{-10}}{x}+\\frac{1040}{\\left(1+x\\right)^{10}}-1120",
+    "formulaSymbols": "K = coupon per period; Price = bond price; R = redemption or recurring replacement cost; n = number of periods or useful life; x = unknown decimal yield",
     "solutionSteps": [
       {
         "step": 1,
@@ -14009,8 +14170,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Annual coupons, redeem at par"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(X\\right)\\times\\left(100\\right)",
+    "governingFormula": "0=K\\times \\frac{1-\\left(1+x\\right)^{-n}}{x}+\\frac{R}{\\left(1+x\\right)^{n}}-Price",
+    "substitutionMath": "0=30000\\times \\frac{1-\\left(1+x\\right)^{-15}}{x}+\\frac{1000000}{\\left(1+x\\right)^{15}}-950000",
+    "formulaSymbols": "K = coupon per period; Price = bond price; R = redemption or recurring replacement cost; n = number of periods or useful life; x = unknown decimal yield",
     "solutionSteps": [
       {
         "step": 1,
@@ -14100,8 +14262,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "12% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(110\\right)\\times\\left(\\frac{1-(1+0.12)^{-20}}{0.12}\\right)\\right)+\\left(\\frac{1000}{\\left(1.12\\right)^{20}}\\right)",
+    "governingFormula": "Price=K\\times \\frac{1-\\left(1+i\\right)^{-n}}{i}+\\frac{R}{\\left(1+i\\right)^{n}}",
+    "substitutionMath": "Price=110\\times \\frac{1-\\left(1+0.12\\right)^{-20}}{0.12}+\\frac{1000}{\\left(1+0.12\\right)^{20}}",
+    "formulaSymbols": "K = coupon per period; R = redemption or recurring replacement cost; i = effective rate per payment period; n = number of periods or useful life",
     "solutionSteps": [
       {
         "step": 1,
@@ -14198,8 +14361,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "2% yearly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(\\left(\\frac{1.05}{1.02}\\right)-\\left(1\\right)\\right)\\times\\left(100\\right)",
+    "governingFormula": "i_{real,percent}=\\left(\\frac{1+i}{1+f}-1\\right)\\times 100",
+    "substitutionMath": "i_{real,percent}=\\left(\\frac{1+0.05}{1+0.02}-1\\right)\\times 100",
+    "formulaSymbols": "f = annual inflation rate; i = effective rate per payment period",
     "solutionSteps": [
       {
         "step": 1,
@@ -14287,8 +14451,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Yield"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\left(X\\right)\\times\\left(100\\right)",
+    "governingFormula": "0=K\\times \\frac{1-\\left(1+x\\right)^{-n}}{x}+\\frac{R}{\\left(1+x\\right)^{n}}-Price",
+    "substitutionMath": "0=80\\times \\frac{1-\\left(1+x\\right)^{-10}}{x}+\\frac{1000}{\\left(1+x\\right)^{10}}-1030",
+    "formulaSymbols": "K = coupon per period; Price = bond price; R = redemption or recurring replacement cost; n = number of periods or useful life; x = unknown decimal yield",
     "solutionSteps": [
       {
         "step": 1,
@@ -14373,8 +14538,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "$200/unit"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{200000}{\\left(200\\right)-\\left(160\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC}",
+    "substitutionMath": "Q=\\frac{200000}{200-160}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -14445,8 +14611,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "₱55/block"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{\\left(\\left(3500\\right)+\\left(25000\\right)\\right)+\\left(12000\\right)}{\\left(\\left(55\\right)-\\left(20\\right)\\right)-\\left(2\\right)}",
+    "governingFormula": "Q=\\frac{FC_{1}+FC_{2}+FC_{3}}{SP-VC_{1}-VC_{2}}",
+    "substitutionMath": "Q=\\frac{3500+25000+12000}{55-20-2}",
+    "formulaSymbols": "FC_1 = fixed cost; FC_2 = fixed cost; FC_3 = fixed cost; SP = selling price per unit; VC_1 = variable cost per unit; VC_2 = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -14550,8 +14717,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "Missing, zero assumed explicitly"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{80000}{0.5}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC}",
+    "substitutionMath": "Q=\\frac{80000}{0.5-0}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -14615,8 +14783,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "₱135/unit"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{69994}{\\left(135\\right)-\\left(56\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC}",
+    "substitutionMath": "Q=\\frac{69994}{135-56}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -14687,8 +14856,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "$1,200/unit"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{100000}{\\left(\\left(\\left(1200\\right)-\\left(300\\right)\\right)-\\left(400\\right)\\right)-\\left(100\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC_{1}-VC_{2}-VC_{3}}",
+    "substitutionMath": "Q=\\frac{100000}{1200-300-400-100}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC_1 = variable cost per unit; VC_2 = variable cost per unit; VC_3 = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -14773,8 +14943,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "$6/piece"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{50000}{\\left(\\left(\\left(6\\right)-\\left(0.75\\right)\\right)-\\left(3.25\\right)\\right)-\\left(0.5\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC_{1}-VC_{2}-VC_{3}}",
+    "substitutionMath": "Q=\\frac{50000}{6-0.75-3.25-0.5}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC_1 = variable cost per unit; VC_2 = variable cost per unit; VC_3 = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -14866,8 +15037,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "$250/unit"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{450000}{\\left(\\left(250\\right)-\\left(45\\right)\\right)-\\left(15\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC_{1}-VC_{2}}",
+    "substitutionMath": "Q=\\frac{450000}{250-45-15}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC_1 = variable cost per unit; VC_2 = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -14952,8 +15124,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "$200/drum"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{200000}{\\left(200\\right)-\\left(160\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC}",
+    "substitutionMath": "Q=\\frac{200000}{200-160}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -15024,8 +15197,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "₱995/unit"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{461600}{\\left(\\left(\\left(995\\right)-\\left(315\\right)\\right)-\\left(100\\right)\\right)-\\left(3\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC_{1}-VC_{2}-VC_{3}}",
+    "substitutionMath": "Q=\\frac{461600}{995-315-100-3}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC_1 = variable cost per unit; VC_2 = variable cost per unit; VC_3 = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -15110,8 +15284,9 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
         "value": "₱250/chair"
       }
     ],
-    "governingFormula": "",
-    "substitutionMath": "\\frac{34950}{\\left(\\left(\\left(250\\right)-\\left(15\\right)\\right)-\\left(65\\right)\\right)-\\left(20\\right)}",
+    "governingFormula": "Q=\\frac{FC}{SP-VC_{1}-VC_{2}-VC_{3}}",
+    "substitutionMath": "Q=\\frac{34950}{250-15-65-20}",
+    "formulaSymbols": "FC = fixed cost; SP = selling price per unit; VC_1 = variable cost per unit; VC_2 = variable cost per unit; VC_3 = variable cost per unit",
     "solutionSteps": [
       {
         "step": 1,
@@ -15155,5 +15330,5 @@ export const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = [
     },
     "mentalModelOrTrap": "Contribution = ₱150 per chair."
   }
-].map(p => ({...p, correctLetter: (p.correctLetter || undefined) as DriveSampleProblem['correctLetter'], difficulty: 'Moderate' as const, category: formulaById[p.formulaId].title, topicTitle: formulaById[p.formulaId].title, governingFormula: formulaById[p.formulaId].formula, weekDay: formulaById[p.formulaId].day, answerStatus: p.answerStatus as DriveSampleProblem['answerStatus']}));
+].map(p => ({...p, correctLetter: (p.correctLetter || undefined) as DriveSampleProblem['correctLetter'], difficulty: 'Moderate' as const, category: formulaById[p.formulaId].title, topicTitle: formulaById[p.formulaId].title, weekDay: formulaById[p.formulaId].day, answerStatus: p.answerStatus as DriveSampleProblem['answerStatus']}));
 export const ESAS_DRIVE_SAMPLE_PROBLEMS = DRIVE_SAMPLE_PROBLEMS;

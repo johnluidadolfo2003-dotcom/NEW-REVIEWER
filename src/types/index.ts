@@ -113,6 +113,7 @@ export interface DriveSampleProblem {
   shortcutSolution?: string; // Fast 30-45s direct shortcut solution
   given: { symbol: string; meaning: string; value: string }[];
   governingFormula: string;
+  formulaSymbols?: string;
   solutionSteps: {
     step: number;
     title: string;

@@ -351,7 +351,7 @@ export function EconomicsProblemCard({
             <h4 className="text-sm font-semibold">1 · Formula</h4>
             <EconomicsMath formula={p.governingFormula} />
             <p className="text-xs text-slate-400">
-              {formulaById[p.formulaId || ""].symbols}
+              {p.formulaSymbols || formulaById[p.formulaId || ""].symbols}
             </p>
           </section>
           <section data-solution-stage="substitute">
@@ -790,11 +790,9 @@ export function EconomicsStudyHub({
                     Follow the shortcut solution
                   </summary>
                   <h4 className="text-sm font-semibold mt-4">1 · Formula</h4>
-                  <EconomicsMath formula={formulaById[e.formulaId].formula} />
+                  <EconomicsMath formula={e.formulaMath} />
                   <h4 className="text-sm font-semibold">2 · Substitute the values</h4>
-                  <p className="font-mono text-sm text-teal-200 break-words p-3 bg-slate-950 rounded-xl my-3">
-                    {e.entry}
-                  </p>
+                  <EconomicsMath formula={e.substitutionMath} />
                   <h4 className="text-sm font-semibold">3 · Answer</h4>
                   <p className="font-semibold mt-2">{e.answer}</p>
                   <details className="mt-4">

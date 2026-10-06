@@ -56,6 +56,17 @@ assert.deepEqual(
   ),
   ["formula", "substitute", "answer"],
 );
+const { DRIVE_SAMPLE_PROBLEMS } = await import("../src/data/driveSampleProblems");
+for (const [stage, expected] of [
+  ["formula", DRIVE_SAMPLE_PROBLEMS[0].governingFormula],
+  ["substitute", DRIVE_SAMPLE_PROBLEMS[0].substitutionMath],
+] as const) {
+  const rendered = first.querySelectorAll(
+    `[data-solution-stage="${stage}"] annotation`,
+  );
+  assert.equal(rendered.length, 1, "Use the applicable equation, not all topic variants");
+  assert.equal(rendered[0].textContent, expected);
+}
 assert.ok(within(first).getByText("1 · Formula"));
 assert.ok(within(first).getByText("2 · Substitute the values"));
 assert.ok(within(first).getByText("3 · Answer"));

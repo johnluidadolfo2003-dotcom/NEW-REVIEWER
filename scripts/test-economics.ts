@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { economicsFormulaLatex } from "../src/utils/economicsMath";
 import { ECONOMICS_TOPIC_NOTES } from "../src/data/economicsTopics";
 import katex from "katex";
+import { ECONOMICS_LESSONS } from "../src/data/economicsLessons";
 import { DRIVE_SAMPLE_PROBLEMS as problems } from "../src/data/driveSampleProblems";
 import { ECON_TERMS_QUESTIONS as terms } from "../src/data/econTermsQuestions";
 import {
@@ -107,3 +108,21 @@ for (const p of problems) {
 console.log(
   "PASS: named givens, complete calculation steps, valid mathematical rendering for all 175 solutions, and solved-rate residual checks.",
 );
+
+for (const p of problems) {
+  assert.ok(p.governingFormula && p.substitutionMath && p.formulaSymbols);
+  katex.renderToString(p.governingFormula, { throwOnError: true, strict: "ignore" });
+}
+for (const lesson of ECONOMICS_LESSONS)
+  for (const example of lesson.examples)
+    for (const math of [example.formulaMath, example.substitutionMath])
+      katex.renderToString(math, { throwOnError: true, strict: "ignore" });
+// A yield substitution must show the residual equation, not just X × 100.
+for (const n of [4, 73, 100, 161, 162, 165]) {
+  assert.ok(problems[n - 1].substitutionMath!.startsWith("0="));
+  assert.ok(problems[n - 1].substitutionMath!.includes("x"));
+}
+assert.ok(problems[0].governingFormula.includes("1+i"));
+assert.ok(problems[0].governingFormula.includes("1+f"));
+assert.ok(problems[94].substitutionMath!.includes("F"));
+console.log("PASS: question-specific formulas, paired answers, yield equations, and all 14 lesson examples render correctly.");

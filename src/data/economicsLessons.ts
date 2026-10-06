@@ -11,6 +11,8 @@ export interface EconomicsLesson {
     source: string;
     question: string;
     formulaId: string;
+    formulaMath: string;
+    substitutionMath: string;
     entry: string;
     answer: string;
     note: string;
@@ -41,6 +43,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "Juan withdraws ₱107,500 after 15 months at 6% simple interest. How much was deposited?",
         formulaId: "simple",
+        formulaMath: "P=\\frac{F}{1+rt}",
+        substitutionMath: "P=\\frac{107500}{1+0.06\\times(15/12)}",
         entry: "107500 ÷ (1 + 0.06 × 15 ÷ 12)",
         answer: "₱100,000 — A",
         note: "Divide the future amount by the simple-interest growth factor.",
@@ -51,6 +55,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "₱50,000 earns 5% compounded semiannually for 5 years. Find the total.",
         formulaId: "compound",
+        formulaMath: "F=P(1+r/m)^{mt}",
+        substitutionMath: "F=50000(1+0.05/2)^{2\\times5}",
         entry: "50000 × (1 + 0.05 ÷ 2)^10",
         answer: "₱64,004.23 — C (printed ₱64,004.22)",
         note: "Five years × two periods = ten. The printed option differs by one cent.",
@@ -80,6 +86,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "Convert 10% nominal compounded semiannually to an effective annual rate.",
         formulaId: "rate",
+        formulaMath: "i_{e,\\%}=\\left[(1+r/m)^m-1\\right]\\times100",
+        substitutionMath: "i_{e,\\%}=\\left[(1+0.10/2)^2-1\\right]\\times100",
         entry: "((1 + 0.10 ÷ 2)^2 − 1) × 100",
         answer: "10.25% — B",
         note: "Two 5% growth periods produce 10.25% yearly.",
@@ -90,6 +98,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "₱6,000 earns 5.2% compounded continuously for 8 years. Find the balance.",
         formulaId: "continuous",
+        formulaMath: "F=Pe^{rt}",
+        substitutionMath: "F=6000e^{0.052\\times8}",
         entry: "6000 × e^(0.052 × 8)",
         answer: "₱9,095.31 — D (printed ₱9,095.32)",
         note: "Use eˣ, not 10ˣ. A one-cent source difference is noted.",
@@ -119,6 +129,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "Find the present worth of ₱15,000 paid yearly for 7 years at 11%.",
         formulaId: "pa",
+        formulaMath: "P=A\\frac{1-(1+i)^{-n}}{i}",
+        substitutionMath: "P=15000\\frac{1-(1+0.11)^{-7}}{0.11}",
         entry: "15000 × (1 − 1.11^(−7)) ÷ 0.11",
         answer: "₱70,682.94 — D",
         note: "The first payment is at the end of year 1.",
@@ -129,6 +141,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "₱50,000 is withdrawn in equal yearly amounts over 12 years at 9% nominal compounded quarterly.",
         formulaId: "cr",
+        formulaMath: "A=P\\frac{i}{1-(1+i)^{-n}}",
+        substitutionMath: "\\begin{gathered}i=(1+0.09/4)^4-1\\\\A=50000\\frac{(1+0.09/4)^4-1}{1-\\left[1+\\left((1+0.09/4)^4-1\\right)\\right]^{-12}}\\end{gathered}",
         entry: "50000 × (1.0225^4 − 1) ÷ (1 − (1.0225^4)^(−12))",
         answer: "₱7,091.36; no matching printed choice.",
         note: "The original printed choices are around ₱1,200–₱1,800 and do not fit the stated annual-withdrawal question. The rate must be effective yearly.",
@@ -159,6 +173,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "A ₱1,000,000 tractor is paid in 20 semiannual installments beginning now, at 28% nominal compounded semiannually.",
         formulaId: "due",
+        formulaMath: "A_{due}=P\\frac{i}{[1-(1+i)^{-n}](1+i)}",
+        substitutionMath: "A_{due}=1000000\\frac{0.14}{[1-(1+0.14)^{-20}](1+0.14)}",
         entry: "1000000 × 0.14 ÷ (1 − 1.14^(−20)) ÷ 1.14",
         answer: "₱132,443.86 — A",
         note: "Divide the ordinary payment by 1.14 for payments one period earlier.",
@@ -169,6 +185,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "Pay ₱100,000 now and ten ₱8,000 semiannual payments starting at year 3. Find cash price at 12% compounded semiannually.",
         formulaId: "deferred",
+        formulaMath: "P_0=P_d+A\\frac{1-(1+i)^{-n}}{i(1+i)^{k-1}}",
+        substitutionMath: "P_0=100000+8000\\frac{1-(1+0.06)^{-10}}{0.06(1+0.06)^{6-1}}",
         entry: "100000 + 8000 × (1 − 1.06^(−10)) ÷ 0.06 ÷ 1.06^5",
         answer: "₱143,999.08 — nearest A (₱144,000)",
         note: "Year 3 is period 6; discount the annuity value five periods.",
@@ -199,6 +217,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "Cost ₱120,000, salvage ₱15,000, life 9 years. Find straight-line book value after 7 years.",
         formulaId: "sl",
+        formulaMath: "BV_m=C-m\\frac{C-S}{n}",
+        substitutionMath: "BV_7=120000-7\\frac{120000-15000}{9}",
         entry: "120000 − 7 × (120000 − 15000) ÷ 9",
         answer: "₱38,333.33 — D",
         note: "Subtract seven equal annual charges.",
@@ -209,6 +229,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "Cost ₱900,000, salvage ₱200,000, life 8 years. Find SYD book value after 5 years.",
         formulaId: "syd",
+        formulaMath: "BV_m=C-(C-S)\\frac{\\sum_{j=1}^m(n-j+1)}{n(n+1)/2}",
+        substitutionMath: "BV_5=900000-(900000-200000)\\frac{8+7+6+5+4}{8(8+1)/2}",
         entry: "900000 − 700000 × (8 + 7 + 6 + 5 + 4) ÷ 36",
         answer: "₱316,666.67 — B (rounded ₱316,667)",
         note: "Five depreciation digits sum to 30; SYD is 36.",
@@ -239,6 +261,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "A power plant costs ₱2 million with ₱200,000 annual expenses indefinitely. Find capitalized cost at 20%.",
         formulaId: "cc",
+        formulaMath: "CC=C+\\frac{O}{i}",
+        substitutionMath: "CC=2000000+\\frac{200000}{0.20}",
         entry: "2000000 + 200000 ÷ 0.20",
         answer: "₱3,000,000 — C",
         note: "Annual expenses are a perpetuity.",
@@ -249,6 +273,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "A bridge costs ₱500,000 and requires ₱30,000 resurfacing every 4 years forever. Find capitalized cost at 10%.",
         formulaId: "cc",
+        formulaMath: "CC=C+\\frac{R}{(1+i)^n-1}",
+        substitutionMath: "CC=500000+\\frac{30000}{(1+0.10)^4-1}",
         entry: "500000 + 30000 ÷ (1.10^4 − 1)",
         answer: "₱564,641.24 — A (rounded ₱564,641)",
         note: "Recurring work begins at year 4, so use the repeating replacement term.",
@@ -280,6 +306,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "A ₱5,000 bond pays ₱250 yearly and redeems after 8 years. Find price for a 6% annual yield.",
         formulaId: "bond",
+        formulaMath: "Price=K\\frac{1-(1+i)^{-n}}{i}+\\frac{R}{(1+i)^n}",
+        substitutionMath: "Price=250\\frac{1-(1+0.06)^{-8}}{0.06}+\\frac{5000}{(1+0.06)^8}",
         entry: "250 × (1 − 1.06^(−8)) ÷ 0.06 + 5000 ÷ 1.06^8",
         answer: "₱4,689.51 — B",
         note: "Discount eight coupons plus the redemption.",
@@ -290,6 +318,8 @@ export const ECONOMICS_LESSONS: EconomicsLesson[] = [
         question:
           "Fixed annual expenses are ₱220,000, cost per unit ₱160, selling price ₱210. Find break-even quantity.",
         formulaId: "breakEven",
+        formulaMath: "Q=\\frac{FC}{SP-VC}",
+        substitutionMath: "Q=\\frac{220000}{210-160}",
         entry: "220000 ÷ (210 − 160)",
         answer: "4,400 units — A",
         note: "Each unit contributes ₱50 toward fixed cost.",

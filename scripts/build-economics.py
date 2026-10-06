@@ -1,6 +1,7 @@
 """Build the source-backed data. Inputs are manually transcribed, not generated questions."""
 import ast,json,math,re
 from economics_solution_steps import load_givens, build_steps
+from economics_formula_pairs import make_pair
 givens_by_number=load_givens()
 from pathlib import Path
 
@@ -85,9 +86,10 @@ for line in Path('scripts/economics-problems.tsv').read_text().splitlines():
  if n==12:calc="2 ÷ 0.20 − 1 = 9 years minimum"
  if n==82:calc="Test quarterly: ((1 + 0.095 ÷ 4)^4 − 1) × 100 ≈ 9.84%; therefore m = 4"
  worked,substitution=build_steps(n,key,expr,note,result,value,fmt,env)
- problems.append(dict(id=f'econ-sample-{n:03}',problemNumber=n,sourceFile=image,sourceDocumentName='Practice Problems in Engineering Economics',folderName='Economics Sample Problem',category=key,topicTitle=key,weekDay=1,difficulty='Moderate',question=q,choices=[f'{"ABCD"[j]}. {o}' for j,o in enumerate(opts)],correctLetter=letter,answerStatus=status,assumption=n in assumptions,formulaId=key,resultValue=value,calculatorEntry=calc,shortcutSolution=note,given=givens_by_number[n],governingFormula='',substitutionMath=substitution,solutionSteps=worked,finalAnswer=fmt,canonCalTech=dict(calculator='Canon F-789SGA',mode='COMP',keystrokes=[calc,'Press =. For an expression containing X, use SOLVE with a decimal initial estimate; then verify the residual.'],resultDisplay=fmt,proTip='Use the power key for ^ and the negative-sign key for a negative exponent; round only the final result.'),mentalModelOrTrap=note))
-# Look up formula text and day in TS at runtime to keep a single formula bank.
-Path('src/data/driveSampleProblems.ts').write_text("import { DriveSampleProblem } from '../types';\nimport { formulaById } from './economicsFormulas';\nexport const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = "+json.dumps(problems,ensure_ascii=False,indent=2)+".map(p => ({...p, correctLetter: (p.correctLetter || undefined) as DriveSampleProblem['correctLetter'], difficulty: 'Moderate' as const, category: formulaById[p.formulaId].title, topicTitle: formulaById[p.formulaId].title, governingFormula: formulaById[p.formulaId].formula, weekDay: formulaById[p.formulaId].day, answerStatus: p.answerStatus as DriveSampleProblem['answerStatus']}));\n")
+ pair=make_pair(n,result,env)
+ problems.append(dict(id=f'econ-sample-{n:03}',problemNumber=n,sourceFile=image,sourceDocumentName='Practice Problems in Engineering Economics',folderName='Economics Sample Problem',category=key,topicTitle=key,weekDay=1,difficulty='Moderate',question=q,choices=[f'{"ABCD"[j]}. {o}' for j,o in enumerate(opts)],correctLetter=letter,answerStatus=status,assumption=n in assumptions,formulaId=key,resultValue=value,calculatorEntry=calc,shortcutSolution=note,given=givens_by_number[n],**pair,solutionSteps=worked,finalAnswer=fmt,canonCalTech=dict(calculator='Canon F-789SGA',mode='COMP',keystrokes=[calc,'Press =. For an expression containing X, use SOLVE with a decimal initial estimate; then verify the residual.'],resultDisplay=fmt,proTip='Use the power key for ^ and the negative-sign key for a negative exponent; round only the final result.'),mentalModelOrTrap=note))
+# Keep bank classification and lesson day, but preserve the question-specific equation.
+Path('src/data/driveSampleProblems.ts').write_text("import { DriveSampleProblem } from '../types';\nimport { formulaById } from './economicsFormulas';\nexport const DRIVE_SAMPLE_PROBLEMS: DriveSampleProblem[] = "+json.dumps(problems,ensure_ascii=False,indent=2)+".map(p => ({...p, correctLetter: (p.correctLetter || undefined) as DriveSampleProblem['correctLetter'], difficulty: 'Moderate' as const, category: formulaById[p.formulaId].title, topicTitle: formulaById[p.formulaId].title, weekDay: formulaById[p.formulaId].day, answerStatus: p.answerStatus as DriveSampleProblem['answerStatus']}));\n")
 with Path('src/data/driveSampleProblems.ts').open('a') as f: f.write('export const ESAS_DRIVE_SAMPLE_PROBLEMS = DRIVE_SAMPLE_PROBLEMS;\n')
 print('Generated',len(problems),'numerical problems; flagged',sum(p['answerStatus'] not in ['matched','nearest-choice'] for p in problems),'choice/given issues.')
 terms=[]
